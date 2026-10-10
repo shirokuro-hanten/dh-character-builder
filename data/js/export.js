@@ -1,5 +1,4 @@
-const traitsName = {agility: "敏捷", strength: "筋力", finesse: "技巧", instinct: "直感", presence: "存在", knowledge: "知識"};
-const rangeName = {melee: "近接", veryClose: "至近距離", close: "近距離", far: "遠距離", veryFar: "超遠距離", outOfRange: "射程外"};
+const traitsName = {agility: "敏捷", strength: "筋力", finesse: "技巧", instinct: "直観", presence: "存在", knowledge: "知識"};
 
 // =========================
 // ココフォリア用駒生成→クリップボードにコピー
@@ -17,7 +16,7 @@ function copyToCcf() {
   memo_arr.push(`【代名詞】${data.pronouns}｜【プレイヤー名】${data.playerName}`);
   memo_arr.push(`【クラス】${data.class}｜【サブクラス】${data.subclass}｜【レベル】${data.level}`);
   memo_arr.push(`【血統】${data.ancestry}｜【共同体】${data.community}`);
-  memo_arr.push(`【回避】${data.evasion}｜【ダメージ閾値】${data.damageThresholdMajor}／${data.damageThresholdSevere}`);
+  memo_arr.push(`【回避】${data.evasion}｜【ダメージ閾値】${data.damageThresholds.major}／${data.damageThresholds.severe}`);
   memo_arr.push(`【所持品】\n${data.inventory.join("\n")}`);
 
   // ステータス
@@ -25,6 +24,11 @@ function copyToCcf() {
   status_arr.push({label: "ストレス", value: data.stressMarked, max: data.stress});
   status_arr.push({label: "希望", value: data.hope, max: 6});
   status_arr.push({label: "防具スロット", value: data.armorSlotsMarked, max: data.armorScore});
+  for (let i = 0; i < 5; i++) {
+    const additionalStat = data.additionalStat[i];
+    if (additionalStat.label === "") {continue;}
+    status_arr.push({label: additionalStat.label, value: additionalStat.current, max: additionalStat.max});
+  }
 
   // パラメータ
   Object.entries(traitsName).forEach(([traitName, traitLabel]) => {
@@ -70,18 +74,18 @@ function exportToUdonarium() {
   <data name="character">
     <data name="image"></data>
     <data name="common">
-      <data name="name">${data.name}</data>
+      <data name="name">${escapeXml(data.name)}</data>
       <data name="size">1</data>
     </data>
     <data name="detail">
       <data name="情報">
-        <data type="note" name="代名詞">${data.pronouns}</data>
-        <data type="note" name="プレイヤー名">${data.playerName}</data>
-        <data type="note" name="クラス">${data.class}</data>
-        <data type="note" name="サブクラス">${data.subclass}</data>
+        <data type="note" name="代名詞">${escapeXml(data.pronouns)}</data>
+        <data type="note" name="プレイヤー名">${escapeXml(data.playerName)}</data>
+        <data type="note" name="クラス">${escapeXml(data.class)}</data>
+        <data type="note" name="サブクラス">${escapeXml(data.subclass)}</data>
         <data type="number" name="レベル">${data.level}</data>
-        <data type="note" name="血統">${data.ancestry}</data>
-        <data type="note" name="共同体">${data.community}</data>
+        <data type="note" name="血統">${escapeXml(data.ancestry)}</data>
+        <data type="note" name="共同体">${escapeXml(data.community)}</data>
       </data>
       <data name="ステータス">
         <data type="numberResource" currentValue="${data.hpMarked}" name="HP">${data.hp}</data>
@@ -89,8 +93,9 @@ function exportToUdonarium() {
         <data type="numberResource" currentValue="${data.hope}" name="希望">6</data>
         <data type="numberResource" currentValue="${data.armorSlotsMarked}" name="防具スロット">${data.armorScore}</data>
         <data name="回避">${data.evasion}</data>
-        <data type="number" name="ダメージ閾値">${data.damageThresholdMajor}／${data.damageThresholdSevere}</data>
+        <data type="number" name="ダメージ閾値">${data.damageThresholds.major}／${data.damageThresholds.severe}</data>
         <data name="習熟">${data.proficiency}</data>
+        ${additionalStatsXml(data)}
       </data>
       <data name="特性">
         <data name="敏捷">${data.traits.agility}</data>
@@ -102,7 +107,7 @@ function exportToUdonarium() {
       </data>
     </data>
   </data>
-  <chat-palette dicebot="">${chatPalette(data)}</chat-palette>
+  <chat-palette dicebot="">${escapeXml(chatPalette(data))}</chat-palette>
 </character>
 `.trim();
 
@@ -114,6 +119,29 @@ function exportToUdonarium() {
   link.download = `${data.name || "character"}.xml`;
   link.click();
   URL.revokeObjectURL(url);
+}
+
+function additionalStatsXml(data) {
+  let xml = "";
+
+  for (let i = 0; i < 5; i++) {
+    const stat = data.additionalStat[i];
+    if (stat.label === "") continue;
+
+    xml += `
+        <data type="numberResource" currentValue="${stat.current}" name="${escapeXml(stat.label)}">${stat.max}</data>`;
+  }
+
+  return xml;
+}
+
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
 }
 
 function chatPalette(data) {
@@ -149,6 +177,10 @@ function chatPalette(data) {
     chatPalette_arr.push(`---所持武器〈${data.inventoryWeapon2.name}〉：${data.inventoryWeapon2.category}、${data.inventoryWeapon2.range}、${data.inventoryWeapon2.burden}、${traitsName[data.inventoryWeapon2.trait]}`);
     chatPalette_arr.push(`2d12${getModifier(data.traits[data.inventoryWeapon2.trait])} 〈${data.inventoryWeapon2.name}〉攻撃ロール`);
     chatPalette_arr.push(`${data.proficiency}${data.inventoryWeapon2.damagedie} 〈${data.inventoryWeapon2.name}〉ダメージロール（${data.inventoryWeapon2.damagetype}）`);
+  }
+  if (data.additionalChatPalette.length > 0) {
+    chatPalette_arr.push("---------------");
+    chatPalette_arr.push(...data.additionalChatPalette);
   }
 
   const chatPalette = chatPalette_arr.join("\n");

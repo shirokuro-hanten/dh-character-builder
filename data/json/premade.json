@@ -1,0 +1,859 @@
+[
+  {
+    "id": "marlowe",
+    "name": "マーロウ・フェアウィンド",
+    "pronouns": "She/Her",
+    "playerName": "",
+    "class": "ソーサラー",
+    "subclass": "始原の起源",
+    "level": 1,
+    "ancestry": "エルフ",
+    "community": "学院育ち",
+    "evasion": 10,
+    "armorScore": 3, "armorSlotsMarked": 0,
+    "traits": {
+      "agility": 0,
+      "strength": -1,
+      "finesse": 1,
+      "instinct": 2,
+      "presence": 1,
+      "knowledge": 0
+    },
+    "traitsMarked": {
+      "agility": false,
+      "strength": false,
+      "finesse": false,
+      "instinct": false,
+      "presence": false,
+      "knowledge": false
+    },
+    "spellcastingTrait": "presence",
+    "damageThresholds": {
+      "major": 7,
+      "severe": 14
+    },
+    "hp": 6,
+    "hpMarked": 0,
+    "stress": 6, "stressMarked": 0,
+    "hope": 2,
+    "experiences": [
+      {"experience": "王室魔道士", "bonus": 2},
+      {"experience": "私の目の黒いうちは", "bonus": 2},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0}
+    ],
+    "proficiency": 1,
+    "activeWeaponPrimary": {
+      "name": "デュアルスタッフ",
+      "trait": "直観",
+      "range": "遠距離",
+      "damagedie": "d6＋3",
+      "damagetype": "魔法",
+      "burden": "両手用",
+      "feature": ""
+    },
+    "activeWeaponSecondary": {
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "feature": ""
+    },
+    "activeArmor": {
+      "name": "レザー・アーマー",
+      "baseThresholds": "6／13",
+      "baseScore": "3",
+      "feature": ""
+    },
+    "inventory": [
+      "初級スタミナ薬（ストレスを1d4つ回復する）"
+    ],
+    "inventoryWeapon1": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "inventoryWeapon2": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "gold": {
+      "handful": 0,
+      "bag": 0,
+      "chest": 0
+    },
+    "heritageFeatures": [
+      "即応：ストレスを1つマークして、反応ロールに有利を得る。",
+      "天上トランス：君は休憩中にトランス状態に入り、合間ムーヴを追加で1つ選択することができる。",
+      "博識：著名な人物や場所に関する歴史、文化、政治に関わるロールに有利を得る。"
+    ],
+    "classFeatures": [
+      "------気まぐれな魔法------",
+      "希望を3つ消費して、魔法ダメージを与える君の攻撃のダメージダイスを任意の数だけ振り直す。",
+      "魔術感知",
+      "君は近距離射程内の魔法的な人間および物体の存在を感知できる。",
+      "------小幻術------",
+      "呪文発動ロール（10）を行う。成功したなら、君は近距離射程内に君自身を超えない大きさのささやかな視覚的幻を1つ生み出す。この幻は、近距離射程またはそれより遠くの者にとっては本物のように見える。",
+      "------天然魔力伝導------",
+      "大休憩ごとに1回、君は準備枠の領域カード1枚を保存枠に移し、以下いずれかを選ぶことができる：",
+      "•そのカードのレベルに等しい数の希望を得る。",
+      "•ダメージを与える呪文1つを強化し、ダメージロールにそのカードのレベルの2倍に等しいボーナスを得る。",
+      "------魔法操作------",
+      "君は原始の起源によって魔法そのものの精髄を変化させられるようになる。君は呪文を発動するか、魔法ダメージを与える武器を用いて攻撃を行った後、ストレスを1つマークして以下のいずれかを行うことができる：",
+      "•その呪文または攻撃の間合いを射程1段階ぶん延長する",
+      "•その攻撃ロールの合計に＋2のボーナスを得る",
+      "•任意のダメージダイス1つを2倍にする",
+      "•射程内にいる追加の目標1体にヒットさせる"
+    ],
+    "domainCards": [
+      "------混沌解放------",
+      "レベル1・秘術呪文｜想起コスト：1",
+      "セッション開始時、君の呪文発動特性に等しい数のトークンをこのカードの上に置く。",
+      "遠距離射程内にいる目標1体に対して呪文発動ロールを行い、好きな数のトークンを消費して内なる自然のエネルギーを引き出し、目標に対して放つ。成功したなら、消費したトークンに等しい数のd10を振り、出目の分だけ目標に魔法ダメージを与える。ストレスを1つマークすることで、このカードにトークンを補充する（最大数は君の呪文発動特性に等しい）。",
+      "各セッションの終了時、消費していないトークンはすべてなくなる。",
+      "------刃の雨------",
+      "レベル1・闇夜呪文｜想起コスト：1",
+      "希望を1つ消費することで、呪文発動ロールを行って無数の刃を召喚し、至近距離射程内にいるすべての目標に浴びせつける。君が成功した目標は、君の習熟度を用いたd8＋2の魔法ダメージを受ける。",
+      "君がヒットさせた目標が脆弱状態なら、追加で1d8のダメージを受ける。"
+    ],
+    "detail": [],
+    "background": [],
+    "connection": [
+      "____：君になら命を預けられる。",
+      "____：君とは親しい間柄だと思っていた。",
+      "____：君には借りがある。"
+    ],
+    "levelupTier2": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0
+    },
+    "levelupTier3": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "levelupTier4": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "additionalStat": [
+      {"label": "混沌解放", "current": 1, "max": 1},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0}
+    ],
+    "additionalChatPalette": [
+      "1d10 混沌解放：ダメージロール（魔法）",
+      "1d8+2 刃の雨：ダメージロール（魔法）",
+      "2d8+2 刃の雨（脆弱状態）：ダメージロール（魔法）"
+    ]
+  },
+  {
+    "id": "barnacle",
+    "name": "バーナクル",
+    "pronouns": "He/Him",
+    "playerName": "",
+    "class": "ローグ",
+    "subclass": "ナイトウォーカー",
+    "level": 1,
+    "ancestry": "リベット",
+    "community": "地下育ち",
+    "evasion": 13,
+    "armorScore": 3, "armorSlotsMarked": 0,
+    "traits": {
+      "agility": 1,
+      "strength": -1,
+      "finesse": 2,
+      "instinct": 0,
+      "presence": 1,
+      "knowledge": 0
+    },
+    "traitsMarked": {
+      "agility": false,
+      "strength": false,
+      "finesse": false,
+      "instinct": false,
+      "presence": false,
+      "knowledge": false
+    },
+    "spellcastingTrait": "finesse",
+    "damageThresholds": {
+      "major": 6,
+      "severe": 12
+    },
+    "hp": 6,
+    "hpMarked": 0,
+    "stress": 6, "stressMarked": 0,
+    "hope": 2,
+    "experiences": [
+      {"experience": "気づかれてないぞ！", "bonus": 2},
+      {"experience": "取引成立", "bonus": 2},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0}
+    ],
+    "proficiency": 1,
+    "activeWeaponPrimary": {
+      "name": "ダガー",
+      "trait": "技巧",
+      "range": "近接",
+      "damagedie": "d8＋1",
+      "damagetype": "物理",
+      "burden": "片手用",
+      "feature": ""
+    },
+    "activeWeaponSecondary": {
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "feature": ""
+    },
+    "activeArmor": {
+      "name": "ギャンベゾン・アーマー",
+      "baseThresholds": "5／11",
+      "baseScore": "3",
+      "feature": "柔軟：回避値＋1"
+    },
+    "inventory": [
+      "初級スタミナ薬（ストレスを1d4つ回復する）"
+    ],
+    "inventoryWeapon1": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "inventoryWeapon2": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "gold": {
+      "handful": 0,
+      "bag": 0,
+      "chest": 0
+    },
+    "heritageFeatures": [
+      "水陸両生：君は水中でも自然に呼吸と移動ができる。",
+      "舌伸ばし：君は長い舌を使って近接射程内にあるものに掴みかかることができる。ストレスを1つマークして、舌を“君の習熟度を用いてd12の物理ダメージを与える【技巧】武器”として使用する。",
+      "薄明かり生活：君は、薄暗い場所や濃い影のある場所にいる時、そのエリア内で身を隠したり、何かを調べたり、細部を知覚したりするためのロールに有利を得る。"
+    ],
+    "classFeatures": [
+      "------ローグの身かわし------",
+      "希望を3つ消費して、回避値に＋2のボーナスを得る。このボーナスは、君に対する攻撃が次に成功するか、次の休憩まで継続する。",
+      "------隠匿------",
+      "君は隠れ身状態になるところで、代わりに隠匿状態になる。隠匿状態の間、君は隠れ身状態の利益に加えて、通常なら敵キャラクターから見られる位置に移動してもじっとしていれば見られずにすむ。君が敵キャラクターの視線内で攻撃を行うかムーヴを終了したなら、君はもはや隠匿状態ではなくなる。",
+      "------急所攻撃------",
+      "君が攻撃に成功した時、君が隠匿状態にあるか、君の目標の近接射程内に味方がいるなら、君のティアに等しい数のd6をダメージロールに加える。",
+      "レベル1→ティア1",
+      "レベル2〜4→ティア2",
+      "レベル5〜7→ティア3",
+      "レベル8〜10→ティア4",
+      "------影渡り------",
+      "君は影から影へと移動できる。君が暗闇の範囲内か、自分以外のクリーチャーや物体が落とす影の中にいる時、君はストレスを1つマークして、元いた場所から姿を消し、遠距離射程内にある別の影の中に姿を現すことができる。姿を現した時、君は隠匿状態になる。"
+    ],
+    "domainCards": [
+      "------鍵開け------",
+      "レベル1・闇夜能力｜想起コスト：0",
+      "君は、非魔法的な錠を開けたり、非魔法的な罠を解除したり、目標から（こっそりと、あるいは力づくで）アイテムを盗んだりするための行動ロールに有利を得る。",
+      "------激励の言葉------",
+      "レベル1・風雅能力｜想起コスト：1",
+      "君の説教は力を帯びる。大休憩ごとに1回、君の【存在】に等しい数のトークンをこのカードの上に置く。君が味方1人と話す時、君はこのカード上のトークンを1つ消費して以下の利益の1つを得ることができる：",
+      "•君の味方はストレスを1つ回復する。",
+      "•君の味方はHPを1つ回復する。",
+      "•君の味方は希望を1つ得る。",
+      "大休憩を取った時、消費していないトークンはすべてなくなる。"
+    ],
+    "detail": [],
+    "background": [],
+    "connection": [
+      "____：どこまでも付いていく。",
+      "____：私たちはトラブルに巻き込まれ過ぎている。",
+      "____：君には気圧されてしまう。"
+    ],
+    "levelupTier2": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0
+    },
+    "levelupTier3": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "levelupTier4": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "additionalStat": [
+      {"label": "激励の言葉", "current": 1, "max": 1},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0}
+    ],
+    "additionalChatPalette": [
+      "1d12 舌伸ばし：ダメージロール（物理）"
+    ]
+  },
+  {
+    "id": "garrick",
+    "name": "ギャリック・リード",
+    "pronouns": "He/Him",
+    "playerName": "",
+    "class": "ウォリアー",
+    "subclass": "勇気の呼び声",
+    "level": 1,
+    "ancestry": "ヒューマン",
+    "community": "貴族育ち",
+    "evasion": 11,
+    "armorScore": 3, "armorSlotsMarked": 0,
+    "traits": {
+      "agility": 2,
+      "strength": 1,
+      "finesse": 1,
+      "instinct": 0,
+      "presence": -1,
+      "knowledge": 0
+    },
+    "traitsMarked": {
+      "agility": false,
+      "strength": false,
+      "finesse": false,
+      "instinct": false,
+      "presence": false,
+      "knowledge": false
+    },
+    "spellcastingTrait": "",
+    "damageThresholds": {
+      "major": 7,
+      "severe": 14
+    },
+    "hp": 6,
+    "hpMarked": 0,
+    "stress": 7, "stressMarked": 0,
+    "hope": 2,
+    "experiences": [
+      {"experience": "愛想良い", "bonus": 2},
+      {"experience": "猛攻撃", "bonus": 2},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0}
+    ],
+    "proficiency": 1,
+    "activeWeaponPrimary": {
+      "name": "ロングソード",
+      "trait": "敏捷",
+      "range": "近接",
+      "damagedie": "d8＋3",
+      "damagetype": "物理",
+      "burden": "両手用",
+      "feature": ""
+    },
+    "activeWeaponSecondary": {
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "feature": ""
+    },
+    "activeArmor": {
+      "name": "レザー・アーマー",
+      "baseThresholds": "6／13",
+      "baseScore": "3",
+      "feature": ""
+    },
+    "inventory": [
+      "初級スタミナ薬（ストレスを1d4つ回復する）"
+    ],
+    "inventoryWeapon1": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "inventoryWeapon2": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "gold": {
+      "handful": 0,
+      "bag": 0,
+      "chest": 0
+    },
+    "heritageFeatures": [
+      "高持久：キャラクター作成時、ストレススロットを追加で1つ得る。",
+      "適応力：君は経験の1つを利用したロールに失敗した時、ストレスを1つマークすることで振り直すことができる。",
+      "特権：貴族を味方につけたり、価格交渉を行ったり、自分の評判を活かして望むものを手に入れたりするためのロールに有利を得る。"
+    ],
+    "classFeatures": [
+      "------無慈悲------",
+      "希望を3つ消費して、次の休憩まで君の攻撃ロールに＋1のボーナスを得る。",
+      "------機会攻撃------",
+      "敵キャラクターが近接射程から出ようとしたなら、その敵キャラクターの難易度に対して任意の特性を用いた反応ロールを行う。以下の効果のうち、成功時は1つ、クリティカル成功時は2つを選ぶこと：",
+      "•目標はその場から動けない。",
+      "•君は目標に、君のメイン武器のダメージに等しいダメージを与える。",
+      "•君は目標と共に移動する。",
+      "------戦闘訓練------",
+      "君は装備している武器の持ち方を無視する。君は物理ダメージを与える時、ダメージロールに自分のレベルに等しいボーナスを得る。",
+      "------勇敢------",
+      "君はロールに恐怖失敗した時、希望を1つ得る。",
+      "------戦闘儀式------",
+      "大休憩ごとに1回、君がきわめて危険な行動に挑む前、あるいは明らかに自分より格上の敵と対峙する前に、どのような儀式を行うか、あるいはどのような準備をするかを説明すること。そうしたなら、ストレスを2つ回復し、希望を2つ得る。"
+    ],
+    "domainCards": [
+      "------もっと上手くできる------",
+      "レベル1・武刃能力｜想起コスト：1",
+      "君はダメージダイスを振った時、1または2の目をすべて振り直せる。",
+      "------予想通り------",
+      "レベル1・骨法能力｜想起コスト：1",
+      "君は、近接射程より外から行われる攻撃の目標になった時、ストレスを1つマークすることでd4を振り、その攻撃に対する回避値に出た目に等しいボーナスを得ることができる。"
+    ],
+    "detail": [],
+    "background": [],
+    "connection": [
+      "____：君の秘密は守る。",
+      "____：君が最善を尽くしているのはわかっている。",
+      "____：互いの感情は脇に置いておこう。"
+    ],
+    "levelupTier2": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0
+    },
+    "levelupTier3": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "levelupTier4": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "additionalStat": [
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0}
+    ],
+    "additionalChatPalette": []
+  },
+  {
+    "id": "khari",
+    "name": "カリ・ニックス",
+    "pronouns": "She/Her",
+    "playerName": "",
+    "class": "ガーディアン",
+    "subclass": "ストルワート",
+    "level": 1,
+    "ancestry": "ジャイアント",
+    "community": "山育ち",
+    "evasion": 8,
+    "armorScore": 4, "armorSlotsMarked": 0,
+    "traits": {
+      "agility": 0,
+      "strength": 2,
+      "finesse": -1,
+      "instinct": 1,
+      "presence": 0,
+      "knowledge": 1
+    },
+    "traitsMarked": {
+      "agility": false,
+      "strength": false,
+      "finesse": false,
+      "instinct": false,
+      "presence": false,
+      "knowledge": false
+    },
+    "spellcastingTrait": "",
+    "damageThresholds": {
+      "major": 9,
+      "severe": 17
+    },
+    "hp": 8,
+    "hpMarked": 0,
+    "stress": 6, "stressMarked": 0,
+    "hope": 2,
+    "experiences": [
+      {"experience": "背中は守る", "bonus": 2},
+      {"experience": "恐れ知らず", "bonus": 2},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0}
+    ],
+    "proficiency": 1,
+    "activeWeaponPrimary": {
+      "name": "バトルアックス",
+      "trait": "筋力",
+      "range": "至近距離",
+      "damagedie": "d10＋3",
+      "damagetype": "物理",
+      "burden": "両手用",
+      "feature": ""
+    },
+    "activeWeaponSecondary": {
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "feature": ""
+    },
+    "activeArmor": {
+      "name": "チェインメイル・アーマー",
+      "baseThresholds": "7／15",
+      "baseScore": "4",
+      "feature": "重装：回避値－1"
+    },
+    "inventory": [
+      "初級スタミナ薬（ストレスを1d4つ回復する）"
+    ],
+    "inventoryWeapon1": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "inventoryWeapon2": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "gold": {
+      "handful": 0,
+      "bag": 0,
+      "chest": 0
+    },
+    "heritageFeatures": [
+      "忍耐：キャラクター作成時、HPスロットを追加で1つ得る。",
+      "間合い：近接射程の武器、能力、呪文、その他の効果を、すべて至近距離射程であるかのように扱う。",
+      "堅実：君は、危険な崖や岩棚を歩いたり、過酷な環境を渡ったり、サバイバル知識を活用したりするためのロールに有利を得る。"
+    ],
+    "classFeatures": [
+      "------前線防衛------",
+      "希望を3つ消費して、防具スロットを2つ回復する。",
+      "------暴走------",
+      "大休憩ごとに1回、君は暴走状態になることができる。君は暴走ダイスを得る。レベル1時点の暴走ダイスはd4である。このダイスをキャラクターシートの所定の欄に、1の面が上を向くように置くこと。君の行ったダメージロールが目標にHPを1つ以上マークしたなら、暴走ダイスの目を1増やす。ダイスの目が最大値を超えるか、場面が終了したら、ダイスを取り除いて暴走状態を解除する。レベル5で暴走ダイスはd6になる。",
+      "暴走状態の間、君は以下の利益を得る：",
+      "•君は物理ダメージの深刻度を閾値1段階ぶん軽減させる（大ダメージなら中ダメージに、中ダメージなら小ダメージに、小ダメージならダメージなしになる）。",
+      "•君はダメージロールに現在の暴走ダイスの値を加える。",
+      "•君は拘束状態と脆弱状態にならない。"
+    ],
+    "domainCards": [
+      "------旋風------",
+      "レベル1・武刃能力｜想起コスト：0",
+      "君が至近距離射程内にいる目標に対して攻撃を成功させた時、君は希望を1つ消費することで、その攻撃を至近距離射程内にいるその他全ての目標に対して使用することができる。君がこの能力で成功した追加の敵キャラクターはみな半分のダメージを受ける。",
+      "------私が盾になる------",
+      "レベル1・勇護能力｜想起コスト：1",
+      "至近距離射程内にいる味方がダメージを受ける時、君はストレスを1つマークすることで間に立ちはだかり、君自身をその攻撃の目標にすることができる。この攻撃からダメージを受けた時、君は任意の数の防具スロットをマークできる。"
+    ],
+    "detail": [],
+    "background": [],
+    "connection": [
+      "____：私たちの望みは同じだ。",
+      "____：君の感心を買おうと努力している。",
+      "____：君は幼馴染みだ。"
+    ],
+    "levelupTier2": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0
+    },
+    "levelupTier3": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "levelupTier4": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "additionalStat": [
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0}
+    ],
+    "additionalChatPalette": []
+  },
+  {
+    "id": "varian",
+    "name": "ヴァリアン・ソトー",
+    "pronouns": "They/Them",
+    "playerName": "",
+    "class": "レンジャー",
+    "subclass": "ウェイファインダー",
+    "level": 1,
+    "ancestry": "カタリ",
+    "community": "森育ち",
+    "evasion": 13,
+    "armorScore": 3, "armorSlotsMarked": 0,
+    "traits": {
+      "agility": 2,
+      "strength": 0,
+      "finesse": 1,
+      "instinct": 1,
+      "presence": -1,
+      "knowledge": 0
+    },
+    "traitsMarked": {
+      "agility": false,
+      "strength": false,
+      "finesse": false,
+      "instinct": false,
+      "presence": false,
+      "knowledge": false
+    },
+    "spellcastingTrait": "agility",
+    "damageThresholds": {
+      "major": 7,
+      "severe": 14
+    },
+    "hp": 6,
+    "hpMarked": 0,
+    "stress": 6, "stressMarked": 0,
+    "hope": 2,
+    "experiences": [
+      {"experience": "致死の照準", "bonus": 2},
+      {"experience": "自然の友", "bonus": 2},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0},
+      {"experience": "", "bonus": 0}
+    ],
+    "proficiency": 1,
+    "activeWeaponPrimary": {
+      "name": "ショートボウ",
+      "trait": "敏捷",
+      "range": "遠距離",
+      "damagedie": "d6＋3",
+      "damagetype": "物理",
+      "burden": "両手用",
+      "feature": ""
+    },
+    "activeWeaponSecondary": {
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "feature": ""
+    },
+    "activeArmor": {
+      "name": "レザー・アーマー",
+      "baseThresholds": "6／13",
+      "baseScore": "3",
+      "feature": ""
+    },
+    "inventory": [
+      "初級スタミナ薬（ストレスを1d4つ回復する）"
+    ],
+    "inventoryWeapon1": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "inventoryWeapon2": {
+      "category": "",
+      "name": "",
+      "trait": "",
+      "range": "",
+      "damagedie": "",
+      "damagetype": "",
+      "burden": "",
+      "feature": ""
+    },
+    "gold": {
+      "handful": 0,
+      "bag": 0,
+      "chest": 0
+    },
+    "heritageFeatures": [
+      "ネコの本能：君は【敏捷】ロールを行う時、希望を2つ消費して、希望ダイスを振り直すことができる。",
+      "飛び出す爪：【敏捷】ロールを行い、近接射程内の目標1体を引っ掻く。成功したなら、目標は一時的に脆弱状態になる。",
+      "足軽：君は自然と音を立てずに移動する。君は物音に気づかれないよう移動するためのロールに有利を得る。"
+    ],
+    "classFeatures": [
+      "------撃退------",
+      "君が武器を用いた攻撃に成功した時、希望を3つ消費して、その攻撃の射程内にいるもう2体の敵キャラクターに対して同じロール結果を使用する。",
+      "------レンジャーの標的------",
+      "希望を1つ消費して、目標1体に対して攻撃を行う。成功したなら、君の攻撃の通常ダメージを与え、その攻撃の目標を一時的に君の標的にする。この特徴が終了するか、君が別のクリーチャーを標的にするまで、君は標的に対して以下の利益を得る：",
+      "•君は標的がいる正確な方向がわかる。",
+      "•君が標的にダメージを与えた時、標的はストレスを1つマークしなければならない。",
+      "•君は標的に対する攻撃に失敗した時、特徴“レンジャーの標的”を終了させて二元ダイスを振り直すことができる。"
+    ],
+    "domainCards": [
+      "------届かず------",
+      "レベル1・骨法能力｜想起コスト：1",
+      "君の回避値に【敏捷】の半分に等しいボーナスを得る。",
+      "------苛烈な絡みつき------",
+      "レベル1・賢智呪文｜想起コスト：1",
+      "遠距離射程内の目標1体に対して呪文発動ロールを行う。成功したなら、地面から根や蔦が伸びてきて、目標に1d8＋1の物理ダメージを与え、一時的に拘束状態にする。",
+      "さらに、成功した時、君は希望を1つ消費することで、目標の至近距離射程内にいる別の敵キャラクター1体を一時的に拘束状態にすることができる。"
+    ],
+    "detail": [],
+    "background": [],
+    "connection": [
+      "____：君のようになりたい。",
+      "____：君が私より優れているんじゃないかと心配している。",
+      "____：私たちはなんでも打ち明けている。"
+    ],
+    "levelupTier2": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0
+    },
+    "levelupTier3": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "levelupTier4": {
+      "trait": 0,
+      "hp": 0,
+      "stress": 0,
+      "experience": 0,
+      "domaincard": 0,
+      "evasion": 0,
+      "upgrade": 0,
+      "proficiency": 0,
+      "multiclass": 0
+    },
+    "additionalStat": [
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0},
+      {"label": "", "current": 0, "max": 0}
+    ],
+    "additionalChatPalette": [
+      "1d8+1 苛烈な絡みつき：ダメージロール（物理）"
+    ]
+  }
+]

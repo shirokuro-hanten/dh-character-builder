@@ -1,9 +1,12 @@
-
 // =========================
 // イベント設定
 // =========================
 
 document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("new-character")
+    .addEventListener("click", ResetCharacterData);
+
   document
     .getElementById("save-character")
     .addEventListener("click", saveCharacterData);
@@ -14,6 +17,21 @@ document.addEventListener("DOMContentLoaded", () => {
     loadCharacterData(file);
     this.value = "";
   });
+
+  document
+    .getElementById("save-character")
+    .addEventListener("click", saveCharacterData);
+
+  document.getElementById("load-character").addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
+    loadCharacterData(file);
+    this.value = "";
+  });
+
+  document
+    .getElementById("load-premade")
+    .addEventListener("click", loadPremadeData);
 
   document
     .getElementById("export-ccfolia")

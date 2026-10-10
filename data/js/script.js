@@ -6,24 +6,42 @@ let characterData = {
   traits: {agility: 0, strength: 0, finesse: 0, instinct: 0, presence: 0, knowledge: 0},
   traitsMarked: {agility: false, strength: false, finesse: false, instinct: false, presence: false, knowledge: false},
   spellcastingTrait: "",
-  damageThresholdMajor: 0, damageThresholdSevere: 0,
+  damageThresholds: "",
   hp: 0, hpMarked: 0, stress: 0, stressMarked: 0,
   hope: 2,
   experiences: [{experience: "", bonus: 2}, {experience: "", bonus: 2}, {experience: "", bonus: 0}, {experience: "", bonus: 0}, {experience: "", bonus: 0}],
-  features: [],
   proficiency: 1,
-  activeWeaponPrimary: {name: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
+  activeWeaponPrimary: {name: "", burden: "", trait: "", range: "", damagedie: "", damagetype: "", feature: ""},
   activeWeaponSecondary: {name: "", trait: "", range: "", damagedie: "", damagetype: "", feature: ""},
   activeArmor: {name: "", baseThresholdMajor: 0, baseThresholdSevere: 0, baseScore: "", feature: ""},
   inventory: [],
-  inventoryWeapon1: {category: "", name: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
-  inventoryWeapon2: {category: "", name: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
-  goldHandful: 0, goldBag: 0, goldChest: 0,
-  notes: [],
-  levelUpTier2: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0},
-  levelUpTier3: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0, upgrade: 0, proficiency: 0, multiclass: 0},
-  levelUpTier4: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0, upgrade: 0, proficiency: 0, multiclass: 0},
+  inventoryWeapon1: {name: "", category: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
+  inventoryWeapon2: {name: "", category: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
+  gold: {handful: 0, bag: 0, chest: 0},
+  heritageFeatures: [], classFeatures: [], domainCards: [],
+  detail: [], background: [], connection: [],
+  levelupTier2: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0},
+  levelupTier3: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0, upgrade: 0, proficiency: 0, multiclass: 0},
+  levelupTier4: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0, upgrade: 0, proficiency: 0, multiclass: 0},
+  additionalStat: [
+    {label: "", current: 0, max: 0},
+    {label: "", current: 0, max: 0},
+    {label: "", current: 0, max: 0},
+    {label: "", current: 0, max: 0},
+    {label: "", current: 0, max: 0}
+  ],
+  additionalChatPalette: []
 };
+
+// =========================
+// JSON保存
+// =========================
+
+function ResetCharacterData() {
+  if (!confirm("入力中のデータは失われます。キャラクターシートをリセットしてもよろしいですか？")) {
+    return;
+  }
+}
 
 // =========================
 // JSON保存
@@ -33,12 +51,13 @@ function saveCharacterData() {
   getCharacterData();
 
   const json = JSON.stringify(characterData, null, 2);
-  const blob = new Blob([json], { type: "application/json"});
+  const blob = new Blob([json], {type: "application/octet-stream"});
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
 
   link.href = url;
-  link.download = `${characterData.name}.json`;
+  link.download = `${characterData.name}.dh`;
+  console.log(link.download);
   link.click();
 
   URL.revokeObjectURL(url);
@@ -49,6 +68,10 @@ function saveCharacterData() {
 // =========================
 
 function loadCharacterData(file) {
+  if (!confirm("入力中のデータは失われます。ファイルを読み込んでもよろしいですか？")) {
+    return;
+  }
+
   const reader = new FileReader();
 
   reader.onload = function () {
@@ -61,11 +84,31 @@ function loadCharacterData(file) {
 }
 
 // =========================
+// サンプル読み込み
+// =========================
+
+async function loadPremadeData(file) {
+  if (!confirm("入力中のデータは失われます。サンプルキャラクターを読み込んでもよろしいですか？")) {
+    return;
+  }
+
+  const id = document.getElementById("select-premade").value;
+  
+  const response = await fetch("data/json/premade.json");
+  const premadeData = await response.json();
+  
+  const data = premadeData.find(premade => premade.id === id);
+  
+  characterData = data;
+  setCharacterData();
+}
+
+// =========================
 // フォームからデータを取得
 // =========================
 
 function getCharacterData() {
-  const data = characterData
+  const data = characterData;
 
   data.name =
     document.getElementById("character-name").value;
@@ -104,9 +147,9 @@ function getCharacterData() {
   data.spellcastingTrait =
     document.getElementById("spellcasting-trait").value;
 
-  data.damageThresholdMajor =
+  data.damageThresholds.major =
     Number(document.getElementById("damage-threshold-major").value);
-  data.damageThresholdSevere =
+  data.damageThresholds.severe =
     Number(document.getElementById("damage-threshold-severe").value);
 
   data.hp =
@@ -128,14 +171,13 @@ function getCharacterData() {
       Number(document.getElementById(`experience-${i + 1}-bonus`).value);
   }
 
-  data.features =
-    document.getElementById("features").value.split("\n");
-
   data.proficiency =
     Number(document.getElementById("proficiency").value);
 
   data.activeWeaponPrimary.name =
     document.getElementById("active-weapon-primary-name").value;
+  data.activeWeaponPrimary.burden =
+    document.getElementById("active-weapon-primary-burden").value;
   data.activeWeaponPrimary.trait =
     document.getElementById("active-weapon-primary-trait").value;
   data.activeWeaponPrimary.range =
@@ -144,8 +186,6 @@ function getCharacterData() {
     document.getElementById("active-weapon-primary-damagedie").value;
   data.activeWeaponPrimary.damagetype =
     document.getElementById("active-weapon-primary-damagetype").value;
-  data.activeWeaponPrimary.burden =
-    document.querySelector(`input[name="active-weapon-primary-burden"]:checked`)?.value ?? "";
   data.activeWeaponPrimary.feature =
     document.getElementById("active-weapon-primary-feature").value;
 
@@ -159,17 +199,13 @@ function getCharacterData() {
     document.getElementById("active-weapon-secondary-damagedie").value;
   data.activeWeaponSecondary.damagetype =
     document.getElementById("active-weapon-secondary-damagetype").value;
-  data.activeWeaponSecondary.burden =
-    document.querySelector(`input[name="active-weapon-secondary-burden"]:checked`)?.value ?? "";
   data.activeWeaponSecondary.feature =
     document.getElementById("active-weapon-secondary-feature").value;
 
   data.activeArmor.name =
     document.getElementById("active-armor-name").value;
   data.activeArmor.baseThresholdMajor =
-    Number(document.getElementById("active-armor-threshold-major").value);
-  data.activeArmor.baseThresholdSevere =
-    Number(document.getElementById("active-armor-threshold-severe").value);
+    document.getElementById("active-armor-thresholds").value;
   data.activeArmor.baseScore =
     Number(document.getElementById("active-armor-score").value);
   data.activeArmor.feature =
@@ -181,10 +217,12 @@ function getCharacterData() {
   for (let i = 1; i < 3; i++) {
     const weapon = data[`inventoryWeapon${i}`]
     
-    weapon.category =
-      document.querySelector(`input[name="inventory-weapon-${i}-category"]:checked`)?.value ?? "";
     weapon.name =
       document.getElementById(`inventory-weapon-${i}-name`).value;
+    weapon.category =
+      document.getElementById(`inventory-weapon-${i}-category`).value;
+    weapon.burden =
+      document.getElementById(`inventory-weapon-${i}-burden`).value;
     weapon.trait =
       document.getElementById(`inventory-weapon-${i}-trait`).value;
     weapon.range =
@@ -193,45 +231,75 @@ function getCharacterData() {
       document.getElementById(`inventory-weapon-${i}-damagedie`).value;
     weapon.damagetype =
       document.getElementById(`inventory-weapon-${i}-damagetype`).value;
-    weapon.burden =
-      document.querySelector(`input[name="inventory-weapon-${i}-burden"]:checked`)?.value ?? "";
     weapon.feature =
       document.getElementById(`inventory-weapon-${i}-feature`).value;
   }
 
-  data.notes =
-    document.getElementById("notes").value.split("\n");
+  data.gold.handful =
+    document.getElementById("gold-handful").value === "" ? 0
+    : document.getElementById("gold-handful").value;
+  data.gold.bag =
+    document.getElementById("gold-bag").value === "" ? 0
+    : document.getElementById("gold-bag").value;
+  data.gold.chest =
+    document.getElementById("gold-chest").value === "" ? 0
+    : document.getElementById("gold-chest").value;
 
-  let tier;
+  data.heritageFeatures =
+    document.getElementById("heritage-features").value.split("\n");
+  data.classFeatures =
+    document.getElementById("class-features").value.split("\n");
+  data.domainCards =
+    document.getElementById("domain-cards").value.split("\n");
+  data.detail =
+    document.getElementById("detail").value.split("\n");
+  data.background =
+    document.getElementById("background").value.split("\n");
+  data.connection =
+    document.getElementById("connection").value.split("\n");
+
   for (let i = 2; i < 5; i++) {
-    tier = data[`levelUpTier${i}`];
+    const tier = data[`levelupTier${i}`];
 
     tier.trait =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-trait"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-trait"]:checked`).length;
     tier.hp =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-hp"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-hp"]:checked`).length;
     tier.stress =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-stress"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-stress"]:checked`).length;
     tier.experience =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-experience"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-experience"]:checked`).length;
     tier.domaincard =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-domaincard"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-domaincard"]:checked`).length;
     tier.evasion =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-evasion"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-evasion"]:checked`).length;
 
     if (i == 2) continue;
 
     tier.upgrade =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-upgrade"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-upgrade"]:checked`).length;
     tier.proficiency =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-proficiency"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-proficiency"]:checked`).length;
     tier.multiclass =
-      document.querySelectorAll(`input[data-group="level-up-tier-${i}-multiclass"]:checked`).length;
+      document.querySelectorAll(`input[data-group="levelup-tier-${i}-multiclass"]:checked`).length;
   }
+
+  for (let i = 1; i < 6; i++) {
+    const additionalStat = data.additionalStat[i - 1];
+
+    additionalStat.label =
+      document.getElementById(`additional-stat-${i}`).value;
+    additionalStat.current =
+      document.getElementById(`additional-stat-${i}-current`).value;
+    additionalStat.max =
+      document.getElementById(`additional-stat-${i}-max`).value;
+  }
+
+  data.additionalChatPalette = document.getElementById(`additional-chat-palette`).value.split("\n");
 }
 
 // =========================
-// characterData → JSON保存
+// データをフォームに反映
 // =========================
 
 function setCharacterData() {
@@ -276,9 +344,9 @@ function setCharacterData() {
     data.spellcastingTrait;
 
   document.getElementById("damage-threshold-major").value =
-    data.damageThresholdMajor;
+    data.damageThresholds.major;
   document.getElementById("damage-threshold-severe").value =
-    data.damageThresholdSevere;
+    data.damageThresholds.severe;
 
   document.getElementById("hp").value =
     data.hp;
@@ -300,17 +368,13 @@ function setCharacterData() {
         : data.experiences[i].bonus;
   }
 
-  document.getElementById("features").value =
-    data.features.join("\n");
-
   document.getElementById("proficiency").value =
     data.proficiency;
 
-  document.querySelector(`input[name="active-weapon-primary-burden"][value="${data.activeWeaponPrimary.burden}"]`).checked =
-    true;
-  
   document.getElementById("active-weapon-primary-name").value =
     data.activeWeaponPrimary.name;
+  document.getElementById("active-weapon-primary-burden").value =
+    data.activeWeaponPrimary.burden;
   document.getElementById("active-weapon-primary-trait").value =
     data.activeWeaponPrimary.trait;
   document.getElementById("active-weapon-primary-range").value =
@@ -328,23 +392,17 @@ function setCharacterData() {
     data.activeWeaponSecondary.trait;
   document.getElementById("active-weapon-secondary-range").value =
     data.activeWeaponSecondary.range;
-  document.getElementById(
-    "active-weapon-secondary-damagedie"
-  ).value =
+  document.getElementById("active-weapon-secondary-damagedie").value =
     data.activeWeaponSecondary.damagedie;
-  document.getElementById(
-    "active-weapon-secondary-damagetype"
-  ).value =
+  document.getElementById("active-weapon-secondary-damagetype").value =
     data.activeWeaponSecondary.damagetype;
   document.getElementById("active-weapon-secondary-feature").value =
     data.activeWeaponSecondary.feature;
 
   document.getElementById("active-armor-name").value =
     data.activeArmor.name;
-  document.getElementById("active-armor-threshold-major").value =
-    data.activeArmor.baseThresholdMajor;
-  document.getElementById("active-armor-threshold-severe").value =
-    data.activeArmor.baseThresholdSevere;
+  document.getElementById("active-armor-thresholds").value =
+    data.activeArmor.baseThresholds;
   document.getElementById("active-armor-score").value =
     data.activeArmor.baseScore;
   document.getElementById("active-armor-feature").value =
@@ -356,12 +414,12 @@ function setCharacterData() {
   for (let i = 1; i <= 2; i++) {
     const weapon = data[`inventoryWeapon${i}`];
 
-    document.querySelector(`input[name="inventory-weapon-${i}-category"][value="${weapon.category}"]`).checked = true;
-
-    document.querySelector(`input[name="inventory-weapon-${i}-burden"][value="${weapon.burden}"]`).checked = true;
-
     document.getElementById(`inventory-weapon-${i}-name`).value =
       weapon.name;
+    document.getElementById(`inventory-weapon-${i}-burden`).value =
+      weapon.burden;
+    document.getElementById(`inventory-weapon-${i}-category`).value =
+      weapon.caregory;
     document.getElementById(`inventory-weapon-${i}-trait`).value =
       weapon.trait;
     document.getElementById(`inventory-weapon-${i}-range`).value =
@@ -370,42 +428,60 @@ function setCharacterData() {
       weapon.damagedie;
     document.getElementById(`inventory-weapon-${i}-damagetype`).value =
       weapon.damagetype;
-    document.getElementById(`inventory-weapon-${i}-feature`).value =weapon.feature;
+    document.getElementById(`inventory-weapon-${i}-feature`).value =
+      weapon.feature;
   }
 
   document.getElementById("gold-handful").value =
-    data.goldHandful === 0
-      ? ""
-      : data.goldHandful;
+    data.gold.handful === 0 ? "" : data.gold.handful;
   document.getElementById("gold-bag").value =
-    data.goldBag === 0
-      ? ""
-      : data.goldBag;
+    data.gold.bag === 0 ? "" : data.gold.bag;
   document.getElementById("gold-chest").value =
-    data.goldChest === 0
-      ? ""
-      : data.goldChest;
+    data.gold.chest === 0 ? "" : data.gold.chest;
 
-  document.getElementById("notes").value =
-    data.notes.join("\n");
+  document.getElementById("heritage-features").value =
+    data.heritageFeatures.join("\n");
+  document.getElementById("class-features").value =
+    data.classFeatures.join("\n");
+  document.getElementById("domain-cards").value =
+    data.domainCards.join("\n");
+  document.getElementById("detail").value =
+    data.detail.join("\n");
+  document.getElementById("background").value =
+    data.background.join("\n");
+  document.getElementById("connection").value =
+    data.connection.join("\n");
 
-  let tier;
   for (let i = 2; i < 5; i++) {
-    tier = data[`levelUpTier${i}`];
+    const tier = data[`levelupTier${i}`];
 
-    setCheckedCount(`level-up-tier-${i}-trait`, tier.trait);
-    setCheckedCount(`level-up-tier-${i}-hp`, tier.hp);
-    setCheckedCount(`level-up-tier-${i}-stress`, tier.stress);
-    setCheckedCount(`level-up-tier-${i}-experience`, tier.experience);
-    setCheckedCount(`level-up-tier-${i}-domaincard`, tier.domaincard);
-    setCheckedCount( `level-up-tier-${i}-evasion`, tier.evasion);
+    setCheckedCount(`levelup-tier-${i}-trait`, tier.trait);
+    setCheckedCount(`levelup-tier-${i}-hp`, tier.hp);
+    setCheckedCount(`levelup-tier-${i}-stress`, tier.stress);
+    setCheckedCount(`levelup-tier-${i}-experience`, tier.experience);
+    setCheckedCount(`levelup-tier-${i}-domaincard`, tier.domaincard);
+    setCheckedCount( `levelup-tier-${i}-evasion`, tier.evasion);
 
     if (i === 2) continue;
 
-    setCheckedCount(`level-up-tier-${i}-upgrade`, tier.upgrade);
-    setCheckedCount(`level-up-tier-${i}-proficiency`, tier.proficiency);
-    setCheckedCount(`level-up-tier-${i}-multiclass`, tier.multiclass);
+    setCheckedCount(`levelup-tier-${i}-upgrade`, tier.upgrade);
+    setCheckedCount(`levelup-tier-${i}-proficiency`, tier.proficiency);
+    setCheckedCount(`levelup-tier-${i}-multiclass`, tier.multiclass);
   }
+
+  for (let i = 1; i < 6; i++) {
+    const additionalStat = data.additionalStat[i - 1];
+
+    document.getElementById(`additional-stat-${i}`).value =
+      additionalStat.label;
+    document.getElementById(`additional-stat-${i}-current`).value =
+      additionalStat.current;
+    document.getElementById(`additional-stat-${i}-max`).value =
+      additionalStat.max;
+  }
+
+  document.getElementById("additional-chat-palette").value =
+    data.additionalChatPalette.join("\n");
 }
 
 // =========================

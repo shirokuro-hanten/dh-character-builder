@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>ダガーハート キャラクターシート</title>
+  <link rel="icon" href="data/images/compatible_with_DH_logos-09.png" type="image/png">
 
   <link rel="stylesheet" href="data/css/style.css">
   <script src="data/js/script.js"></script>
@@ -13,623 +13,667 @@
 </head>
 
 <body>
-
 <header>
-  <h1>
-    ダガーハート
-    <span class="subtitle">キャラクターシート</span>
-  </h1>
+  <h1>ダガーハート キャラクターシート</h1>
 </header>
 
 <main>
   <!-- 保存・読み込み -->
-  <section class="data-controls">
-    <div class="data-controls-buttons">
+  <section>
+    <div class="data-controls">
       <button type="button" id="new-character">
         新規作成
       </button>
-      <button type="button" id="save-character">
-        JSONとして保存
+      <button type="button" id="save-character" title="現在のデータをファイルとしてダウンロードします。">
+        保存
       </button>
-      <label for="load-character" class="button">
-        JSONを読み込む
+      <label for="load-character" class="button" title="ローカルファイルからデータを読み込みます。">
+        読込
       </label>
       <input type="file" id="load-character" accept=".json,application/json" hidden>
     </div>
 
-    <div class="data-controls-buttons">
-      コマ出力：
-      <button type="button" id="export-ccfolia">
-        ココフォリア
+    <div class="data-controls">
+      <button type="button" id="load-premade">
+        サンプルを適用
       </button>
-      <button type="button" id="export-udonarium">
-        ユドナリウム
-      </button>
+      <select id="select-premade">
+        <option value="" disabled selected>------------サンプルを選択------------</option>
+        <option value="marlowe">マーロウ・フェアウィンド（ソーサラー／エルフ／学院育ち）</option>
+        <option value="barnacle">バーナクル（ローグ／リベット／地下育ち）</option>
+        <option value="garrick">ギャリック・リード（ウォリアー／ヒューマン／貴族育ち）</option>
+        <option value="khari">カリ・ニックス（ガーディアン／ジャイアント／山育ち）</option>
+        <option value="varian">ヴァリアン・ソトー（レンジャー／カタリ／森育ち）</option>
+      </select>
     </div>
   </section>
 
-  <section class="character-sheet">
+  <section id="character-sheet">
     <!-- 基本情報 -->
-    <section class="character-section">
-      <div class="form-row">
+    <section id="sheet-header-1">
+      <div>
         <label for="character-name">キャラクター名</label>
         <input type="text" id="character-name">
+      </div>
+      <div>
         <label for="pronouns">代名詞</label>
         <input type="text" id="pronouns">
+      </div>
+      <div>
         <label for="player-name">プレイヤー名</label>
         <input type="text" id="player-name">
       </div>
     </section>
-
-    <section>
-      <div class="form-row">
+    <section id="sheet-header-2">
+      <div>
         <label for="class">クラス</label>
         <input type="text" id="class">
-        
+      </div>
+      <div>
         <label for="subclass">サブクラス</label>
         <input type="text" id="subclass">
-        
+      </div>
+      <div>
         <label for="level">レベル</label>
         <input type="number" id="level" min="1" max="10" value="1">
       </div>
-
-      <div class="form-row">
+      <div>
         <label for="ancestry">血統</label>
         <input type="text" id="ancestry">
-        
+      </div>
+      <div>
         <label for="community">共同体</label>
         <input type="text" id="community">
       </div>
     </section>
 
-    <section class="sheet-body">
-      <section class="sheet-block">
-        <div class="block-header">
-          <h4>回避</h4>
-          <input type="number" id="evasion" min="0" max="99" value="5">
-        </div>
+    <section id="sheet-1">
+      <section id="sheet-1-left">
+        <article class="sheet-block">
+          <div>
+            <span class="label">回避値</span>
+            <input type="number" id="evasion" min="0" max="99" value="5">
+          </div>
           
-        <div class="block-header">
-          <h4>防具値</h4>
-          <input type="number" id="armor" min="0" max="12" value="0">
-          <div>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <br>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <br>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-            <input type="checkbox" data-group="armor-slot" disabled>
-          </div>
-        </div>
-      </section>
-
-      <section class="sheet-block">
-        <div id="traits" class="form-row">
-          <div>
-            <label for="agility">【敏捷】</label>
-            <input type="checkbox" id="agility-marked">
+          <div id="armor-score" class="grid-2">
             <div>
-              <input type="number" id="agility" class="modifier" value="0">
+              <span class="label">防具値</span><br>
+              <input type="number" id="armor" min="0" max="12" value="0">
             </div>
+            <p>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <br>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+              <input type="checkbox" data-group="armor-slot" disabled>
+            </p>
           </div>
+        </article>
+        
+        <article class="sheet-block">
+          <h3>ダメージと健康状態</h3>
 
-          <div>
-            <label for="strength">【筋力】</label>
-            <input type="checkbox" id="strength-marked">
-            <div>
-              <input type="number" id="strength" class="modifier" value="0">
-            </div>
-          </div>
-
-          <div>
-            <label for="finesse">【技巧】</label>
-            <input type="checkbox" id="finesse-marked">
-            <div>
-              <input type="number" id="finesse" class="modifier" value="0">
-            </div>
-          </div>
-
-          <div>
-            <label for="instinct">【本能】</label>
-            <input type="checkbox" id="instinct-marked">
-            <div>
-              <input type="number" id="instinct" class="modifier" value="0">
-            </div>
-          </div>
-
-          <div>
-            <label for="presence">【存在】</label>
-            <input type="checkbox" id="presence-marked">
-            <div>
-              <input type="number" id="presence" class="modifier" value="0">
-            </div>
-          </div>
-
-          <div>
-            <label for="knowledge">【知識】</label>
-            <input type="checkbox" id="knowledge-marked">
-            <div>
-              <input type="number" id="knowledge" class="modifier" value="0">
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <label for="spellcasting-trait">呪文発動特性</label>
-          <select id="spellcasting-trait">
-            <option value="" selected>なし</option>
-            <option value="agility">【敏捷】</option>
-            <option value="strength">【筋力】</option>
-            <option value="finesse">【技巧】</option>
-            <option value="instinct">【本能】</option>
-            <option value="presence">【存在】</option>
-            <option value="knowledge">【知識】</option>
-          </select>
-        </div>
-      </section>
-    </section>
-
-    <!-- リソース -->
-    <section class="sheet-body">
-      <section class="sheet-body-left">
-        <section class="sheet-block">
-          <div class="resource-grid">
-            <h3>ダメージと健康状態</h3>
-
-            <div class="form-row">ダメージ閾値
-              <input type="number" id="damage-threshold-major" min="0" max="99">
+          <div class="grid-2">
+            <span class="label">ダメージ<br>閾値</span>
+            <p>
+              <input type="number" id="damage-threshold-major" min="0" max="99" placeholder="中">
               ／
-              <input type="number" id="damage-threshold-severe" min="0" max="99">
-            </div>
-
-            <div class="health-grid">
-              <h4>HP</h4>
+              <input type="number" id="damage-threshold-severe" min="0" max="99" placeholder="大">
+            </p>
+            
+            <p>
+              <span class="label">HP</span><br>
               <input type="number" id="hp" min="0" max="12" value="6">
-              <div>
-                <input type="checkbox" data-group="hp-slot">
-                <input type="checkbox" data-group="hp-slot">
-                <input type="checkbox" data-group="hp-slot">
-                <input type="checkbox" data-group="hp-slot">
-                <input type="checkbox" data-group="hp-slot">
-                <input type="checkbox" data-group="hp-slot">
-                <br>
-                <input type="checkbox" data-group="hp-slot" disabled>
-                <input type="checkbox" data-group="hp-slot" disabled>
-                <input type="checkbox" data-group="hp-slot" disabled>
-                <input type="checkbox" data-group="hp-slot" disabled>
-                <input type="checkbox" data-group="hp-slot" disabled>
-                <input type="checkbox" data-group="hp-slot" disabled>
-              </div>
+            </p>
+            <p>
+              <input type="checkbox" data-group="hp-slot">
+              <input type="checkbox" data-group="hp-slot">
+              <input type="checkbox" data-group="hp-slot">
+              <input type="checkbox" data-group="hp-slot">
+              <input type="checkbox" data-group="hp-slot">
+              <input type="checkbox" data-group="hp-slot">
+              <br>
+              <input type="checkbox" data-group="hp-slot" disabled>
+              <input type="checkbox" data-group="hp-slot" disabled>
+              <input type="checkbox" data-group="hp-slot" disabled>
+              <input type="checkbox" data-group="hp-slot" disabled>
+              <input type="checkbox" data-group="hp-slot" disabled>
+              <input type="checkbox" data-group="hp-slot" disabled>
+            </p>
 
-              <h4>ストレス</h4>
+            <p>
+              <span class="label">ストレス</span><br>
               <input type="number" id="stress" min="0" max="12" value="6">
-              <div>
-                <input type="checkbox" data-group="stress-slot">
-                <input type="checkbox" data-group="stress-slot">
-                <input type="checkbox" data-group="stress-slot">
-                <input type="checkbox" data-group="stress-slot">
-                <input type="checkbox" data-group="stress-slot">
-                <input type="checkbox" data-group="stress-slot">
-                <br>
-                <input type="checkbox" data-group="stress-slot" disabled>
-                <input type="checkbox" data-group="stress-slot" disabled>
-                <input type="checkbox" data-group="stress-slot" disabled>
-                <input type="checkbox" data-group="stress-slot" disabled>
-                <input type="checkbox" data-group="stress-slot" disabled>
-                <input type="checkbox" data-group="stress-slot" disabled>
-              </div>
-            </div>
+            </p>
+            <p>
+              <input type="checkbox" data-group="stress-slot">
+              <input type="checkbox" data-group="stress-slot">
+              <input type="checkbox" data-group="stress-slot">
+              <input type="checkbox" data-group="stress-slot">
+              <input type="checkbox" data-group="stress-slot">
+              <input type="checkbox" data-group="stress-slot">
+              <br>
+              <input type="checkbox" data-group="stress-slot" disabled>
+              <input type="checkbox" data-group="stress-slot" disabled>
+              <input type="checkbox" data-group="stress-slot" disabled>
+              <input type="checkbox" data-group="stress-slot" disabled>
+              <input type="checkbox" data-group="stress-slot" disabled>
+              <input type="checkbox" data-group="stress-slot" disabled>
+            </p>
           </div>
-        </section>
+        </article>
 
-        <section class="sheet-block">
+        <article id="hope" class="sheet-block">
           <h3>希望</h3>
-          <input type="checkbox" data-group="hope" checked>
-          <input type="checkbox" data-group="hope" checked>
-          <input type="checkbox" data-group="hope">
-          <input type="checkbox" data-group="hope">
-          <input type="checkbox" data-group="hope">
-          <input type="checkbox" data-group="hope">
-        </section>
+          <div>
+            <input type="checkbox" data-group="hope" checked>
+            <input type="checkbox" data-group="hope" checked>
+            <input type="checkbox" data-group="hope">
+            <input type="checkbox" data-group="hope">
+            <input type="checkbox" data-group="hope">
+            <input type="checkbox" data-group="hope">
+          </div>
+        </article>
 
-        <section class="sheet-block">
+        <article id="traits" class="sheet-block">
+          <h3>特性</h3>
+
+          <div id="trait-grid">
+            <label for="agility">【敏捷】</label>
+            <input type="number" id="agility" class="modifier" value="0">
+            <input type="checkbox" id="agility-marked">
+            
+            <label for="strength">【筋力】</label>
+            <input type="number" id="strength" class="modifier" value="0">
+            <input type="checkbox" id="strength-marked">
+            
+            <label for="finesse">【技巧】</label>
+            <input type="number" id="finesse" class="modifier" value="0">
+            <input type="checkbox" id="finesse-marked">
+            
+            <label for="instinct">【直観】</label>
+            <input type="number" id="instinct" class="modifier" value="0">
+            <input type="checkbox" id="instinct-marked">
+            
+            <label for="presence">【存在】</label>
+            <input type="number" id="presence" class="modifier" value="0">
+            <input type="checkbox" id="presence-marked">
+            
+            <label for="knowledge">【知識】</label>
+            <input type="number" id="knowledge" class="modifier" value="0">
+            <input type="checkbox" id="knowledge-marked">
+          </div>
+
+          <div>
+            <label for="spellcasting-trait">呪文発動特性</label>
+            <select id="spellcasting-trait">
+              <option value="" selected>なし</option>
+                <option value="agility">【敏捷】</option>
+                <option value="strength">【筋力】</option>
+                <option value="finesse">【技巧】</option>
+                <option value="instinct">【直観】</option>
+                <option value="presence">【存在】</option>
+                <option value="knowledge">【知識】</option>
+            </select>
+          </div>
+        </article>
+
+        <article class="sheet-block">
           <h3>経験</h3>
-          <div>
-            <input type="text" id="experience-1">
-            <input type="number" id="experience-1-bonus" class="modifier" min="0" value="2">
-          </div>
-          <div>
-            <input type="text" id="experience-2">
-            <input type="number" id="experience-2-bonus" class="modifier" min="0" value="2">
-          </div>
-          <div>
-            <input type="text" id="experience-3">
-            <input type="number" id="experience-3-bonus" class="modifier" min="0" value="">
-          </div>
-          <div>
-            <input type="text" id="experience-4">
-            <input type="number" id="experience-4-bonus" class="modifier" min="0" value="">
-          </div>
-          <div>
-            <input type="text" id="experience-5">
-            <input type="number" id="experience-5-bonus" class="modifier" min="0" value="">
-          </div>
-        </section>
 
-        <section class="sheet-block">
-          <h3>特徴</h3>
-          <textarea id="features" rows="28"></textarea>
-        </section>
+          <div id="experience-grid">
+            <input type="text" class="auto" id="experience-1">
+            <input type="number" id="experience-1-bonus" min="0" value="2">
+            
+            <input type="text" class="auto" id="experience-2">
+            <input type="number" id="experience-2-bonus" min="0" value="2">
+            
+            <input type="text" class="auto" id="experience-3">
+            <input type="number" id="experience-3-bonus" min="0" value="">
+            
+            <input type="text" class="auto" id="experience-4">
+            <input type="number" id="experience-4-bonus" min="0" value="">
+            
+            <input type="text" class="auto" id="experience-5">
+            <input type="number" id="experience-5-bonus" min="0" value="">
+          </div>
+        </article>
       </section>
 
-      <section class="sheet-body-right">
-        <section class="sheet-block">
+      <section id="sheet-1-center">
+        <article class="sheet-block">
           <h3>装備武器</h3>
 
           <div>
-            <label for="proficiency">習熟度</label>
+            <label for="proficiency" class="bold">習熟度</label>
             <input type="number" id="proficiency" min="1" max="6" value="1">
           </div>
 
-          <div class="block-header">
-            <h4>メイン武器</h4>
-            <span>［片手用
-              <input type="radio" name="active-weapon-primary-burden" value="1">
-              <input type="radio" name="active-weapon-primary-burden" value="2">両手用］
-            </span>
-          </div>
-          <div class="weapon-grid">
-            <p>名称</p>
-            <p>特性</p>
-            <p>射程</p>
-            <p>ダメージ</p>
-
-            <input type="text" id="active-weapon-primary-name">
-            <select id="active-weapon-primary-trait">
-              <option value="" selected disabled>特性</option>
-              <option value="agility">【敏捷】</option>
-              <option value="strength">【筋力】</option>
-              <option value="finesse">【技巧】</option>
-              <option value="instinct">【本能】</option>
-              <option value="presence">【存在】</option>
-              <option value="knowledge">【知識】</option>
-              <option value="spellcast">呪文発動</option>
-            </select>
-            <select id="active-weapon-primary-range">
-              <option value="" selected disabled>射程</option>
-              <option value="melee">近接</option>
-              <option value="very-close">至近距離</option>
-              <option value="close">近距離</option>
-              <option value="far">遠距離</option>
-              <option value="very-far">超遠距離</option>
-            </select>
+          <div>
             <p>
-              <input type="text" class="short" id="active-weapon-primary-damagedie" placeholder="ダイス">
-              <input type="text" class="short" id="active-weapon-primary-damagetype" placeholder="種別">
+              <span class="label">メイン武器</span>
+              <input type="text" id="active-weapon-primary-name" placeholder="名称">
+              <select id="active-weapon-primary-burden">
+                <option value="" selected disabled>持ち方</option>
+                <option value="片手用">片手用</option>
+                <option value="両手用">両手用</option>
+              </select>
             </p>
-            <p class="grid-full">特徴<input type="text" class="long" id="active-weapon-primary-feature"></p>
+            <p>
+              <select id="active-weapon-primary-trait">
+                <option value="" selected disabled>特性</option>
+                <option value="敏捷">【敏捷】</option>
+                <option value="筋力">【筋力】</option>
+                <option value="技巧">【技巧】</option>
+                <option value="直観">【直観】</option>
+                <option value="存在">【存在】</option>
+                <option value="知識">【知識】</option>
+                <option value="呪文発動">呪文発動</option>
+              </select>
+              <select id="active-weapon-primary-range">
+                <option value="" selected disabled>射程</option>
+                <option value="近接">近接</option>
+                <option value="至近距離">至近距離</option>
+                <option value="近距離">近距離</option>
+                <option value="遠距離">遠距離</option>
+                <option value="超遠距離">超遠距離</option>
+              </select>
+              <input type="text" class="short" id="active-weapon-primary-damagedie" placeholder="ダメージ">
+              <input type="text" class="short" id="active-weapon-primary-damagetype" placeholder="ダメージ種別">
+            </p>
+            <textarea id="active-weapon-primary-feature" rows="2" placeholder="特徴"></textarea>
           </div>
           
-          <h4>サブ武器</h4>
-          <div class="weapon-grid">
-            <p>名称</p>
-            <p>特性</p>
-            <p>射程</p>
-            <p>ダメージ</p>
-            <input type="text" id="active-weapon-secondary-name">
-            <select id="active-weapon-secondary-trait">
-              <option value="" selected disabled>特性</option>
-              <option value="agility">【敏捷】</option>
-              <option value="strength">【筋力】</option>
-              <option value="finesse">【技巧】</option>
-              <option value="instinct">【本能】</option>
-              <option value="presence">【存在】</option>
-              <option value="knowledge">【知識】</option>
-              <option value="spellcast">呪文発動</option>
-            </select>
-            <select id="active-weapon-secondary-range">
-              <option value="" selected disabled>射程</option>
-              <option value="melee">近接</option>
-              <option value="very-close">至近距離</option>
-              <option value="close">近距離</option>
-              <option value="far">遠距離</option>
-              <option value="very-far">超遠距離</option>
-            </select>
+          <div>
             <p>
-              <input type="text" class="short" id="active-weapon-secondary-damagedie" placeholder="ダイス">
-              <input type="text" id="active-weapon-secondary-damagetype" class="short" placeholder="種別">
+              <span class="label">サブ武器</span>
+              <input type="text" id="active-weapon-secondary-name" placeholder="名称">
             </p>
-            <p class="grid-full">特徴<textarea id="active-weapon-secondary-feature" rows="2"></textarea></p>
+            <p>
+              <select id="active-weapon-secondary-trait">
+                <option value="" selected disabled>特性</option>
+                <option value="敏捷">【敏捷】</option>
+                <option value="筋力">【筋力】</option>
+                <option value="技巧">【技巧】</option>
+                <option value="直観">【直観】</option>
+                <option value="存在">【存在】</option>
+                <option value="知識">【知識】</option>
+                <option value="呪文発動">呪文発動</option>
+              </select>
+              <select id="active-weapon-secondary-range">
+                <option value="" selected disabled>射程</option>
+                <option value="近接">近接</option>
+                <option value="至近距離">至近距離</option>
+                <option value="近距離">近距離</option>
+                <option value="遠距離">遠距離</option>
+                <option value="超遠距離">超遠距離</option>
+              </select>
+              <input type="text" class="short" id="active-weapon-secondary-damagedie" placeholder="ダメージ">
+              <input type="text" id="active-weapon-secondary-damagetype" class="short" placeholder="ダメージ種別">
+            </p>
+            <textarea id="active-weapon-secondary-feature" rows="2" placeholder="特徴"></textarea>
           </div>
-        </section>
+        </article>
 
-        <!-- Armor -->
-        <section class="sheet-block">
+        <article class="sheet-block">
           <h3>装備防具</h3>
-          <div class="armor-grid">
-            <p>名称</p>
-            <p>基本閾値</p>
-            <p>基本防具値</p>
-            <input type="text" id="active-armor-name">
-            <p><input type="number" id="active-armor-threshold-major" placeholder="中">／<input type="number" id="active-armor-threshold-severe" placeholder="大"></p>
-            <input type="number" id="active-armor-score">
-            <p class="grid-full">特徴<input type="text" class="long" id="active-armor-feature"></p>
-          </div>
-        </section>
 
-        <!-- Inventory -->
-        <section class="sheet-block">
+          <p>
+            <input type="text" id="active-armor-name" placeholder="名称">
+            <input type="text" class="short" id="active-armor-thresholds" placeholder="基本閾値">
+            <input type="number" class="long" id="active-armor-score" placeholder="基本防具値">
+          </p>
+          <textarea id="active-armor-feature" rows="2" placeholder="特徴"></textarea>
+        </article>
+
+        <article class="sheet-block">
           <h3>所持品</h3>
-
-          <textarea id="inventory" rows="5"></textarea>
+          <div>
+            <textarea id="inventory" rows="3"></textarea>
+          </div>
           
-          <div class="block-header">
-            <h4>所持武器1</h4>
-            <span>［片手用
-              <input type="radio" name="inventory-weapon-1-burden" value="1">
-              <input type="radio" name="inventory-weapon-1-burden" value="2">両手用］
-            </span>
-            <span>［メイン
-              <input type="radio" name="inventory-weapon-1-category" value="p">
-              <input type="radio" name="inventory-weapon-1-category" value="s">サブ］
-            </span>
-          </div>
-          <div class="weapon-grid">
-            <p>名称</p>
-            <p>特性</p>
-            <p>射程</p>
-            <p>ダメージ</p>
-            <input type="text" id="inventory-weapon-1-name">
-            <select id="inventory-weapon-1-trait">
-              <option value="" selected disabled>特性</option>
-              <option value="agility">【敏捷】</option>
-              <option value="strength">【筋力】</option>
-              <option value="finesse">【技巧】</option>
-              <option value="instinct">【本能】</option>
-              <option value="presence">【存在】</option>
-              <option value="knowledge">【知識】</option>
-              <option value="spellcast">呪文発動</option>
-            </select>
-            <select id="inventory-weapon-1-range">
-              <option value="" selected disabled>射程</option>
-              <option value="melee">近接</option>
-              <option value="very-close">至近距離</option>
-              <option value="close">近距離</option>
-              <option value="far">遠距離</option>
-              <option value="very-far">超遠距離</option>
-            </select>
+          <div>
             <p>
-              <input type="text" class="short" id="inventory-weapon-1-damagedie" placeholder="ダイス">
-              <input type="text" class="short" id="inventory-weapon-1-damagetype" placeholder="種別">
+              <span class="label">所持武器1</span>
+              <input type="text" id="inventory-weapon-1-name" placeholder="名称">
+              <select id="inventory-weapon-1-burden">
+                <option value="" selected disabled>持ち方</option>
+                <option value="片手用">片手用</option>
+                <option value="両手用">両手用</option>
+              </select>
+              <select id="inventory-weapon-1-category">
+                <option value="" selected disabled>分類</option>
+                <option value="メイン">メイン</option>
+                <option value="サブ">サブ</option>
+              </select>
             </p>
-            <p class="grid-full">特徴<input type="text" class="long" id="inventory-weapon-1-feature"></p>
+            <p>
+              <select id="inventory-weapon-1-trait" >
+                <option value="" selected disabled>特性</option>
+                <option value="敏捷">【敏捷】</option>
+                <option value="筋力">【筋力】</option>
+                <option value="技巧">【技巧】</option>
+                <option value="直観">【直観】</option>
+                <option value="存在">【存在】</option>
+                <option value="知識">【知識】</option>
+                <option value="呪文発動">呪文発動</option>
+              </select>
+              <select id="inventory-weapon-1-range">
+                <option value="" selected disabled>射程</option>
+                <option value="近接">近接</option>
+                <option value="至近距離">至近距離</option>
+                <option value="近距離">近距離</option>
+                <option value="遠距離">遠距離</option>
+                <option value="超遠距離">超遠距離</option>
+              </select>
+              <input type="text" class="short" id="inventory-weapon-1-damagedie" placeholder="ダメージ">
+              <input type="text" class="short" id="inventory-weapon-1-damagetype" placeholder="ダメージ種別">
+            </p>
+            <textarea id="inventory-weapon-1-feature" rows="2" placeholder="特徴"></textarea>
+          </div>
+
+          <div>
+            <p>
+              <span class="label">所持武器2</span>
+              <input type="text" id="inventory-weapon-2-name" placeholder="名称">
+              <select id="inventory-weapon-2-burden">
+                <option value="" selected disabled>持ち方</option>
+                <option value="片手用">片手用</option>
+                <option value="両手用">両手用</option>
+              </select>
+              <select id="inventory-weapon-2-category">
+                <option value="" selected disabled>分類</option>
+                <option value="メイン">メイン</option>
+                <option value="サブ">サブ</option>
+              </select>
+            </p>
+            <p>
+              <select id="inventory-weapon-2-trait">
+                <option value="" selected disabled>特性</option>
+                <option value="敏捷">【敏捷】</option>
+                <option value="筋力">【筋力】</option>
+                <option value="技巧">【技巧】</option>
+                <option value="直観">【直観】</option>
+                <option value="存在">【存在】</option>
+                <option value="知識">【知識】</option>
+                <option value="呪文発動">呪文発動</option>
+              </select>
+              <select id="inventory-weapon-2-range">
+                <option value="" selected disabled>射程</option>
+                <option value="近接">近接</option>
+                <option value="至近距離">至近距離</option>
+                <option value="近距離">近距離</option>
+                <option value="遠距離">遠距離</option>
+                <option value="超遠距離">超遠距離</option>
+              </select>
+              <input type="text" class="short" id="inventory-weapon-2-damagedie" placeholder="ダメージ">
+              <input type="text" class="short" id="inventory-weapon-2-damagetype" placeholder="ダメージ種別">
+            </p>
+            <textarea id="inventory-weapon-2-feature" rows="2" placeholder="特徴"></textarea>
           </div>
 
           <div class="block-header">
-            <h4>所持武器2</h4>
-            <span>［ 片手用
-              <input type="radio" name="inventory-weapon-2-burden" value="1">
-              <input type="radio" name="inventory-weapon-2-burden" value="2">両手用 ］
-            </span>
-            <span>［ メイン
-              <input type="radio" name="inventory-weapon-2-category" value="p">
-              <input type="radio" name="inventory-weapon-2-category" value="s">サブ ］
-            </span>
-          </div>
-          <div class="weapon-grid">
-            <p>名称</p>
-            <p>特性</p>
-            <p>射程</p>
-            <p>ダメージ</p>
-            <input type="text" id="inventory-weapon-2-name">
-            <select id="inventory-weapon-2-trait">
-              <option value="" selected disabled>特性</option>
-              <option value="agility">【敏捷】</option>
-              <option value="strength">【筋力】</option>
-              <option value="finesse">【技巧】</option>
-              <option value="instinct">【本能】</option>
-              <option value="presence">【存在】</option>
-              <option value="knowledge">【知識】</option>
-              <option value="spellcast">呪文発動</option>
-            </select>
-            <select id="inventory-weapon-2-range">
-              <option value="" selected disabled>射程</option>
-              <option value="melee">近接</option>
-              <option value="very-close">至近距離</option>
-              <option value="close">近距離</option>
-              <option value="far">遠距離</option>
-              <option value="very-far">超遠距離</option>
-            </select>
-            <p>
-              <input type="text" class="short" id="inventory-weapon-2-damagedie" placeholder="ダイス">
-              <input type="text" class="short" id="inventory-weapon-2-damagetype" placeholder="種別">
-            </p>
-            <p class="grid-full">特徴<input type="text" class="long" id="inventory-weapon-2-feature"></p>
-          </div>
-
-          <div class="block-header">
-            <h4>金</h4>
+            <span class="label">金</span>
             
-            <label for="gold-handful">包</label>
             <input type="number" id="gold-handful" min="0" max="9">
+            <label for="gold-handful">握り</label>
 
-            <label for="gold-bag">袋</label>
             <input type="number" id="gold-bag" min="0" max="9">
-
-            <label for="gold-chest">箱</label>
+            <label for="gold-bag">袋</label>
+            
             <input type="number" id="gold-chest" min="0" max="1">
+            <label for="gold-chest">箱</label>
           </div>
-        </section>
+        </article>
+      </section>
 
-        <!-- Notes -->
-        <section class="sheet-block">
-          <h3>その他の詳細</h3>
-          <textarea id="notes" rows="10"></textarea>
-        </section>
+      <section id="sheet-1-right">
+        <article class="sheet-block">
+          <h3>血統／共同体特徴</h3>
+          <textarea id="heritage-features" class="feature" rows="10"></textarea>
+        </article>
+        <article class="sheet-block">
+          <h3>クラス特徴</h3>
+          <textarea id="class-features" class="feature" rows="25"></textarea>
+        </article>
+        <article class="sheet-block">
+          <h3>領域カード</h3>
+          <textarea id="domain-cards" class="feature" rows="15"></textarea>
+        </article>
       </section>
     </section>
 
-    <!-- レベルアップ -->
-    <section class="character-section">
-      <h2>レベルアップ項目</h2>
-      <div class="grid-3">
+    <section id="sheet-2">
+      <section id="sheet-2-top">
+        <article class="sheet-block">
+          <h3>詳細</h3>
+          <textarea id="detail" rows="10"></textarea>
+        </article>
 
-        <div class="sheet-block grid-2">
-          <h3 class="grid-full">ティア2（レベル2〜4）</h3>
+        <article class="sheet-block">
+          <h3>背景</h3>
+          <textarea id="background" rows="10"></textarea>
+        </article>
 
-          <div class="level-up-checks">
-            <input type="checkbox" data-group="level-up-tier-2-trait">
-            <input type="checkbox" data-group="level-up-tier-2-trait">
-            <input type="checkbox" data-group="level-up-tier-2-trait">
+        <article class="sheet-block">
+          <h3>関係性</h3>
+          <textarea id="connection" rows="10"></textarea>
+        </article>
+      </section>
+
+      <section id="sheet-2-bottom">
+        <h2>レベルアップ項目</h2>
+        <div id="levelup-grid">
+          <div class="sheet-block grid-2">
+            <h3 class="grid-full">ティア2（レベル2〜4）</h3>
+
+            <div class="levelup-checks">
+              <input type="checkbox" data-group="levelup-tier-2-trait">
+              <input type="checkbox" data-group="levelup-tier-2-trait">
+              <input type="checkbox" data-group="levelup-tier-2-trait">
+            </div>
+            <p>マークされていないキャラクター特性2つに＋1のボーナスを得る。その特性をマークする。</p>
+
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-2-hp-1">
+              <input type="checkbox" id="levelup-tier-2-hp-2">
+            </div>
+            <p>永続的にHPスロットを1つ得る。</p>
+
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-2-stress-1">
+              <input type="checkbox" id="levelup-tier-2-stress-2">
+            </div>
+            <p>永続的にストレススロットを1つ得る。</p>
+
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-2-experience">
+            </div>
+            <p>経験2つに永続的に＋1のボーナス得る。</p>
+
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-2-domaincard">
+            </div>
+            <p>君が利用可能な領域から君のレベル以下の領域カードを追加で1枚取得する（最大レベル4）。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-2-evasion">
+            </div>
+            <p>回避に永続的に＋1のボーナス得る。</p>
           </div>
-          <p>マークされていないキャラクター特性2つに＋1のボーナスを得る。その特性をマークする。</p>
 
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-2-hp-1">
-            <input type="checkbox" id="level-up-tier-2-hp-2">
-          </div>
-          <p>永続的にHPスロットを1つ得る。</p>
+          <div class="sheet-block grid-2">
+            <h3 class="grid-full">ティア3（レベル5〜7）</h3>
 
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-2-stress-1">
-            <input type="checkbox" id="level-up-tier-2-stress-2">
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-trait-1">
+              <input type="checkbox" id="levelup-tier-3-trait-2">
+              <input type="checkbox" id="levelup-tier-3-trait-3">
+            </div>
+            <p>マークされていないキャラクター特性2つに＋1のボーナスを得る。その特性をマークする。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-hp-1">
+              <input type="checkbox" id="levelup-tier-3-hp-2">
+            </div>
+            <p>永続的にHPスロットを1つ得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-stress-1">
+              <input type="checkbox" id="levelup-tier-3-stress-2">
+            </div>
+            <p>永続的にストレススロットを1つ得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-experience">
+            </div>
+            <p>経験2つに永続的に＋1のボーナス得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-domaincard">
+            </div>
+            <p>君が利用可能な領域から君のレベル以下の領域カードを追加で1枚取得する（最大レベル7）。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-evasion">
+            </div>
+            <p>回避に永続的に＋1のボーナス得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-3-upgrade">
+            </div>
+            <p>次の段階のサブクラス特徴を取得する。このティアのマルチクラスは選択できなくなる。</p>
+            
+            <div class="levelup-checks boxed">
+              <input type="checkbox" id="levelup-tier-3-proficiency-1">
+              <input type="checkbox" id="levelup-tier-3-proficiency-2">
+            </div>
+            <p>習熟度を1上昇させる。</p>
+            
+            <div class="levelup-checks boxed">
+              <input type="checkbox" id="levelup-tier-3-multiclass-1">
+              <input type="checkbox" id="levelup-tier-3-multiclass-2">
+            </div>
+            <p>マルチクラス：追加のクラスを選択する。未使用の“次の段階のサブクラス特徴”とこの他のマルチクラスは選択できなくなる。</p>
           </div>
-          <p>永続的にストレススロットを1つ得る。</p>
-
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-2-experience">
-          </div>
-          <p>経験2つに永続的に＋1のボーナス得る。</p>
-
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-2-domaincard">
-          </div>
-          <p>君が利用可能な領域から君のレベル以下の領域カードを追加で1枚取得する（最大レベル4）。</p>
           
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-2-evasion">
+          <div class="sheet-block grid-2">
+            <h3 class="grid-full">ティア4（レベル8〜10）</h3>
+
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-trait-1">
+              <input type="checkbox" id="levelup-tier-4-trait-2">
+              <input type="checkbox" id="levelup-tier-4-trait-3">
+            </div>
+            <p>マークされていないキャラクター特性2つに＋1のボーナスを得る。その特性をマークする。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-hp-1">
+              <input type="checkbox" id="levelup-tier-4-hp-2">
+            </div>
+            <p>永続的にHPスロットを1つ得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-stress-1">
+              <input type="checkbox" id="levelup-tier-4-stress-2">
+            </div>
+            <p>永続的にストレススロットを1つ得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-experience">
+            </div>
+            <p>経験2つに永続的に＋1のボーナス得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-domaincard">
+            </div>
+            <p>君が利用可能な領域から君のレベル以下の領域カードを追加で1枚取得する。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-evasion">
+            </div>
+            <p>回避に永続的に＋1のボーナス得る。</p>
+            
+            <div class="levelup-checks">
+              <input type="checkbox" id="levelup-tier-4-upgrade">
+            </div>
+            <p>次の段階のサブクラス特徴を取得する。このティアのマルチクラスは選択できなくなる。</p>
+            
+            <div class="levelup-checks boxed">
+              <input type="checkbox" id="levelup-tier-4-proficiency-1">
+              <input type="checkbox" id="levelup-tier-4-proficiency-2">
+            </div>
+            <p>習熟度を1上昇させる。</p>
+            
+            <div class="levelup-checks boxed">
+              <input type="checkbox" id="levelup-tier-4-multiclass-1">
+              <input type="checkbox" id="levelup-tier-4-multiclass-2">
+            </div>
+            <p>マルチクラス：追加のクラスを選択する。未使用の“次の段階のサブクラス特徴”とこの他のマルチクラスは選択できなくなる。</p>
           </div>
-          <p>回避に永続的に＋1のボーナス得る。</p>
         </div>
+      </section>
+    </section>
+  </section>
 
-        <div class="sheet-block grid-2">
-          <h3 class="grid-full">ティア3（レベル5〜7）</h3>
+  <section class="export-token">
+    <h1>オンセツール用コマ出力</h1>
 
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-trait-1">
-            <input type="checkbox" id="level-up-tier-3-trait-2">
-            <input type="checkbox" id="level-up-tier-3-trait-3">
-          </div>
-          <p>マークされていないキャラクター特性2つに＋1のボーナスを得る。その特性をマークする。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-hp-1">
-            <input type="checkbox" id="level-up-tier-3-hp-2">
-          </div>
-          <p>永続的にHPスロットを1つ得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-stress-1">
-            <input type="checkbox" id="level-up-tier-3-stress-2">
-          </div>
-          <p>永続的にストレススロットを1つ得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-experience">
-          </div>
-          <p>経験2つに永続的に＋1のボーナス得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-domaincard">
-          </div>
-          <p>君が利用可能な領域から君のレベル以下の領域カードを追加で1枚取得する（最大レベル7）。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-evasion">
-          </div>
-          <p>回避に永続的に＋1のボーナス得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-upgrade">
-          </div>
-          <p>次の段階のサブクラス特徴を取得する。このティアのマルチクラスは選択できなくなる。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-proficiency-1">
-            <input type="checkbox" id="level-up-tier-3-proficiency-2">
-          </div>
-          <p>習熟度を1上昇させる。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-3-multiclass-1">
-            <input type="checkbox" id="level-up-tier-3-multiclass-2">
-          </div>
-          <p>マルチクラス：追加のクラスを選択する。未使用の“次の段階のサブクラス特徴”とこの他のマルチクラスは選択できなくなる。</p>
-        </div>
-        
-        <div class="sheet-block grid-2">
-          <h3 class="grid-full">ティア4</h3>
-
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-trait-1">
-            <input type="checkbox" id="level-up-tier-4-trait-2">
-            <input type="checkbox" id="level-up-tier-4-trait-3">
-          </div>
-          <p>マークされていないキャラクター特性2つに＋1のボーナスを得る。その特性をマークする。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-hp-1">
-            <input type="checkbox" id="level-up-tier-4-hp-2">
-          </div>
-          <p>永続的にHPスロットを1つ得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-stress-1">
-            <input type="checkbox" id="level-up-tier-4-stress-2">
-          </div>
-          <p>永続的にストレススロットを1つ得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-experience">
-          </div>
-          <p>経験2つに永続的に＋1のボーナス得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-domaincard">
-          </div>
-          <p>君が利用可能な領域から君のレベル以下の領域カードを追加で1枚取得する。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-evasion">
-          </div>
-          <p>回避に永続的に＋1のボーナス得る。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-upgrade">
-          </div>
-          <p>次の段階のサブクラス特徴を取得する。このティアのマルチクラスは選択できなくなる。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-proficiency-1">
-            <input type="checkbox" id="level-up-tier-4-proficiency-2">
-          </div>
-          <p>習熟度を1上昇させる。</p>
-          
-          <div class="level-up-checks">
-            <input type="checkbox" id="level-up-tier-4-multiclass-1">
-            <input type="checkbox" id="level-up-tier-4-multiclass-2">
-          </div>
-          <p>マルチクラス：追加のクラスを選択する。未使用の“次の段階のサブクラス特徴”とこの他のマルチクラスは選択できなくなる。</p>
-        </div>
+    <div class="data-controls">
+      <div>
+        <button type="button" id="export-ccfolia" title="ココフォリアのキャラクターとしてクリップボードにコピーします。ルームを開いて任意の場所に貼り付けてください。">
+          ココフォリア
+        </button>
       </div>
+      <div>
+        <button type="button" id="export-udonarium" title="ユドナリウムのキャラクターファイルとしてファイルをダウンロードします。ルームを開いてファイルをドラッグ＆ドロップしてください。">
+          ユドナリウム
+        </button>
+      </div>
+    </div>
+
+    <section class="grid-2">
+      <article class="sheet-block">
+        <h3>追加ステータス</h3>
+        <div>
+          <input type="text" id="additional-stat-1">
+          現在値<input type="number" id="additional-stat-1-current">
+          最大値<input type="number" id="additional-stat-1-max">
+        </div>
+        <div>
+          <input type="text" id="additional-stat-2">
+          現在値<input type="number" id="additional-stat-2-current">
+          最大値<input type="number" id="additional-stat-2-max">
+        </div>
+        <div>
+          <input type="text" id="additional-stat-3">
+          現在値<input type="number" id="additional-stat-3-current">
+          最大値<input type="number" id="additional-stat-3-max">
+        </div>
+        <div>
+          <input type="text" id="additional-stat-4">
+          現在値<input type="number" id="additional-stat-4-current">
+          最大値<input type="number" id="additional-stat-4-max">
+        </div>
+        <div>
+          <input type="text" id="additional-stat-5">
+          現在値<input type="number" id="additional-stat-5-current">
+          最大値<input type="number" id="additional-stat-5-max">
+        </div>
+      </article>
+
+      <article class="sheet-block">
+        <h3>追加チャットパレット</h3>
+        <textarea id="additional-chat-palette" rows="10"></textarea>
+      </article>
     </section>
   </section>
 </main>

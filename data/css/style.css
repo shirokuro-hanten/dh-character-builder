@@ -1,111 +1,130 @@
 /* =========================
-   基本設定
+  基本設定
 ========================= */
 
 * {
   box-sizing: border-box;
 }
 
+header {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+header.div {
+  margin: 0;
+}
+
 body {
   margin: 0;
   padding: 2rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.8rem;
   font-feature-settings: "palt";
   letter-spacing: 0.05em;
   background: #f0f0f0;
 }
 
 /* =========================
-   ヘッダー
+  ヘッダー
 ========================= */
 
 header {
   max-width: 1200px;
   margin: 0 auto 1rem;
 }
-
-h1 {
+header.div {
   margin: 0;
   text-align: center;
-}
-.subtitle {
-  display: block;
-  font-size: 0.6em;
-}
-
-h2, h4 {
-  margin: 1rem 0 0;
-}
-h3 {
-  text-align: center;
-  margin: 0 0 0.5rem;
-}
-h4:first-child {
-  margin-top: 0;
-}
-
-.block-header {
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-p {
-  margin: 0;
 }
 
 /* =========================
-   キャラクターシート全体
+  ボタン配置
 ========================= */
 
-.character-sheet {
+.data-controls {
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+  キャラクターシート
+========================= */
+
+/* レイアウト */
+
+#character-sheet {
   max-width: 1200px;
   margin: 1rem 0 1rem;
   padding: 2rem;
-  background: #b4b4b4;
+  background: #bbb;
 }
 
-
-/* =========================
-   セクション
-========================= */
-
-.character-section {
-  margin-bottom: 2rem;
-}
-.character-section h2 {
-  margin-top: 0;
-}
-
-/* =========================
-  フォーム
-========================= */
-
-.sheet-body {
+#sheet-header-1 {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  grid-template-columns: repeat(3, max-content);
 }
-
-.sheet-body-left,
-.sheet-body-right {
+#sheet-header-2 {
+  display: grid;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  grid-template-columns: repeat(5, max-content);
+}
+#sheet-header-1 > div,
+#sheet-header-2 > div {
   display: flex;
   flex-direction: column;
 }
 
+#sheet-1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+}
+
+#sheet-1-left,
+#sheet-1-center,
+#sheet-1-right {
+  display: block;
+}
+
+#sheet-2-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
 .sheet-block {
-  gap: 0.75rem;
+  background: #ddd;
   border: 1px solid #000;
   border-radius: 8px;
-  padding: 0.5em 1em 1em;
+  padding: 1rem;
   margin: 1rem 0 0;
 }
+
+/* 書式 */
 
 .form-row {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.75rem;
+}
+.form-row label {
+  width: 7rem;
+  flex-shrink: 0;
+}
+
+.subblock {
+  
+}
+.inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .grid-2 {
@@ -114,21 +133,24 @@ p {
   gap: 0.5rem;
   align-items: start;
 }
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  align-items: start;
-}
 
-.health-grid {
+#hope {
+  justify-items: center;
+}
+#trait-grid {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 0rem;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+#experience-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 0.2rem;
 }
 .weapon-grid {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: auto auto auto;
   gap: 0 0.5rem;
 }
 .armor-grid {
@@ -143,62 +165,150 @@ p {
   gap: 0.5rem;
 }
 
-.leveling-up-checks {
+#levelup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.levelup-checks {
   display: flex;
   justify-content: flex-end;
   gap: 0rem;
+  align-items: start;
 }
 
 /* =========================
-   ラベル
+  入力欄
 ========================= */
 
-.form-row label {
-  width: 7rem;
-  flex-shrink: 0;
+h1 {
+  margin: 0;
+  text-align: center;
+}
+.subtitle {
+  display: block;
+  font-size: 0.6em;
 }
 
-/* =========================
-   入力欄
-========================= */
+h2 {
+  margin: 1rem 0 0;
+  text-align: center;
+}
+h3 {
+  margin: -0.4rem 0 0.4rem;
+  text-align: center;
+}
+h4 {
+  margin: 1rem 0 0;
+  font-size: 1.1em;
+}
+h4:first-child {
+  margin-top: 0;
+}
+
+.block-header {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.inline-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+div {
+  margin-bottom: 0.5rem;
+}
+div:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0 0 0.2rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+span {
+  padding: 0;
+  line-height: 1.2;
+}
+span.label {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
 
 input, select {
   font: inherit;
+  height: 1.2rem;
+  box-sizing: border-box;
   align-self: start;
 }
-
 input[type="text"] {
   width: 10rem;
 }
 input[type="text"].short {
   width: 5rem;
 }
-input[type="text"].long {
-  flex: 1;
-  width: auto;
+input[type="text"].auto {
+  width: 100%;
+  box-sizing: border-box;
 }
 input[type="number"] {
   width: 3rem;
 }
+input[type="number"].long {
+  width: 6rem;
+}
 input[type="checkbox"] {
   width: 1.25em;
   height: 1.25em;
-  margin: 0.25em 0 0;
+  margin: 0;
 }
-#traits input[type="checkbox"] {
-  width: 1em;
-  height: 1em;
+.levelup-checks.boxed {
+  width: fit-content;
+  justify-self: end;
+  border: 1.5px solid #666;
+  border-radius: 4px;
 }
 
 select {
   min-width: auto;
 }
+#select-premade {
+  font-size: 0.8em;
+  height: 1.4rem;
+}
 
 textarea {
   width: 100%;
+}
+textarea.feature {
+  font-size: 0.8em;
 }
 .grid-full > textarea {
   flex: 1;
   width: auto;
   resize: vertical;
+}
+
+button,
+.button {
+  font: inherit;
+  margin-right: 0.2rem;
+  padding: 0rem 0.4rem;
+  border: 1px solid #777;
+  border-radius: 3px;
+  background: #eee;
+  color: #000;
+  cursor: pointer;
+}
+button:hover,
+.button:hover {
+  background: #ddd;
 }
