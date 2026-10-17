@@ -11,9 +11,6 @@ header {
   margin: 0 auto 1rem;
   text-align: center;
 }
-header.div {
-  margin: 0;
-}
 
 body {
   margin: 0;
@@ -26,32 +23,15 @@ body {
 }
 
 /* =========================
-  ヘッダー
+  キャラクターシート
 ========================= */
 
-header {
-  max-width: 1200px;
-  margin: 0 auto 1rem;
-}
-header.div {
-  margin: 0;
-  text-align: center;
-}
-
-/* =========================
-  ボタン配置
-========================= */
+/* レイアウト */
 
 .data-controls {
   display: flex;
   justify-content: center;
 }
-
-/* =========================
-  キャラクターシート
-========================= */
-
-/* レイアウト */
 
 #character-sheet {
   max-width: 1200px;
@@ -60,41 +40,16 @@ header.div {
   background: #bbb;
 }
 
-#sheet-header-1 {
-  display: grid;
-  gap: 0.75rem 1rem;
-  margin-bottom: 0.75rem;
-  grid-template-columns: repeat(3, max-content);
-}
-#sheet-header-2 {
-  display: grid;
-  gap: 0.75rem 1rem;
-  margin-bottom: 0.75rem;
-  grid-template-columns: repeat(5, max-content);
-}
-#sheet-header-1 > div,
-#sheet-header-2 > div {
-  display: flex;
-  flex-direction: column;
-}
-
 #sheet-1 {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   gap: 1rem;
 }
 
-#sheet-1-left,
-#sheet-1-center,
-#sheet-1-right {
-  display: block;
-}
-
 #sheet-2-top {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  align-items: start;
 }
 
 .sheet-block {
@@ -104,27 +59,12 @@ header.div {
   padding: 1rem;
   margin: 1rem 0 0;
 }
-
-/* 書式 */
-
-.form-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-.form-row label {
-  width: 7rem;
-  flex-shrink: 0;
-}
-
-.subblock {
-  
-}
-.inline {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.export-block {
+  background: #ccc;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0;
 }
 
 .grid-2 {
@@ -132,6 +72,12 @@ header.div {
   grid-template-columns: auto 1fr;
   gap: 0.5rem;
   align-items: start;
+}
+.grid-full {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 #hope {
@@ -148,26 +94,10 @@ header.div {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.5rem 0.2rem;
 }
-.weapon-grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 0 0.5rem;
-}
-.armor-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0 0.5rem;
-}
-.grid-full {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 
 #levelup-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   align-items: start;
 }
@@ -186,37 +116,14 @@ h1 {
   margin: 0;
   text-align: center;
 }
-.subtitle {
-  display: block;
-  font-size: 0.6em;
-}
-
 h2 {
   margin: 1rem 0 0;
   text-align: center;
 }
 h3 {
+  width: 100%;
   margin: -0.4rem 0 0.4rem;
   text-align: center;
-}
-h4 {
-  margin: 1rem 0 0;
-  font-size: 1.1em;
-}
-h4:first-child {
-  margin-top: 0;
-}
-
-.block-header {
-  display: flex;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.inline-field {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 div {
@@ -287,14 +194,7 @@ select {
 
 textarea {
   width: 100%;
-}
-textarea.feature {
   font-size: 0.8em;
-}
-.grid-full > textarea {
-  flex: 1;
-  width: auto;
-  resize: vertical;
 }
 
 button,

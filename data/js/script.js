@@ -93,6 +93,7 @@ async function loadPremadeData(file) {
   }
 
   const id = document.getElementById("select-premade").value;
+  if (id === "") { return; }
   
   const response = await fetch("data/json/premade.json");
   const premadeData = await response.json();

@@ -50,56 +50,58 @@
 
   <section id="character-sheet">
     <!-- 基本情報 -->
-    <section id="sheet-header-1">
+    <section>
       <div>
-        <label for="character-name">キャラクター名</label>
-        <input type="text" id="character-name">
+        <span>
+          <label for="character-name">キャラクター名</label>
+          <input type="text" id="character-name">
+        </span>
+        <span>
+          <label for="pronouns">ジェンダー代名詞</label>
+          <input type="text" id="pronouns" class="short">
+        </span>
+        <span>
+          <label for="player-name">プレイヤー名</label>
+          <input type="text" id="player-name">
+        </span>
       </div>
       <div>
-        <label for="pronouns">代名詞</label>
-        <input type="text" id="pronouns">
-      </div>
-      <div>
-        <label for="player-name">プレイヤー名</label>
-        <input type="text" id="player-name">
-      </div>
-    </section>
-    <section id="sheet-header-2">
-      <div>
-        <label for="class">クラス</label>
-        <input type="text" id="class">
-      </div>
-      <div>
-        <label for="subclass">サブクラス</label>
-        <input type="text" id="subclass">
-      </div>
-      <div>
-        <label for="level">レベル</label>
-        <input type="number" id="level" min="1" max="10" value="1">
-      </div>
-      <div>
-        <label for="ancestry">血統</label>
-        <input type="text" id="ancestry">
-      </div>
-      <div>
-        <label for="community">共同体</label>
-        <input type="text" id="community">
+        <span>
+          <label for="class">クラス</label>
+          <input type="text" id="class">
+        </span>
+        <span>
+          <label for="subclass">サブクラス</label>
+          <input type="text" id="subclass">
+        </span>
+        <span>
+          <label for="level">レベル</label>
+          <input type="number" id="level" min="1" max="10" value="1">
+        </span>
+        <span>
+          <label for="ancestry">血統</label>
+          <input type="text" id="ancestry" class="short">
+        </span>
+        <span>
+          <label for="community">共同体</label>
+          <input type="text" id="community" class="short">
+        </span>
       </div>
     </section>
 
     <section id="sheet-1">
-      <section id="sheet-1-left">
+      <section>
         <article class="sheet-block">
           <div>
             <span class="label">回避値</span>
             <input type="number" id="evasion" min="0" max="99" value="5">
           </div>
           
-          <div id="armor-score" class="grid-2">
-            <div>
+          <div class="grid-2">
+            <p>
               <span class="label">防具値</span><br>
               <input type="number" id="armor" min="0" max="12" value="0">
-            </div>
+            </p>
             <p>
               <input type="checkbox" data-group="armor-slot" disabled>
               <input type="checkbox" data-group="armor-slot" disabled>
@@ -248,12 +250,12 @@
         </article>
       </section>
 
-      <section id="sheet-1-center">
+      <section>
         <article class="sheet-block">
           <h3>装備武器</h3>
 
           <div>
-            <label for="proficiency" class="bold">習熟度</label>
+            <label for="proficiency">習熟度</label>
             <input type="number" id="proficiency" min="1" max="6" value="1">
           </div>
 
@@ -325,7 +327,6 @@
 
         <article class="sheet-block">
           <h3>装備防具</h3>
-
           <p>
             <input type="text" id="active-armor-name" placeholder="名称">
             <input type="text" class="short" id="active-armor-thresholds" placeholder="基本閾値">
@@ -337,7 +338,7 @@
         <article class="sheet-block">
           <h3>所持品</h3>
           <div>
-            <textarea id="inventory" rows="3"></textarea>
+            <textarea id="inventory" rows="5"></textarea>
           </div>
           
           <div>
@@ -420,33 +421,41 @@
             <textarea id="inventory-weapon-2-feature" rows="2" placeholder="特徴"></textarea>
           </div>
 
-          <div class="block-header">
+          <div>
             <span class="label">金</span>
             
-            <input type="number" id="gold-handful" min="0" max="9">
-            <label for="gold-handful">握り</label>
+            <label for="gold-handful">
+              <input type="number" id="gold-handful" min="0" max="9">
+              握り
+            </label>
 
-            <input type="number" id="gold-bag" min="0" max="9">
-            <label for="gold-bag">袋</label>
+            <label for="gold-bag">
+              <input type="number" id="gold-bag" min="0" max="9">
+              袋
+            </label>
             
-            <input type="number" id="gold-chest" min="0" max="1">
-            <label for="gold-chest">箱</label>
+            <label for="gold-chest">
+              <input type="number" id="gold-chest" min="0" max="1">
+              箱
+            </label>
           </div>
         </article>
       </section>
 
-      <section id="sheet-1-right">
+      <section>
         <article class="sheet-block">
-          <h3>血統／共同体特徴</h3>
-          <textarea id="heritage-features" class="feature" rows="10"></textarea>
+          <h3>詳細</h3>
+          <textarea id="detail" rows="12"></textarea>
         </article>
+
         <article class="sheet-block">
-          <h3>クラス特徴</h3>
-          <textarea id="class-features" class="feature" rows="25"></textarea>
+          <h3>背景</h3>
+          <textarea id="background" rows="12"></textarea>
         </article>
+
         <article class="sheet-block">
-          <h3>領域カード</h3>
-          <textarea id="domain-cards" class="feature" rows="15"></textarea>
+          <h3>関係性</h3>
+          <textarea id="connection" rows="12"></textarea>
         </article>
       </section>
     </section>
@@ -454,26 +463,27 @@
     <section id="sheet-2">
       <section id="sheet-2-top">
         <article class="sheet-block">
-          <h3>詳細</h3>
-          <textarea id="detail" rows="10"></textarea>
+          <h3>血統／共同体特徴</h3>
+          <textarea id="heritage-features" class="feature" rows="20"></textarea>
         </article>
-
         <article class="sheet-block">
-          <h3>背景</h3>
-          <textarea id="background" rows="10"></textarea>
+          <h3>クラス特徴</h3>
+          <textarea id="class-features" class="feature" rows="20"></textarea>
         </article>
-
         <article class="sheet-block">
-          <h3>関係性</h3>
-          <textarea id="connection" rows="10"></textarea>
+          <h3>領域カード</h3>
+          <textarea id="domain-cards" class="feature" rows="20"></textarea>
         </article>
       </section>
 
+      <br><hr>
       <section id="sheet-2-bottom">
         <h2>レベルアップ項目</h2>
         <div id="levelup-grid">
           <div class="sheet-block grid-2">
-            <h3 class="grid-full">ティア2（レベル2〜4）</h3>
+            <span class="grid-full">
+              <h3>ティア2（レベル2〜4）</h3>
+            </span>
 
             <div class="levelup-checks">
               <input type="checkbox" data-group="levelup-tier-2-trait">
@@ -511,7 +521,9 @@
           </div>
 
           <div class="sheet-block grid-2">
-            <h3 class="grid-full">ティア3（レベル5〜7）</h3>
+            <span class="grid-full">
+              <h3>ティア3（レベル5〜7）</h3>
+            </span>
 
             <div class="levelup-checks">
               <input type="checkbox" id="levelup-tier-3-trait-1">
@@ -566,7 +578,9 @@
           </div>
           
           <div class="sheet-block grid-2">
-            <h3 class="grid-full">ティア4（レベル8〜10）</h3>
+            <span class="grid-full">
+              <h3>ティア4（レベル8〜10）</h3>
+            </span>
 
             <div class="levelup-checks">
               <input type="checkbox" id="levelup-tier-4-trait-1">
@@ -632,8 +646,6 @@
         <button type="button" id="export-ccfolia" title="ココフォリアのキャラクターとしてクリップボードにコピーします。ルームを開いて任意の場所に貼り付けてください。">
           ココフォリア
         </button>
-      </div>
-      <div>
         <button type="button" id="export-udonarium" title="ユドナリウムのキャラクターファイルとしてファイルをダウンロードします。ルームを開いてファイルをドラッグ＆ドロップしてください。">
           ユドナリウム
         </button>
@@ -641,7 +653,7 @@
     </div>
 
     <section class="grid-2">
-      <article class="sheet-block">
+      <article class="export-block">
         <h3>追加ステータス</h3>
         <div>
           <input type="text" id="additional-stat-1">
@@ -670,7 +682,7 @@
         </div>
       </article>
 
-      <article class="sheet-block">
+      <article class="export-block">
         <h3>追加チャットパレット</h3>
         <textarea id="additional-chat-palette" rows="10"></textarea>
       </article>
