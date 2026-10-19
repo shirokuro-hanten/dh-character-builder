@@ -1,0 +1,186 @@
+/* =========================
+  基本設定
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  font-feature-settings: "palt";
+  letter-spacing: 0.05em;
+  background: #f0f0f0;
+}
+
+/* =========================
+  キャラクターシート
+========================= */
+
+/* レイアウト */
+
+.data-controls {
+  display: flex;
+  justify-content: center;
+}
+
+#statblock {
+  max-width: 1200px;
+  background: #ddd;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-content: start;
+}
+#stat-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+}
+#experience-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.2rem;
+}
+#feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+.grid-full {
+  grid-column: 1 / -1;
+}
+
+#export-data {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+.export-block {
+  background: #ccc;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0;
+}
+
+/* =========================
+  入力欄
+========================= */
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+h2 {
+  margin: 1rem 0 0.4rem;
+  text-align: center;
+}
+h3 {
+  margin: -0.4rem 0 0.4rem;
+  text-align: center;
+}
+h4 {
+  font-size: 1.1em;
+  margin: 0 0 0.4rem;
+}
+
+div {
+  margin-bottom: 0.5rem;
+}
+div:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0 0 0.2rem;
+  line-height: 1.2;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+span {
+  padding: 0;
+  line-height: 1.2;
+}
+span.label {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+input, select {
+  font: inherit;
+  height: 1.2rem;
+  box-sizing: border-box;
+  align-self: start;
+}
+input[type="text"] {
+  width: 10rem;
+}
+input[type="number"],
+input.short {
+  width: 4rem;
+}
+input.auto {
+  width: auto;
+  box-sizing: border-box;
+}
+#name {
+  width: 100%;
+  font-size: 1.2rem;
+  height: 1.8rem;
+}
+
+textarea {
+  width: 100%;
+  font-size: 0.8em;
+}
+#motives-and-tactics {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+p:has(#motives-and-tactics) {
+  display: flex;
+  align-items:flex-start;
+  gap: 0.5rem;
+}
+
+select {
+  min-width: auto;
+  margin-right: 0.2rem;
+}
+.data-controls > select {
+  height: 1.4rem;
+}
+
+button,
+.button {
+  font: inherit;
+  margin-right: 0.2rem;
+  padding: 0rem 0.4rem;
+  border: 1px solid #777;
+  border-radius: 3px;
+  background: #eee;
+  color: #000;
+  cursor: pointer;
+}
+button:hover,
+.button:hover {
+  background: #ddd;
+}

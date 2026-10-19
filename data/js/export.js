@@ -20,10 +20,10 @@ function copyToCcf() {
   memo_arr.push(`【所持品】\n${data.inventory.join("\n")}`);
 
   // ステータス
-  status_arr.push({label: "HP", value: data.hpMarked, max: data.hp});
-  status_arr.push({label: "ストレス", value: data.stressMarked, max: data.stress});
+  status_arr.push({label: "HP", value: data.hp - data.hpMarked, max: data.hp});
+  status_arr.push({label: "ストレス", value: data.stress - data.stressMarked, max: data.stress});
   status_arr.push({label: "希望", value: data.hope, max: 6});
-  status_arr.push({label: "防具スロット", value: data.armorSlotsMarked, max: data.armorScore});
+  status_arr.push({label: "防具スロット", value: data.armorScore - data.armorSlotsMarked, max: data.armorScore});
   for (let i = 0; i < 5; i++) {
     const additionalStat = data.additionalStat[i];
     if (additionalStat.label === "") {continue;}
@@ -88,10 +88,10 @@ function exportToUdonarium() {
         <data type="note" name="共同体">${escapeXml(data.community)}</data>
       </data>
       <data name="ステータス">
-        <data type="numberResource" currentValue="${data.hpMarked}" name="HP">${data.hp}</data>
-        <data type="numberResource" currentValue="${data.stressMarked}" name="ストレス">${data.stress}</data>
+        <data type="numberResource" currentValue="${data.hp - data.hpMarked}" name="HP">${data.hp}</data>
+        <data type="numberResource" currentValue="${data.stress - data.stressMarked}" name="ストレス">${data.stress}</data>
         <data type="numberResource" currentValue="${data.hope}" name="希望">6</data>
-        <data type="numberResource" currentValue="${data.armorSlotsMarked}" name="防具スロット">${data.armorScore}</data>
+        <data type="numberResource" currentValue="${data.armorScore - data.armorSlotsMarked}" name="防具スロット">${data.armorScore}</data>
         <data name="回避">${data.evasion}</data>
         <data type="number" name="ダメージ閾値">${data.damageThresholds.major}／${data.damageThresholds.severe}</data>
         <data name="習熟">${data.proficiency}</data>

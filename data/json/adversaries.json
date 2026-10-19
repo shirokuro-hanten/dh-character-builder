@@ -1,0 +1,5363 @@
+{
+  "tier-1": [
+    {
+      "id": "acid-burrower",
+      "name": "アシッド・バロワー",
+      "tier": 1,
+      "type": "単体",
+      "description": "地面を掘る爪と酸性の血液を持つ、馬大の昆虫。",
+      "motivesAndTactics": "穴を掘る、引きずり込む、餌食にする、貯蔵する",
+      "difficulty": 14,
+      "damageThresholds": "8／15",
+      "hp": 8,
+      "stress": 3,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "爪",
+        "range": "至近距離",
+        "damagedice": "1d12+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "振動感知",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "このバロワーにはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "地上噴出",
+          "type": "行動",
+          "description": "ストレスを1つマークして、このバロワーを地上に飛び出させる。至近距離射程内にいるすべてのクリーチャーは【敏捷】反応ロールを行わなければならず、失敗するとひっくり返り、次の行動時まで脆弱状態になる。"
+        },
+        {
+          "name": "酸吐き",
+          "type": "行動",
+          "description": "このバロワーの前方の近距離射程内にいるすべての目標に対して攻撃ロールを行う。このバロワーが成功した目標は2d6の物理ダメージを受け、防具スロットを1つマークしなければならない（これは何の利益ももたらさないが、さらに防具を使用してダメージを軽減することはできる）。防具スロットをマークすることができない目標はHPを追加で1つマークしなければならず、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "酸の飛沫",
+          "type": "反応",
+          "description": "このバロワーが大ダメージを受けた時、近距離射程内にいるすべてのクリーチャーは酸性の血を浴び、1d10の物理ダメージを受ける。この飛沫は至近距離射程内の地面を血で覆い、そこを通り抜けるこのバロワー以外のすべてのクリーチャーは1d6の物理ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "bear",
+      "name": "ベア",
+      "tier": 1,
+      "type": "暴力",
+      "description": "分厚い毛皮と力強い爪を持つ大型のクマ。",
+      "motivesAndTactics": "登攀する、縄張りを守る、打ちのめす、追跡する",
+      "difficulty": 14,
+      "damageThresholds": "9／17",
+      "hp": 7,
+      "stress": 2,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "爪",
+        "range": "近接",
+        "damagedice": "1d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "待ち伏せ",
+          "modifier": 3
+        },
+        {
+          "name": "鋭敏感覚",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "圧倒的威力",
+          "type": "受動",
+          "description": "このベアの通常攻撃によってHPをマークした目標は、至近距離射程まで吹き飛ばされる。"
+        },
+        {
+          "name": "噛みつき",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内にいる目標1体に対して攻撃を行う。成功したなら、3d4＋10の物理ダメージを与え、目標は【筋力】ロールに成功して脱出するまで拘束状態になる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このベアがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "cave-ogre",
+      "name": "洞窟オーガ",
+      "tier": 1,
+      "type": "単体",
+      "description": "あらゆる知的生命体を食糧とみなす巨大な人型生物。",
+      "motivesAndTactics": "頭を噛ちぎる、平らげる、四肢をもぐ、踏み潰す、敵を投げ飛ばす",
+      "difficulty": 13,
+      "damageThresholds": "8／15",
+      "hp": 8,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "棍棒",
+        "range": "至近距離",
+        "damagedice": "1d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "投擲",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "増強",
+          "type": "受動",
+          "description": "このオーガにスポットライトを当てる際は、恐怖を1つ消費しなければならない。スポットライトを浴びている間、このオーガは射程内にいるすべての目標に対して通常攻撃を行える。"
+        },
+        {
+          "name": "骨砕き",
+          "type": "受動",
+          "description": "このオーガの攻撃は直接ダメージを与える。"
+        },
+        {
+          "name": "丸岩の雨",
+          "type": "行動",
+          "description": "ストレスを1つマークして重い物体を持ち上げ、このオーガの前方の遠距離射程内にいるすべての目標に投げつける。それらの目標に対して攻撃を行う。このオーガが成功した目標は1d10＋2の物理ダメージを受ける。このオーガが2体以上の目標に対して成功したなら、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "怒りの大暴れ",
+          "type": "反応",
+          "description": "このオーガはHPを2つ以上マークした時、暴れ回ることができる。このオーガを近距離射程内の一点へ移動させ、その線上にいるすべての目標に2d6＋3の直接物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "construct",
+      "name": "コンストラクト",
+      "tier": 1,
+      "type": "単体",
+      "description": "魔法によって組み上げられ動いている、石と鋼鉄でできたおおよそ人型の存在。",
+      "motivesAndTactics": "環境を破壊する、創造主に奉仕する、標的を破壊する、集団を踏みつける",
+      "difficulty": 13,
+      "damageThresholds": "7／15",
+      "hp": 9,
+      "stress": 4,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "拳叩きつけ",
+        "range": "近接",
+        "damagedice": "1d20",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "このコンストラクトにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "脆弱構造",
+          "type": "受動",
+          "description": "このコンストラクトは物理ダメージによってHPをマークした時、HPを追加で1つマークしなければならない。"
+        },
+        {
+          "name": "踏みつけ",
+          "type": "行動",
+          "description": "ストレスを1つマークして、このコンストラクトの移動線上にいるすべての目標に対して攻撃を行う。このコンストラクトが成功した目標は1d8の物理ダメージを受ける。"
+        },
+        {
+          "name": "過負荷",
+          "type": "反応",
+          "description": "君はこのコンストラクトの攻撃のダメージを振る前に、ストレスを1つマークしてダメージロールに＋10のボーナスを得ることができる。その後、このコンストラクトは再度スポットライトを浴びることができる。"
+        },
+        {
+          "name": "断末魔の振動",
+          "type": "反応",
+          "description": "このコンストラクトが最後のHPをマークした時、動力源の魔法が炸裂して力場の爆発を起こす。至近距離射程内にいるすべての目標に対して有利で攻撃する。このコンストラクトが成功した目標は1d12＋2の魔法ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "courtier",
+      "name": "廷臣",
+      "tier": 1,
+      "type": "社交",
+      "description": "人を操ることに卓越した社交術の達人。",
+      "motivesAndTactics": "唆す、うまく立ち回る、後援者を確保する",
+      "difficulty": 13,
+      "damageThresholds": "7／13",
+      "hp": 3,
+      "stress": 4,
+      "attackModifier": -3,
+      "standardAttack": {
+        "name": "ダガー",
+        "range": "近接",
+        "damagedice": "1d4+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "人心操作",
+          "modifier": 3
+        },
+        {
+          "name": "社交",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "嘲り",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内の目標1体に嘲笑の言葉を投げ、面目を保てるかどうか【存在】反応ロール（14）を行わせる。失敗したなら、目標はストレスを2つマークしなければならず、場面が終わるまで脆弱状態になる。"
+        },
+        {
+          "name": "身代わり",
+          "type": "行動",
+          "description": "恐怖を1つ消費してPC1人を目標とする。この廷臣は群集または主要人物1人を説得して、目標が現在の衝突や不運の原因だと信じ込ませる。"
+        }
+      ]
+    },
+    {
+      "id": "deeproot-defender",
+      "name": "ディープルートの防衛者",
+      "tier": 1,
+      "type": "暴力",
+      "description": "絡みつく蔦を持つ、がっしりとした野菜人間。",
+      "motivesAndTactics": "待ち伏せする、掴む、保護する、打ちのめす",
+      "difficulty": 10,
+      "damageThresholds": "8／14",
+      "hp": 7,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "蔦",
+        "range": "近距離",
+        "damagedice": "1d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "巨大",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "地面叩きつけ",
+          "type": "行動",
+          "description": "地面を叩きつけ、至近距離射程内にいるすべての目標を遠距離射程まで吹き飛ばす。こうして吹き飛ばされた各目標は、ストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "掴んで引きずる",
+          "type": "行動",
+          "description": "近距離射程内の目標1体に対して攻撃を行う。成功したなら、恐怖を1つ消費して、目標を近接射程内に引き寄せ、1d6＋2の物理ダメージを与えて、この防衛者が大ダメージを受けるまで拘束状態にする。"
+        }
+      ]
+    },
+    {
+      "id": "dire-wolf",
+      "name": "ダイア・ウルフ",
+      "tier": 1,
+      "type": "潜伏",
+      "description": "威圧的な牙を持つ大型のオオカミ。単独で遭遇することはめったにない。",
+      "motivesAndTactics": "縄張りを守る、執拗に攻撃する、群れを保護する、包囲する、追跡する",
+      "difficulty": 12,
+      "damageThresholds": "5／9",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "爪",
+        "range": "近接",
+        "damagedice": "1d6+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "鋭敏感覚",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "群れ戦術",
+          "type": "受動",
+          "description": "このウルフが通常攻撃に成功した時、別の《ダイア・ウルフ》が目標の近接射程内にいるなら、通常ダメージではなく1d6＋5の物理ダメージを与え、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "足止め攻撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に対して攻撃を行う。成功したなら、3d4＋10の物理ダメージを与え、目標がHPを1つ以上回復するまで脆弱状態にする。"
+        }
+      ]
+    },
+    {
+      "id": "giant-mosquitoes",
+      "name": "巨大モスキートの群れ",
+      "tier": 1,
+      "type": "大群（2／HP）",
+      "description": "固まって飛ぶことで身を守る、数十匹の拳大の蚊。",
+      "motivesAndTactics": "飛び去る、悩ませる、血を奪う",
+      "difficulty": 10,
+      "damageThresholds": "5／9",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": -2,
+      "standardAttack": {
+        "name": "口吻",
+        "range": "近接",
+        "damagedice": "1d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "迷彩",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "大群（1d4＋1）",
+          "type": "受動",
+          "description": "この群れがHPを半分以上マークしている時、通常攻撃が与える物理ダメージは1d4＋1になる。"
+        },
+        {
+          "name": "飛行",
+          "type": "受動",
+          "description": "飛行中、この群れは難易度に＋2のボーナスを得る。"
+        },
+        {
+          "name": "吸血",
+          "type": "反応",
+          "description": "この群れの攻撃が目標にHPをマークさせる時、君はストレスを1つマークして、目標にHPを追加で1つマークさせることができる。"
+        }
+      ]
+    },
+    {
+      "id": "giant-rat",
+      "name": "巨大ラット",
+      "tier": 1,
+      "type": "雑魚",
+      "description": "ゴミ漁りと生存に熟達した猫大の齧歯類。",
+      "motivesAndTactics": "穴を掘る、飢える、ゴミを漁る、消耗させる",
+      "difficulty": 10,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": -4,
+      "standardAttack": {
+        "name": "爪",
+        "range": "近接",
+        "damagedice": "1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "鋭敏感覚",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "雑魚（3）",
+          "type": "受動",
+          "description": "このラットはダメージを受けると倒れる。PCがこのラットに3ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《ジャイアント・ラット》にスポットライトを当てる。それらの雑魚キャラクターは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ1の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "giant-scorpion",
+      "name": "巨大スコーピオン",
+      "tier": 1,
+      "type": "暴力",
+      "description": "引き裂く爪と突き刺す尾を持つヒューマン大の蜘蛛形生物。",
+      "motivesAndTactics": "待ち伏せ、食糧、掴み、毒",
+      "difficulty": 13,
+      "damageThresholds": "7／13",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "ハサミ",
+        "range": "近接",
+        "damagedice": "1d12+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "迷彩",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "二重攻撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標2体に対して通常攻撃を行う。"
+        },
+        {
+          "name": "毒針",
+          "type": "行動",
+          "description": "至近距離射程内の目標1体に対して攻撃を行う。成功したなら、恐怖を1つ消費して、1d4＋4の物理ダメージを与え、目標を毒状態にする。この状態は次の休憩か、目標が【知識】ロール（16）に成功するまで継続する。毒状態の間、目標は行動ロールを行う前にd6を振らなければならない。出た目が4以下だったなら、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このスコーピオンがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "glass-snake",
+      "name": "グラス・スネーク",
+      "tier": 1,
+      "type": "標準",
+      "description": "通り道にガラスの破片を残す、頭部が巨大な透明の蛇。",
+      "motivesAndTactics": "よじ登る、餌食にする、距離を保つ、怖がらせる",
+      "difficulty": 14,
+      "damageThresholds": "6／10",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "ガラス牙",
+        "range": "至近距離",
+        "damagedice": "1d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "鎧を刻む破片",
+          "type": "受動",
+          "description": "このスネークに対する近接射程内の攻撃が成功した後、攻撃者は防具スロットを1つマークしなければならない。防具スロットをマークできないなら、HPを1つマークしなければならない。"
+        },
+        {
+          "name": "蛇回転",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内にいるすべての目標に対して攻撃を行う。このスネークが成功した目標は1d6＋1の物理ダメージを受ける。"
+        },
+        {
+          "name": "唾吐き",
+          "type": "行動",
+          "description": "恐怖を1つ消費して唾吐きダイス（d6）を導入する。このスネークがスポットライトを浴びた時、このダイスを振る。出た目が5以上なら、このスネークの前方の遠距離射程内にいるすべての目標は【敏捷】反応ロールを行わなければならず、失敗すると1d4の物理ダメージを受ける。このスネークはこのGMターンに2回目のスポットライトを浴びることができる。"
+        }
+      ]
+    },
+    {
+      "id": "harrier",
+      "name": "歩兵",
+      "tier": 1,
+      "type": "標準",
+      "description": "ジャヴェリンを装備した機敏な戦士。",
+      "motivesAndTactics": "側面攻撃を仕掛ける、しつこつ攻撃する、宙を舞う、儲ける",
+      "difficulty": 12,
+      "damageThresholds": "5／9",
+      "hp": 3,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "投槍",
+        "range": "近距離",
+        "damagedice": "1d6+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "迷彩",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "距離確保",
+          "type": "受動",
+          "description": "この歩兵は通常攻撃を行った後、遠距離射程内の任意の場所へ移動することができる。"
+        },
+        {
+          "name": "後退攻撃",
+          "type": "反応",
+          "description": "クリーチャーが攻撃を行うために近接射程内に移動した時、君はその攻撃ロールの前にストレスを1つマークして、近距離射程内の任意の場所へ移動し、そのクリーチャーに対して攻撃を行うことができる。成功したなら、1d10＋2の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "archer-guard",
+      "name": "弓の衛兵",
+      "tier": 1,
+      "type": "射撃",
+      "description": "長弓と矢筒を持った背の高い衛兵。矢羽根は集落の色が付いている。",
+      "motivesAndTactics": "逮捕する、門を閉める、1日を乗り切る、組み敷く",
+      "difficulty": 10,
+      "damageThresholds": "4／8",
+      "hp": 3,
+      "stress": 2,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "長弓",
+        "range": "遠距離",
+        "damagedice": "1d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "地元知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "足止め射撃",
+          "type": "行動",
+          "description": "遠距離射程内の目標1体に対して攻撃を行う。成功したなら、ストレスを1つマークして、1d12＋3の物理ダメージを与える。目標は、この攻撃によってHPをマークしたなら、HPを最低1つ回復するまで【敏捷】ロールに不利を受ける。"
+        }
+      ]
+    },
+    {
+      "id": "bladed-guard",
+      "name": "剣の衛兵",
+      "tier": 1,
+      "type": "標準",
+      "description": "剣と集落の色に塗った盾を持つ武装衛兵。",
+      "motivesAndTactics": "逮捕する、門を閉める、1日を乗り切る、組み敷く",
+      "difficulty": 12,
+      "damageThresholds": "5／9",
+      "hp": 5,
+      "stress": 2,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "長剣",
+        "range": "近接",
+        "damagedice": "1d6+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "地元知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "盾の壁",
+          "type": "受動",
+          "description": "この衛兵の至近距離射程内で移動を試みるクリーチャーは【敏捷】ロールに成功しなければならない。この衛兵を含む直線上に他の《剣の衛兵》が立っており、それぞれが直線上で他の衛兵の近接射程内にいるなら、直線上にいる衛兵の合計数だけ難易度が上昇する。"
+        },
+        {
+          "name": "拘留",
+          "type": "行動",
+          "description": "至近距離射程内の目標1体に対して攻撃を行う。成功したなら、ストレスを1つマークして目標を拘束状態にする。この状態は、目標が攻撃、【技巧】ロール、【筋力】ロールのいずれかに成功して脱出するまで継続する。"
+        }
+      ]
+    },
+    {
+      "id": "head-guard",
+      "name": "衛兵隊長",
+      "tier": 1,
+      "type": "指揮",
+      "description": "戦棍と笛を持ち、怒鳴り声を出す熟練の衛兵。",
+      "motivesAndTactics": "逮捕する、門を閉める、組み敷く、栄光を求める",
+      "difficulty": 15,
+      "damageThresholds": "7／13",
+      "hp": 7,
+      "stress": 3,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "戦棍",
+        "range": "近接",
+        "damagedice": "1d10+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "指揮",
+          "modifier": 2
+        },
+        {
+          "name": "地元知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "衛兵鼓舞",
+          "type": "行動",
+          "description": "恐怖を2つ消費して、この衛兵と遠距離射程内にいる2d4体の味方にスポットライトを当てる。"
+        },
+        {
+          "name": "合図",
+          "type": "反応",
+          "description": "カウントダウン（5）。この衛兵隊長が初めてスポットライトを浴びた時、カウントダウンを開始する。カウントダウンはPCが攻撃ロールを行うと進む。カウントダウンが作動した時、遠距離射程内にいるすべての《弓の衛兵》が射程内にいる最も近い目標に対して通常攻撃を行う。同一の目標に対して成功した攻撃のダメージは合計すること。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この衛兵隊長がPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-bandit",
+      "name": "鋸ナイフ団の山賊",
+      "tier": 1,
+      "type": "標準",
+      "description": "団の象徴であるナイフを持った狡猾な犯罪者。",
+      "motivesAndTactics": "逃走する、儲ける、盗む、煙幕を張る",
+      "difficulty": 12,
+      "damageThresholds": "8／14",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "ダガー",
+        "range": "近接",
+        "damagedice": "1d8+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "泥棒",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "壁登り",
+          "type": "受動",
+          "description": "この山賊は走るように軽々と登攀できる。"
+        },
+        {
+          "name": "高所",
+          "type": "受動",
+          "description": "この山賊は、目標より高所から通常攻撃に成功した時、（通常ダメージではなく）1d10＋1の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-hexer",
+      "name": "鋸ナイフ団の呪術師",
+      "tier": 1,
+      "type": "支援",
+      "description": "魔法の装飾品をあしらった外套をまとい、長杖を振るう山賊。呪いを用いて敵を苦しめる。",
+      "motivesAndTactics": "命令する、呪詛をかける、儲ける",
+      "difficulty": 13,
+      "damageThresholds": "5／9",
+      "hp": 4,
+      "stress": 4,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "長杖",
+        "range": "遠距離",
+        "damagedice": "1d6+2",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "魔法知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "呪い",
+          "type": "行動",
+          "description": "遠距離射程内の目標1体を選び、一時的に呪い状態にする。目標が呪い状態の間、目標のロール結果が希望だった時、君はストレスを1つマークして、そのロールの結果を恐怖にすることができる。"
+        },
+        {
+          "name": "混沌の奔流",
+          "type": "行動",
+          "description": "至近距離射程内にいる最大3体までの目標に対して攻撃を行う。ストレスを1つマークして、この呪術師が成功した目標に2d6＋3の魔法ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-kneebreaker",
+      "name": "鋸ナイフ団の膝砕き",
+      "tier": 1,
+      "type": "暴力",
+      "description": "大きな棍棒を持ち歩く威圧的な喧嘩屋。",
+      "motivesAndTactics": "掴む、威圧する、儲ける、盗む",
+      "difficulty": 12,
+      "damageThresholds": "7／14",
+      "hp": 7,
+      "stress": 4,
+      "attackModifier": -3,
+      "standardAttack": {
+        "name": "棍棒",
+        "range": "近接",
+        "damagedice": "1d4+6",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "泥棒",
+          "modifier": 2
+        },
+        {
+          "name": "露骨な脅迫",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "捕まえたぞ",
+          "type": "受動",
+          "description": "この膝砕きに拘束されているクリーチャーがその他の敵キャラクターの攻撃から受けるダメージは2倍になる。"
+        },
+        {
+          "name": "押さえつけ",
+          "type": "行動",
+          "description": "近接射程内の目標1体に対して攻撃を行う。成功したなら、目標はダメージを受けないが、拘束状態かつ脆弱状態になる。目標は【筋力】ロールに成功することで脱出し、両状態を解除することができる。また、この膝砕きが中ダメージ以上を受けると自動的に解放される。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-lackey",
+      "name": "鋸ナイフ団の使い走り",
+      "tier": 1,
+      "type": "雑魚",
+      "description": "地味な服に小さなダガーを携え、実力を証明しようと意気込む盗賊。",
+      "motivesAndTactics": "逃走する、儲ける、煙幕を張る",
+      "difficulty": 9,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": -2,
+      "standardAttack": {
+        "name": "ダガー",
+        "range": "近接",
+        "damagedice": "2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "泥棒",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "雑魚（3）",
+          "type": "受動",
+          "description": "この使い走りはダメージを受けると倒れる。PCがこの使い走りに3ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《鋸ナイフ団の使い走り》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ2の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-lieutenant",
+      "name": "鋸ナイフ団の部隊長",
+      "tier": 1,
+      "type": "指揮",
+      "description": "上質な革の服をまとい、力強い声と狡猾な目をした、ベテランの山賊。",
+      "motivesAndTactics": "弱いものをいじめる、命令する、儲ける、増援を呼ぶ",
+      "difficulty": 13,
+      "damageThresholds": "7／14",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "投槍",
+        "range": "近距離",
+        "damagedice": "1d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "地元知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "戦術家",
+          "type": "行動",
+          "description": "この部隊長にスポットライトを当てた時、ストレスを1つマークして、近距離射程内にいる2体の味方にもスポットライトを当てる。"
+        },
+        {
+          "name": "まだまだいるぞ",
+          "type": "行動",
+          "description": "遠距離射程内に3人の《鋸ナイフ団の使い走り》を召喚する。"
+        },
+        {
+          "name": "とどめの一撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、近距離射程内にいる脆弱状態の目標1体に対して攻撃を行う。成功したなら、2d6＋12の物理ダメージを与え、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この部隊長がPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-shadow",
+      "name": "鋸ナイフ団の影",
+      "tier": 1,
+      "type": "潜伏",
+      "description": "邪悪なナイフを携え、影の魔法を使って標的を孤立させる、機敏な悪党。",
+      "motivesAndTactics": "待ち伏せする、隠す、分断する、儲ける",
+      "difficulty": 12,
+      "damageThresholds": "4／8",
+      "hp": 3,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "ダガー",
+        "range": "近接",
+        "damagedice": "1d4+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "侵入",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "背後からの一撃",
+          "type": "受動",
+          "description": "この影は、有利を得た通常攻撃に成功した時、通常ダメージではなく1d6＋6の物理ダメージを与える。"
+        },
+        {
+          "name": "隠匿",
+          "type": "行動",
+          "description": "この影の次の攻撃後まで隠れ身状態になる。この特徴による隠れ身状態で行われる攻撃は有利を得る。"
+        }
+      ]
+    },
+    {
+      "id": "jagged-knife-sniper",
+      "name": "鋸ナイフ団の狙撃手",
+      "tier": 1,
+      "type": "射撃",
+      "description": "隠れながら短弓を放つ、痩せた山賊。",
+      "motivesAndTactics": "待ち伏せする、隠れる、儲ける、位置取りを変える",
+      "difficulty": 13,
+      "damageThresholds": "4／7",
+      "hp": 3,
+      "stress": 2,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "短弓",
+        "range": "遠距離",
+        "damagedice": "1d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "隠密",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "見えざる一撃",
+          "type": "受動",
+          "description": "この狙撃手は、目標に対する通常攻撃に成功した際に隠れ身状態だったなら、通常ダメージではなく1d10＋4の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "merchant",
+      "name": "商人",
+      "tier": 1,
+      "type": "社交",
+      "description": "金融的な利益を見極める、身なりの整った商売人。",
+      "motivesAndTactics": "安く買って高く売る、需要を生む、価格をつり上げる、利益を求める",
+      "difficulty": 12,
+      "damageThresholds": "4／8",
+      "hp": 3,
+      "stress": 3,
+      "attackModifier": -4,
+      "standardAttack": {
+        "name": "棍棒",
+        "range": "近接",
+        "damagedice": "1d4+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "抜け目ない交渉術",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "優先待遇",
+          "type": "受動",
+          "description": "この商人に対する【存在】ロールに成功したPCは、購入金額に割引を受ける。この商人に対する【存在】ロールに失敗したPCは、追加料金を支払わなければならず、以後この商人に対する【存在】ロールに不利を受ける。"
+        },
+        {
+          "name": "言い逃れ",
+          "type": "受動",
+          "description": "この商人に対する【存在】ロールの合計値が14以下だったPCは、ストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "minor-chaos-elemental",
+      "name": "下級ケイオス・エレメンタル",
+      "tier": 1,
+      "type": "単体",
+      "description": "明るく輝く制御不能な魔法の塊。",
+      "motivesAndTactics": "混乱させる、不安定にする、変質させる",
+      "difficulty": 14,
+      "damageThresholds": "7／14",
+      "hp": 7,
+      "stress": 3,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "歪曲の爆風",
+        "range": "近距離",
+        "damagedice": "1d12+6",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "魔法抵抗",
+          "type": "受動",
+          "description": "このエレメンタルは魔法ダメージに抵抗を持つ。"
+        },
+        {
+          "name": "消耗の流れ",
+          "type": "行動",
+          "description": "HPを1つマークして、近距離射程内にいるすべての目標にストレスを1つマークさせ、脆弱状態にする。この状態は、次の休憩か、HPを1つ回復するまで継続する。"
+        },
+        {
+          "name": "現実改変",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、至近距離射程内の範囲を別の生態系に変容させる。この範囲内にいるすべての目標は2d6＋3の直接魔法ダメージを受ける。"
+        },
+        {
+          "name": "魔法的反射",
+          "type": "反応",
+          "description": "このエレメンタルが近距離射程からの攻撃でダメージを受けた時、与えられたダメージの半分に等しい量のダメージを攻撃者に与える。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このエレメンタルがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "minor-fire-elemental",
+      "name": "下級ファイアー・エレメンタル",
+      "tier": 1,
+      "type": "単体",
+      "description": "大きな焚き火ほどある生きた炎。",
+      "motivesAndTactics": "敵を囲む、大型化する、威圧する、火を点ける",
+      "difficulty": 13,
+      "damageThresholds": "7／15",
+      "hp": 9,
+      "stress": 3,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "元素の爆風",
+        "range": "遠距離",
+        "damagedice": "1d10+4",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "このエレメンタルにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "大地焼却",
+          "type": "行動",
+          "description": "ストレスを1つマークして、遠距離射程内の一点を選ぶ。その地点から至近距離射程内の地面は即座に燃え上がる。この範囲内にいるすべてのクリーチャーは【敏捷】反応ロールを行わなければならない。失敗した目標は、炎から2d8の魔法ダメージを受ける。成功した目標は半分のダメージを受ける。"
+        },
+        {
+          "name": "爆発",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、炎の爆発を起こす。近距離射程内にいるすべての目標に対して攻撃を行う。このエレメンタルが成功した目標は1d8の魔法ダメージを受け、遠距離射程まで吹き飛ばされる。"
+        },
+        {
+          "name": "薪吸収",
+          "type": "反応",
+          "description": "場面ごとに3回、このエレメンタルが燃えやすい物体の上に移動した時、それらを吸収してHPまたはストレスを1つ回復する。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このエレメンタルがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "minor-demon",
+      "name": "下級デーモン",
+      "tier": 1,
+      "type": "単体",
+      "description": "地円界から現れた深紅の生き物。あらゆる定命の者に対する怒りに駆られている。",
+      "motivesAndTactics": "予測不能な行動を取る、標的を追い詰める、苦痛を味わう、苦しめる",
+      "difficulty": 14,
+      "damageThresholds": "8／15",
+      "hp": 8,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "爪",
+        "range": "近接",
+        "damagedice": "1d8+6",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "このデーモンにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "みな滅ぶべし",
+          "type": "受動",
+          "description": "このデーモンの近距離射程内で恐怖失敗したPCは、希望を1つ失う。"
+        },
+        {
+          "name": "地獄の業火",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内に業火の雨を降らす。この範囲内にいるすべての目標は【敏捷】反応ロールを行わなければならない。失敗した目標は1d20＋3の魔法ダメージを受ける。成功した目標は半分のダメージを受ける。"
+        },
+        {
+          "name": "魂刈り",
+          "type": "反応",
+          "description": "君はこのデーモンの攻撃のダメージを振る前に、ストレスを1つマークして、そのダメージロールに“このデーモンが現在マークしているHPの数”に等しいボーナスを得ることができる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このデーモンがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "minor-treant",
+      "name": "下級トリエント",
+      "tier": 1,
+      "type": "雑魚",
+      "description": "森を守るために立ち上がる歩行可能な苗木。",
+      "motivesAndTactics": "破壊、圧倒、保護",
+      "difficulty": 10,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": -2,
+      "standardAttack": {
+        "name": "爪枝",
+        "range": "近接",
+        "damagedice": "4",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（5）",
+          "type": "受動",
+          "description": "このトリエントはダメージを受けると倒れる。PCがこのトリエントに5ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《マイナー・トリエント》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ4の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "green-ooze",
+      "name": "グリーン・ウーズ",
+      "tier": 1,
+      "type": "潜伏",
+      "description": "透明な緑色のスライムからなる動く塊。",
+      "motivesAndTactics": "環境に溶け込む、食べて増殖する、忍び寄る、包み込む",
+      "difficulty": 8,
+      "damageThresholds": "5／10",
+      "hp": 5,
+      "stress": 2,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "粘腕",
+        "range": "近接",
+        "damagedice": "1d6+1",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "迷彩",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "鈍重",
+          "type": "受動",
+          "description": "君がこのウーズにスポットライトを当てた時、データブロックの上にトークンがなければ、このウーズは行動できない。データブロックにトークンを置き、どんな行動を準備しているか説明すること。君がこのウーズにスポットライトを当てた時、データブロックの上にトークンがあれば、このウーズは行動できる。トークンを取り除くこと。"
+        },
+        {
+          "name": "酸の体",
+          "type": "受動",
+          "description": "このウーズが攻撃に成功した時、目標は防具スロットを1つマークしなければならない（これは何の利益ももたらさないが、さらに防具を使用してダメージを軽減することはできる）。防具スロットをマークできないなら、HPを追加で1つマークしなければならない。"
+        },
+        {
+          "name": "包み込み",
+          "type": "行動",
+          "description": "近接射程内の目標1体に対して通常攻撃を行う。成功したなら、このウーズが目標を包み込み、目標はストレスを2つマークしなければならない。目標は行動を行う際にストレスを追加で1つマークしなければならない。このウーズが大ダメージを受けたなら、目標は解放される。"
+        },
+        {
+          "name": "分裂",
+          "type": "反応",
+          "description": "このウーズがHPを3つ以上マークしている時、君は恐怖を1つ消費して、このウーズを2体の《小型グリーン・ウーズ》（HPとストレスは一切マークしていない状態）に分裂させることができる。即座にその2体にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "tiny-green-ooze",
+      "name": "小型グリーン・ウーズ",
+      "tier": 1,
+      "type": "潜伏",
+      "description": "透明な緑色のスライムからなる小さな動く塊。",
+      "motivesAndTactics": "環境に溶け込む、忍び寄る",
+      "difficulty": 14,
+      "damageThresholds": "4／なし",
+      "hp": 2,
+      "stress": 1,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "粘腕",
+        "range": "近接",
+        "damagedice": "1d4+1",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "酸の体",
+          "type": "受動",
+          "description": "このウーズが攻撃に成功した時、目標は防具スロットを1つマークしなればならない（これは何の利益ももたらさないが、さらに防具を使用してダメージを軽減することはできる）。防具スロットをマークできないなら、HPを追加で1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "red-ooze",
+      "name": "レッド・ウーズ",
+      "tier": 1,
+      "type": "潜伏",
+      "description": "透明な燃える赤いスライムからなる動く塊。",
+      "motivesAndTactics": "環境に溶け込む、食べて増殖する、発火する、火を点ける",
+      "difficulty": 10,
+      "damageThresholds": "6／11",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "粘腕",
+        "range": "近接",
+        "damagedice": "1d8+3",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "迷彩",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "這い寄る炎",
+          "type": "受動",
+          "description": "このウーズが通常の移動として動けるのは、至近距離射程内のみである。このウーズが触れた可燃性の物体はすべて着火する。"
+        },
+        {
+          "name": "発火",
+          "type": "行動",
+          "description": "至近距離射程内の目標1体に対して攻撃を行う。成功したなら、目標は1d8の魔法ダメージを受けて発火状態になる。この状態は【技巧】ロール（14）に成功して消火するまで継続する。発火状態の間、目標は行動ロールを行う際に1d4の魔法ダメージを受ける。"
+        },
+        {
+          "name": "分裂",
+          "type": "反応",
+          "description": "このウーズがHPを3つ以上マークしている時、君は恐怖を1つ消費して、このウーズを2体の《小型レッド・ウーズ》に分裂させることができる（マークされているHPとストレスは持ち越さない）。即座にその2体にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "tiny-red-ooze",
+      "name": "小型レッド・ウーズ",
+      "tier": 1,
+      "type": "潜伏",
+      "description": "透明な燃える赤いスライムからなる小さな動く塊。",
+      "motivesAndTactics": "燃え上がる、環境に溶け込む",
+      "difficulty": 11,
+      "damageThresholds": "5／なし",
+      "hp": 2,
+      "stress": 1,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "粘腕",
+        "range": "近接",
+        "damagedice": "1d4+2",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "燃焼",
+          "type": "反応",
+          "description": "近接射程内のクリーチャーは、このウーズにダメージを与えた時、1d6の直接魔法ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "petty-noble",
+      "name": "小貴族",
+      "tier": 1,
+      "type": "社交",
+      "description": "豪華な服装を装飾品で飾り立てた、自信過剰な貴族。",
+      "motivesAndTactics": "権力を濫用する、資源を集める、手下を動員する",
+      "difficulty": 14,
+      "damageThresholds": "6／10",
+      "hp": 3,
+      "stress": 5,
+      "attackModifier": -3,
+      "standardAttack": {
+        "name": "レイピア",
+        "range": "近接",
+        "damagedice": "1d6+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "貴族",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "我が領地、我が法",
+          "type": "受動",
+          "description": "この貴族に対して領地内で行われるあらゆる社交的行動は不利を受ける。"
+        },
+        {
+          "name": "衛兵、取り押さえよ！",
+          "type": "行動",
+          "description": "場面ごとに1回、ストレスを1つマークして、1d4人の《剣の衛兵》を召喚する。召喚した衛兵は遠距離射程に現れ、この貴族の意思を遂行する。"
+        },
+        {
+          "name": "追放",
+          "type": "行動",
+          "description": "恐怖を1つ消費してPC1人を目標とする。この貴族は目標とその味方たちを自分の領地から追放することを宣言する。追放されている間、目標とその味方はこの貴族の領地内での社交的状況において不利を受ける。"
+        }
+      ]
+    },
+    {
+      "id": "pirate-captain",
+      "name": "海賊船長",
+      "tier": 1,
+      "type": "指揮",
+      "description": "印象的な帽子をかぶったカリスマ的な海賊。襲撃や略奪に熱心である。",
+      "motivesAndTactics": "命令する、板の上を歩かせる、略奪する、襲撃する",
+      "difficulty": 14,
+      "damageThresholds": "7／14",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "カトラス",
+        "range": "近接",
+        "damagedice": "1d12+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "指揮",
+          "modifier": 2
+        },
+        {
+          "name": "船乗り",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "剣戟",
+          "type": "受動",
+          "description": "この船長が近接射程内の攻撃によって2つ以下のHPをマークした時、攻撃者はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "援軍",
+          "type": "行動",
+          "description": "場面ごとに1回、ストレスを1つマークして、遠距離射程に《海賊の襲撃隊》を召喚する。"
+        },
+        {
+          "name": "情けはかけぬ",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、近接射程内に海賊が3人以上いる目標1体を選ぶ。この船長は海賊たちを先導して、脅し文句を浴びせ、必ず海の底に沈めてやると約束する。目標は【存在】反応ロールを行わなければならない。失敗したなら、目標はストレスを1d4＋1つマークする。成功したなら、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この船長がPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "pirate-raiders",
+      "name": "海賊の襲撃隊",
+      "tier": 1,
+      "type": "大群（2／HP）",
+      "description": "集団で動き回り略奪する、船乗りの悪党。",
+      "motivesAndTactics": "徒党を組む、略奪する、襲撃する",
+      "difficulty": 12,
+      "damageThresholds": "5／11",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "カトラス",
+        "range": "近接",
+        "damagedice": "1d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "船乗り",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "大群（1d4＋1）",
+          "type": "受動",
+          "description": "この大群がHPを半分以上マークしている時、通常攻撃が与える物理ダメージは1d4＋1になる。"
+        },
+        {
+          "name": "剣戟",
+          "type": "受動",
+          "description": "この襲撃部隊が近接射程内の攻撃によって2つ以下のHPをマークした時、攻撃者はストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "pirate-tough",
+      "name": "海賊の乱暴者",
+      "tier": 1,
+      "type": "暴力",
+      "description": "筋肉隆々でタトゥーの入った、メロン大の拳を持つ海賊。",
+      "motivesAndTactics": "略奪する、襲撃する、叩き壊す、怖がらせる",
+      "difficulty": 13,
+      "damageThresholds": "8／15",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "大拳",
+        "range": "近接",
+        "damagedice": "2d6",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "船乗り",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "剣戟",
+          "type": "受動",
+          "description": "このならず者が近接射程内の攻撃によって2つ以下のHPをマークした時、攻撃者はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "甲板掃除",
+          "type": "行動",
+          "description": "至近距離射程内の目標1体に対して攻撃を行う。成功したなら、ストレスを1つマークして目標の近接射程内に移動し、3d4の物理ダメージを与えて目標を近距離射程まで吹き飛ばす。"
+        }
+      ]
+    },
+    {
+      "id": "sellsword",
+      "name": "傭兵",
+      "tier": 1,
+      "type": "雑魚",
+      "description": "運試しをする武装傭兵。",
+      "motivesAndTactics": "突撃する、切り裂く、圧倒する、儲ける",
+      "difficulty": 10,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "ロングソード",
+        "range": "近接",
+        "damagedice": "3",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（4）",
+          "type": "受動",
+          "description": "この傭兵はダメージを受けると倒れる。PCがこの傭兵に4ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《傭兵》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ3の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-archer",
+      "name": "スケルトンの弓使い",
+      "tier": 1,
+      "type": "射撃",
+      "description": "短弓と矢を持った脆い骸骨。",
+      "motivesAndTactics": "注意の逸れた標的に穴を開ける、死んだふりをする、皮を剥ぐ",
+      "difficulty": 9,
+      "damageThresholds": "4／7",
+      "hp": 3,
+      "stress": 2,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "ショートボウ",
+        "range": "遠距離",
+        "damagedice": "1d8+1",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "便乗",
+          "type": "受動",
+          "description": "クリーチャーの至近距離射程内に2体以上の敵がいる時、この弓使いがそのクリーチャーに与えるダメージはすべて2倍になる。"
+        },
+        {
+          "name": "トドメの一射",
+          "type": "行動",
+          "description": "遠距離射程内にいる脆弱状態の目標1体に対して攻撃を行う。成功したなら、ストレスを1つマークして3d4＋8の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-dredge",
+      "name": "スケルトンの底浚い",
+      "tier": 1,
+      "type": "雑魚",
+      "description": "カタカタと音を立てる骨の山。",
+      "motivesAndTactics": "崩れ落ちる、圧倒する、死んだふりをする、皮を剥ぐ",
+      "difficulty": 8,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "骨爪",
+        "range": "近接",
+        "damagedice": "1",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（4）",
+          "type": "受動",
+          "description": "この底浚いはダメージを受けると倒れる。PCがこの底浚いに4ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての底浚いにスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ1の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-knight",
+      "name": "スケルトンの騎士",
+      "tier": 1,
+      "type": "暴力",
+      "description": "剣と盾を携えた、戦いの傷跡だらけの骸骨。",
+      "motivesAndTactics": "圧倒する、死んだふりをする、保護する、皮を剥ぐ",
+      "difficulty": 13,
+      "damageThresholds": "7／14",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "ロングソード",
+        "range": "近接",
+        "damagedice": "1d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "盾打撃",
+          "type": "行動",
+          "description": "近接射程内の目標1体に対して攻撃を行う。成功したなら、ストレスを1つマークして、1d8＋2の物理ダメージを与え、目標を至近距離射程へ吹き飛ばす。"
+        },
+        {
+          "name": "不死",
+          "type": "反応",
+          "description": "この騎士が最後のHPをマークした時、d6を振る。出た目が5以上だったなら、HPを1つ回復する。"
+        }
+      ]
+    },
+    {
+      "id": "skeleton-warrior",
+      "name": "スケルトンの戦士",
+      "tier": 1,
+      "type": "標準",
+      "description": "剣を携え、戦への渇望を武器とする、脆い骸骨。",
+      "motivesAndTactics": "圧倒、死んだふり、保護、皮を剥ぐ",
+      "difficulty": 10,
+      "damageThresholds": "5／9",
+      "hp": 4,
+      "stress": 2,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "ショートソード",
+        "range": "近接",
+        "damagedice": "1d6+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "便乗",
+          "type": "受動",
+          "description": "クリーチャーの至近距離射程内に2体以上の敵がいる時、この戦士がそのクリーチャーに与えるダメージはすべて2倍になる。"
+        },
+        {
+          "name": "断末魔の一撃",
+          "type": "反応",
+          "description": "この戦士が最後のHPをマークした時、最も近くにいる目標に対して通常攻撃を行う。"
+        }
+      ]
+    },
+    {
+      "id": "spellblade",
+      "name": "呪文剣士",
+      "tier": 1,
+      "type": "標準",
+      "description": "刃と秘術魔法の両方を振るう訓練を積んだ戦士。",
+      "motivesAndTactics": "決闘する、圧倒する、技術を証明する、敵を打ち倒す",
+      "difficulty": 12,
+      "damageThresholds": "6／11",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "秘術刃",
+        "range": "近接",
+        "damagedice": "1d8+2",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "秘術知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "呪文攻撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に対して通常攻撃を行う。成功したなら、（通常ダメージではなく）2d8＋3の魔法ダメージを与える。"
+        },
+        {
+          "name": "秘術的受け流し",
+          "type": "反応",
+          "description": "この呪文剣士への攻撃が成功した時、ストレスを1つマークしてそのダメージを1d8＋2だけ減少させる。"
+        }
+      ]
+    },
+    {
+      "id": "swarm-of-rats",
+      "name": "ラットの大群",
+      "tier": 1,
+      "type": "大群（2／HP）",
+      "description": "飢えた齧歯類からなる蠢く塊。",
+      "motivesAndTactics": "食い尽くす、圧倒する、走り回る、群がる",
+      "difficulty": 9,
+      "damageThresholds": "5／10",
+      "hp": 6,
+      "stress": 2,
+      "attackModifier": -2,
+      "standardAttack": {
+        "name": "噛みつき",
+        "range": "近接",
+        "damagedice": "1d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "大群（1d4＋1）",
+          "type": "受動",
+          "description": "この大群がHPを半分以上マークしている時、通常攻撃が与える物理ダメージは1d4＋1になる。"
+        },
+        {
+          "name": "制圧",
+          "type": "行動",
+          "description": "ストレスを1つマークして、この大群を近距離射程内の任意の場所に移動させる。その際、道中のクリーチャーや物体を通り抜けることができる。この大群が通り抜けたすべての目標は【敏捷】反応ロールを行わなければならない。失敗したなら、目標は1d6＋1の物理ダメージを受け、次の自分の行動まで脆弱状態になる。"
+        }
+      ]
+    },
+    {
+      "id": "sylvan-soldier",
+      "name": "シルヴァンの兵士",
+      "tier": 1,
+      "type": "標準",
+      "description": "自然の武器と古来の修行を身につけた、規律正しい森の戦士。",
+      "motivesAndTactics": "縄張りを守る、自然を保護する、素早く攻撃する、協力する",
+      "difficulty": 12,
+      "damageThresholds": "6／12",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "茨剣",
+        "range": "近接",
+        "damagedice": "1d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "森の歩み",
+          "type": "受動",
+          "description": "この兵士は自然地形をペナルティなしに通り抜けることができる。"
+        },
+        {
+          "name": "連携攻撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に対して通常攻撃を行う。他の《シルヴァンの兵士》が目標の近接射程内にいるなら、（通常ダメージではなく）2d6＋4の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "tangle-bramble-swarm",
+      "name": "タングル・ブランブルの大群",
+      "tier": 1,
+      "type": "大群（2／HP）",
+      "description": "近くにあるものすべてに絡みつき、激しく叩きつける、生きた棘のある蔦の塊。",
+      "motivesAndTactics": "絡みつく、縄張りを守る、圧倒する、拘束する",
+      "difficulty": 10,
+      "damageThresholds": "6／12",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "棘蔦",
+        "range": "近距離",
+        "damagedice": "1d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "大群（1d4＋1）",
+          "type": "受動",
+          "description": "このブランブルがHPを半分以上マークしている時、通常攻撃が与える物理ダメージは1d4＋1になる。"
+        },
+        {
+          "name": "絡みつく下生え",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内にいるすべての目標に対して攻撃を行う。このブランブルが成功した目標は、1d6＋2の物理ダメージを受け、【筋力】ロールに成功して脱出するまで拘束状態になる。"
+        }
+      ]
+    },
+    {
+      "id": "tangle-bramble",
+      "name": "タングル・ブランブル",
+      "tier": 1,
+      "type": "標準",
+      "description": "侵入者を叩きつける、棘のある生きた蔦の絡まり。",
+      "motivesAndTactics": "絡みつく、縄張りを守る、拘束する",
+      "difficulty": 11,
+      "damageThresholds": "5／10",
+      "hp": 4,
+      "stress": 2,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "棘蔦",
+        "range": "近距離",
+        "damagedice": "1d6+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "掴みかかる蔦",
+          "type": "行動",
+          "description": "近距離射程内の目標1体に対して攻撃を行う。成功したなら、ストレスを1つマークして、目標を拘束状態にする。この状態は【筋力】ロールに成功して脱出するまで継続する。"
+        }
+      ]
+    },
+    {
+      "id": "weaponmaster",
+      "name": "武具使い",
+      "tier": 1,
+      "type": "指揮",
+      "description": "多種多様な武器に習熟した戦闘の達人。",
+      "motivesAndTactics": "専門技能を披露する、敵を支配する、自分にふさわしい相手を求める",
+      "difficulty": 14,
+      "damageThresholds": "8／16",
+      "hp": 7,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "任意の武器",
+        "range": "近接",
+        "damagedice": "1d10+3",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "戦闘の達人",
+          "type": "受動",
+          "description": "この武具使いは通常攻撃のダメージ種別を選択できる。"
+        },
+        {
+          "name": "武器落とし",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に対して攻撃を行う。成功したなら、1d8＋3の物理ダメージを与え、目標に持っているアイテムを1つ落とさせる。"
+        },
+        {
+          "name": "即反撃",
+          "type": "反応",
+          "description": "近接射程内のクリーチャーがこの武具使いに対する攻撃を外した時、そのクリーチャーに対して通常攻撃を行う。"
+        }
+      ]
+    },
+    {
+      "id": "young-dryad",
+      "name": "ヤング・ドライアド",
+      "tier": 1,
+      "type": "支援",
+      "description": "まだ自分の魔法の全容を学ぶ途中の、若き木の精霊。",
+      "motivesAndTactics": "親しくなる、森を守る、味方を保護する、自然の魔法を使う",
+      "difficulty": 12,
+      "damageThresholds": "5／10",
+      "hp": 4,
+      "stress": 4,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "自然の矢",
+        "range": "近距離",
+        "damagedice": "1d6+2",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "自然の祝福",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内の味方1体にこのドライアドの次の行動まで物理ダメージへの抵抗を付与する。"
+        },
+        {
+          "name": "絡みつく根",
+          "type": "行動",
+          "description": "恐怖を1つマークして、遠距離射程内の一点を選ぶ。その地点から至近距離内にいるすべての目標は【筋力】反応ロールを行わなければならず、失敗すると拘束状態になる。"
+        }
+      ]
+    },
+    {
+      "id": "brawny-zombie",
+      "name": "屈強ゾンビ",
+      "tier": 1,
+      "type": "暴力",
+      "description": "強靭な手足を持ち飽くことなき飢えを抱えた、巨躯の屍。",
+      "motivesAndTactics": "貪る、圧倒する、殴りつける、肉を裂く",
+      "difficulty": 11,
+      "damageThresholds": "7／14",
+      "hp": 7,
+      "stress": 2,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "拳",
+        "range": "近接",
+        "damagedice": "1d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "容赦なき飢え",
+          "type": "受動",
+          "description": "このゾンビは、HPをマークしている目標に対して追加で1d6の物理ダメージを与える。"
+        },
+        {
+          "name": "粉砕の一撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に対して攻撃を行う。成功したなら、2d8＋3の物理ダメージを与え、目標を至近距離射程へ吹き飛ばす。"
+        }
+      ]
+    },
+    {
+      "id": "patchwork-zombie-hulk",
+      "name": "継ぎはぎ巨大ゾンビ",
+      "tier": 1,
+      "type": "暴力",
+      "description": "無数の肉体を継ぎ合わせた巨大な屍。",
+      "motivesAndTactics": "破壊する、貪る、暴れ回る、叩き壊す",
+      "difficulty": 13,
+      "damageThresholds": "9／18",
+      "hp": 9,
+      "stress": 4,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "巨拳",
+        "range": "近接",
+        "damagedice": "1d12+3",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "このゾンビにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "投げ飛ばし",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に対して攻撃を行う。成功したなら、1d10＋3の物理ダメージを与え、目標を遠距離射程へ投げ飛ばす。"
+        },
+        {
+          "name": "不死の塊",
+          "type": "反応",
+          "description": "このゾンビが最後のHPをマークした時、近距離射程内にいるすべての目標は【筋力】反応ロールを行わなければならない。失敗した目標は2d6＋3の物理ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "rotted-zombie",
+      "name": "腐敗ゾンビ",
+      "tier": 1,
+      "type": "標準",
+      "description": "病気と腐敗で膨れ上がった、朽ち果てた屍。",
+      "motivesAndTactics": "貪る、病を広める、よろめく、圧倒する",
+      "difficulty": 9,
+      "damageThresholds": "4／8",
+      "hp": 4,
+      "stress": 2,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "腐敗の噛みつき",
+        "range": "近接",
+        "damagedice": "1d6+1",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "腐臭",
+          "type": "受動",
+          "description": "このゾンビの攻撃によってHPをマークした目標は、ストレスも1つマークしなければならない。"
+        },
+        {
+          "name": "断末魔の爆発",
+          "type": "反応",
+          "description": "このゾンビが最後のHPをマークした時、至近距離射程内にいるすべての目標は【敏捷】反応ロールを行わなければならず、失敗するとストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "shambling-zombie",
+      "name": "よろめきゾンビ",
+      "tier": 1,
+      "type": "標準",
+      "description": "飢えのみに駆られ、よろめきながら動く生ける屍。",
+      "motivesAndTactics": "貪る、飢える、敵に殺到する、肉を引き裂く",
+      "difficulty": 10,
+      "damageThresholds": "4／6",
+      "hp": 4,
+      "stress": 1,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "噛みつき",
+        "range": "近接",
+        "damagedice": "1d6+1",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "手に負えない数",
+          "type": "受動",
+          "description": "このゾンビがクリーチャーの近接射程内におり、かつ近距離射程内に他のゾンビが最低1体いる時、そのクリーチャーに対するすべての攻撃は有利を得る。"
+        },
+        {
+          "name": "おぞましき姿",
+          "type": "受動",
+          "description": "このゾンビの攻撃によってHPをマークした目標は、ストレスも1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "zombie-pack",
+      "name": "ゾンビの群れ",
+      "tier": 1,
+      "type": "大群（2／HP）",
+      "description": "本能的に固まって動く、よろめく屍集団。",
+      "motivesAndTactics": "肉を食い尽くす、飢える、打ちのめす",
+      "difficulty": 8,
+      "damageThresholds": "6／12",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "噛みつき",
+        "range": "近接",
+        "damagedice": "1d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "大群（1d4＋2）",
+          "type": "受動",
+          "description": "このゾンビがHPを半分以上マークしている時、通常攻撃が与える物理ダメージは1d4＋2になる。"
+        },
+        {
+          "name": "圧倒",
+          "type": "反応",
+          "description": "このゾンビが近接射程内の攻撃によってHPをマークする時、君はストレスを1つマークして、攻撃者に対して通常攻撃を行うことができる。"
+        }
+      ]
+    }
+  ],
+  "tier-2": [
+    {
+      "id": "archer-squadron",
+      "name": "弓兵部隊",
+      "tier": 2,
+      "type": "大群（2／HP）",
+      "description": "巨大な弓を持った、訓練された弓兵の集団。",
+      "motivesAndTactics": "隊形を維持する、生き延びる、矢を放つ",
+      "difficulty": 13,
+      "damageThresholds": "8／16",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "ロングボウ",
+        "range": "遠距離",
+        "damagedice": "2d6+3",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "大群（1d6＋3）",
+          "type": "受動",
+          "description": "この部隊がHPを半分以上マークしている時、通常攻撃が与える物理ダメージは1d6＋3になる。"
+        },
+        {
+          "name": "集中掃射",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内の一点を目標とする。その地点の近距離射程内にいるすべての目標に対して有利で攻撃を行う。この部隊が成功した目標は1d10＋4の物理ダメージを受ける。"
+        },
+        {
+          "name": "制圧射撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、遠距離射程内の一点を目標とする。次にロール結果が恐怖となるまで、その地点の近距離射程内で移動したクリーチャーは、【敏捷】反応ロールを行わなければならない。失敗したなら、そのクリーチャーは2d6＋3の物理ダメージを受ける。成功したなら、半分のダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "apprentice-assassin",
+      "name": "見習い暗殺者",
+      "tier": 2,
+      "type": "雑魚",
+      "description": "実力を証明しようと意気込む若き見習い。",
+      "motivesAndTactics": "無謀な行動を取る、殺す、自分の価値を証明する、見せびらかす",
+      "difficulty": 13,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": -1,
+      "standardAttack": {
+        "name": "ダガー投擲",
+        "range": "至近距離",
+        "damagedice": "4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "侵入",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "雑魚（6）",
+          "type": "受動",
+          "description": "この暗殺者はダメージを受けると倒れる。PCがこの暗殺者に6ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《見習い暗殺者》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ4の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "assassin-poisoner",
+      "name": "暗殺者の毒使い",
+      "tier": 2,
+      "type": "潜伏",
+      "description": "毒と奇襲の両方に長けた、狡猾な悪党。",
+      "motivesAndTactics": "先を読む、報酬を受け取る、殺す、食料や水を汚染する",
+      "difficulty": 14,
+      "damageThresholds": "8／16",
+      "hp": 4,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "毒ダガー投擲",
+        "range": "近距離",
+        "damagedice": "2d8+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "侵入",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "グリンドルトゥース毒",
+          "type": "受動",
+          "description": "この暗殺者の攻撃によってHPをマークした目標は、HPを回復するまで脆弱状態になる。"
+        },
+        {
+          "name": "どこからともなく",
+          "type": "受動",
+          "description": "この暗殺者は、隠れ身状態にあるなら攻撃に有利を得る。"
+        },
+        {
+          "name": "燻蒸",
+          "type": "行動",
+          "description": "煙玉を落として近距離射程内の空気中に煙を充満させ、その範囲内にいるすべての目標を目眩状態にする。目眩状態の目標は次の自分の行動ロールに不利を受け、その時点でこの状態を解除する。"
+        }
+      ]
+    },
+    {
+      "id": "master-assassin",
+      "name": "達人暗殺者",
+      "tier": 2,
+      "type": "指揮",
+      "description": "威圧的な声と致死の刃を持つ、ベテランの殺し屋。",
+      "motivesAndTactics": "待ち伏せする、生還する、殺す、あらゆる事態に備える",
+      "difficulty": 15,
+      "damageThresholds": "12／25",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 5,
+      "standardAttack": {
+        "name": "鋸歯ダガー",
+        "range": "近距離",
+        "damagedice": "2d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "命令",
+          "modifier": 3
+        },
+        {
+          "name": "侵入",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "予想外の一撃",
+          "type": "受動",
+          "description": "この暗殺者が隠れ身状態で与えるダメージは直接ダメージになる。"
+        },
+        {
+          "name": "一斉攻撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、この暗殺者がマークしていないストレスと同じ数だけ、他の暗殺者にスポットライトを当てる。"
+        },
+        {
+          "name": "隠し刃",
+          "type": "反応",
+          "description": "この暗殺者が脆弱状態の目標に対して通常攻撃を成功させた時、君は恐怖を1つ消費して、通常ダメージの代わりに大ダメージを与えることができる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この暗殺者がPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "battle-box",
+      "name": "バトル・ボックス",
+      "tier": 2,
+      "type": "単体",
+      "description": "6つの面それぞれに異なるルーンが刻まれた立方体の構造物。",
+      "motivesAndTactics": "戦術を切り替える、敵を踏み潰す、正体を隠して待ち伏せる",
+      "difficulty": 15,
+      "damageThresholds": "10／20",
+      "hp": 8,
+      "stress": 6,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "叩きつけ",
+        "range": "近接",
+        "damagedice": "2d6+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "迷彩",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "このボックスにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "ランダム戦術",
+          "type": "行動",
+          "description": "ストレスを1つマークしてd6を振る。このボックスは対応するムーヴを使用する。魔力光線Mana Beam：このボックスは灼熱の光線を放つ。遠距離射程内の目標1体に対して攻撃を行う。成功したなら、2d10＋2の魔法ダメージを与える。炎噴射Fire Jets：このボックスは回転しながら炎の柱を吹き出し、空中に飛び上がる。近距離射程内にいるすべての目標に対して攻撃を行う。このボックスが成功した目標は2d8の物理ダメージを受ける。踏みつけTrample：このボックスは不規則に高速で飛び回る。近距離射程内にいるすべての目標に対して攻撃を行う。このボックスが成功した目標は1d6＋5の物理ダメージを受け、次に自分のロール結果が希望となるまで脆弱状態になる。感電ガスShocking Gas：このボックスは稲妻が走る銀色のガスを噴霧する。近距離射程内にいるすべての目標は【技巧】反応ロールを行わなければならず、失敗するとストレスを3つマークする。衝撃波Stunning Clap：このボックスは跳んで側面を叩きつけ、小さな衝撃波を生み出す。至近距離射程内にいるすべての目標は【筋力】反応ロールを行わなければならず、失敗するとこのボックスが倒れるまで脆弱状態になる。不協和音Psionic Whine：このボックスは機械の蜂の群れを放ち、その羽音で定命の者たちの精神を揺さぶる。近距離射程内にいるすべての目標は【存在】反応ロールを行わなければならず、失敗すると2d4＋9の直接魔法ダメージを受ける。"
+        },
+        {
+          "name": "過充填",
+          "type": "反応",
+          "description": "君はこのボックスの攻撃のダメージを振る前に、ストレスを1つマークして、ダメージロールにd6を加えることができる。加えて、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "断末魔の振動",
+          "type": "反応",
+          "description": "このボックスが最後のHPをマークした時、ボックスの魔力が破裂して力場の爆発を生む。近距離射程内にいるすべての目標は【直観】反応ロールを行わなければならず、失敗すると2d8＋1の魔法ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "chaos-skull",
+      "name": "ケイオス・スカル",
+      "tier": 2,
+      "type": "射撃",
+      "description": "きらめく魔法によって動く、宙に浮かんだ人型生物の頭蓋骨。",
+      "motivesAndTactics": "ケタケタと笑う、魔法を食らう、創造主に奉仕する",
+      "difficulty": 15,
+      "damageThresholds": "8／16",
+      "hp": 5,
+      "stress": 4,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "エネルギー爆発",
+        "range": "近距離",
+        "damagedice": "2d8+3",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "浮遊",
+          "type": "受動",
+          "description": "このスカルは地面から数フィート浮いており、拘束状態にならない。"
+        },
+        {
+          "name": "防護",
+          "type": "受動",
+          "description": "このスカルは魔法ダメージへの抵抗を持つ。"
+        },
+        {
+          "name": "魔力炸裂",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内にいるすべての目標に対して攻撃を行う。このスカルが成功した目標は2d6＋4の魔法ダメージを受ける。"
+        },
+        {
+          "name": "魔法抽出",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、至近距離射程内のPC1人に対して呪文発動特性を用いて攻撃を行う。成功したなら、目標は1d4ストレスをマークし、このスカルは同じ数のストレスを回復する。加えて、成功したなら、このスカルは即座に再びスポットライトを浴びる。"
+        }
+      ]
+    },
+    {
+      "id": "conscript",
+      "name": "徴集兵",
+      "tier": 2,
+      "type": "雑魚",
+      "description": "訓練を受けずに戦場へ駆り出された民間人。",
+      "motivesAndTactics": "命令に従う、徒党を組む、生き残る",
+      "difficulty": 12,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "槍",
+        "range": "至近距離",
+        "damagedice": "6",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（6）",
+          "type": "受動",
+          "description": "この徴集兵はダメージを受けると倒れる。PCがこの徴集兵に6ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《徴集兵》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ6の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "courtesan",
+      "name": "遊女",
+      "tier": 2,
+      "type": "社交",
+      "description": "他者を操ることに卓越した、社交術の達人。",
+      "motivesAndTactics": "唆す、うまく立ち回る、後援者を確保する",
+      "difficulty": 13,
+      "damageThresholds": "7／13",
+      "hp": 3,
+      "stress": 4,
+      "attackModifier": -3,
+      "standardAttack": {
+        "name": "ダガー",
+        "range": "近接",
+        "damagedice": "1d4+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "人心操作",
+          "modifier": 3
+        },
+        {
+          "name": "社交",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "灼けつく視線",
+          "type": "反応",
+          "description": "近距離射程内のPCが【存在】ロールを行った時、君はストレスを1つマークして、成り行きに視線を投げることができる。目標が失敗したなら、目標はストレスを2つマークしなければならず、脆弱状態になる。この状態は、場面が終了するか、目標がこの遊女に対する社交的行動に成功するまで継続する。目標が成功したなら、目標はストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "cult-adept",
+      "name": "カルト教団の熟練者",
+      "tier": 2,
+      "type": "支援",
+      "description": "影と恐怖を操る、熟練の魔道士。",
+      "motivesAndTactics": "取り入る、敵を妨害する、知識を紐解く",
+      "difficulty": 14,
+      "damageThresholds": "9／18",
+      "hp": 4,
+      "stress": 6,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "ルーン刻みの杖",
+        "range": "遠距離",
+        "damagedice": "2d4+3",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "堕落知識",
+          "modifier": 2
+        },
+        {
+          "name": "儀式",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "衰弱の爆発",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、射程内の目標1体に対して通常攻撃を行う。成功したなら、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "堕落者の衣",
+          "type": "行動",
+          "description": "ストレスを1つマークして、この熟練者が最後のHPをマークするまで近距離射程内の味方1体を保護の衣で包む。保護状態の間、目標はあらゆるダメージへの抵抗を持つ。"
+        },
+        {
+          "name": "影の枷",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内の一点を選ぶ。その地点の近距離射程内にいるすべての目標は、煙の鎖によって拘束状態になる。この状態は、【筋力】または【直観】ロールに成功して自由になるまで継続する。この特徴によって拘束されている目標は、行動ロールを行う際に希望を1つ消費しなければならない。"
+        },
+        {
+          "name": "恐怖は糧",
+          "type": "反応",
+          "description": "場面ごとに2回、PCがロールに恐怖失敗した時、ストレスを1つ回復する。"
+        }
+      ]
+    },
+    {
+      "id": "cult-fang",
+      "name": "カルト教団の爪牙",
+      "tier": 2,
+      "type": "潜伏",
+      "description": "カルト教団に入信したプロの殺し屋。",
+      "motivesAndTactics": "生贄を捕らえる、獲物を孤立させる、地位を上げる",
+      "difficulty": 15,
+      "damageThresholds": "9／17",
+      "hp": 4,
+      "stress": 4,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "長ナイフ",
+        "range": "近接",
+        "damagedice": "2d8+4",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "影の抱擁",
+          "type": "受動",
+          "description": "この爪牙は、垂直な表面を登ったり歩いたりすることができる。ストレスを1つマークして、影から遠距離射程内の別の影に移動することができる。"
+        },
+        {
+          "name": "はぐれ者狙い",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内の目標1体に【直観】反応ロールを行わせる。失敗したなら、目標はストレスを2つマークしなければならず、この爪牙と共に遠距離射程内の影に転移し、脆弱状態になる。成功したなら、目標はストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "cult-initiate",
+      "name": "カルト教団の新入り",
+      "tier": 2,
+      "type": "雑魚",
+      "description": "権力を手に入れようと躍起になっている、質素なローブをまとった低級のカルト教団員。",
+      "motivesAndTactics": "命令に従う、権力を手に入れる、禁断の知識を求める",
+      "difficulty": 13,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "儀式のダガー",
+        "range": "近接",
+        "damagedice": "5",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（6）",
+          "type": "受動",
+          "description": "この新入りはダメージを受けると倒れる。PCがこの新入りに6ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《カルト教団の新入り》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ5の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "demonic-hound-pack",
+      "name": "デモニック・ハウンドの群れ",
+      "tier": 2,
+      "type": "大群（1／HP）",
+      "description": "地獄の炎が体内から照らす不自然な猟犬たち。",
+      "motivesAndTactics": "恐怖を呼び起こす、肉を貪る、主人に奉仕する",
+      "difficulty": 15,
+      "damageThresholds": "11／23",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "爪と牙",
+        "range": "近接",
+        "damagedice": "2d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "嗅覚追跡",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "大群（2d4＋1）",
+          "type": "受動",
+          "description": "この群れがHPを半分以上マークしている時、通常攻撃が与える物理ダメージは2d4＋1になる。"
+        },
+        {
+          "name": "戦慄の遠吠え",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内にいるすべての目標に希望を1つ失わせる。目標が希望を失えないなら、代わりにストレスを2つマークしなければならない。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この群れがPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "electric-eels",
+      "name": "エレクトリック・イールの群れ",
+      "tier": 2,
+      "type": "大群（2／HP）",
+      "description": "標的を取り囲んで感電させるウナギの群れ。",
+      "motivesAndTactics": "大きな捕食者を避ける、獲物を感電させる、引き裂く",
+      "difficulty": 14,
+      "damageThresholds": "10／20",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "感電の噛みつき",
+        "range": "近接",
+        "damagedice": "2d6+4",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "大群（2d4＋1）",
+          "type": "受動",
+          "description": "この群れがHPを半分以上マークしている時、通常攻撃が与える物理ダメージは2d4＋1になる。"
+        },
+        {
+          "name": "痺れる電流",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内にいるすべての目標に対して通常攻撃を行う。君はHPをマークした目標1体につき恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "elite-soldier",
+      "name": "精鋭兵",
+      "tier": 2,
+      "type": "標準",
+      "description": "昇進を目指す、鎧をまとった従者や戦闘経験豊富な一般人。",
+      "motivesAndTactics": "栄光を得る、秩序を維持する、同盟を結ぶ",
+      "difficulty": 15,
+      "damageThresholds": "9／18",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "槍",
+        "range": "至近距離",
+        "damagedice": "2d8+5",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "増強",
+          "type": "行動",
+          "description": "ストレスを1つマークして、味方1体の近接射程内に移動し、至近距離射程内の目標1体に対して通常攻撃を行う。成功したなら、2d10＋2の物理ダメージを与え、その味方はストレスを1つ回復できる。"
+        },
+        {
+          "name": "臣下の忠義",
+          "type": "反応",
+          "description": "この精鋭兵が騎士その他の貴族の至近距離射程内にいて、その貴族がダメージを受ける時、君はストレスを1つマークしてその貴族の近接射程内に移動して代わりにそのダメージを受けることができる。"
+        }
+      ]
+    },
+    {
+      "id": "failed-experiment",
+      "name": "フェイルド・エクスペリメント",
+      "tier": 2,
+      "type": "標準",
+      "description": "死霊術魔法の失敗により歪められ、不格好になった実験体。",
+      "motivesAndTactics": "貪る、狩る、追跡する",
+      "difficulty": 13,
+      "damageThresholds": "12／23",
+      "hp": 3,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "噛みつきと爪",
+        "range": "近接",
+        "damagedice": "2d6+5",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "物真似",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "歪んだ頑健性",
+          "type": "受動",
+          "description": "このエクスペリメントは物理ダメージへの抵抗を持つ。"
+        },
+        {
+          "name": "圧倒",
+          "type": "受動",
+          "description": "このエクスペリメントは、攻撃する目標の至近距離射程内に別の敵キャラクターがいる時、2倍のダメージを与える。"
+        },
+        {
+          "name": "よろめく突進",
+          "type": "行動",
+          "description": "恐怖を消費する代わりにストレスを1つマークして、追加のGMムーヴとして、このエクスペリメントにスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "giant-beastmaster",
+      "name": "ジャイアントの獣使い",
+      "tier": 2,
+      "type": "指揮",
+      "description": "鞭と巨大な弓を携え、革を身にまとった戦士。",
+      "motivesAndTactics": "命令する、生計を立てる、うまく立ち回る、釘付けにする、相棒の動物の守る",
+      "difficulty": 16,
+      "damageThresholds": "12／24",
+      "hp": 6,
+      "stress": 5,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "長弓",
+        "range": "遠距離",
+        "damagedice": "2d8+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "動物使い",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "一心同体",
+          "type": "受動",
+          "description": "この獣使いがスポットライトを浴びた時、君はその制御下にあるティア1敵キャラクターの動物1体にもスポットライトを当てることができる。"
+        },
+        {
+          "name": "釘付けの一撃",
+          "type": "行動",
+          "description": "目標1体に対して通常攻撃を行う。成功したなら、君はストレスを1つマークして、目標を近くの地表に釘付けにすることができる。釘付けにされた目標は、【技巧】または【筋力】ロールに成功して脱出するまで拘束状態になる。"
+        },
+        {
+          "name": "恐ろしい相棒",
+          "type": "行動",
+          "description": "場面ごとに2回、この獣使いの制御下にある《ベア》、《ダイア・ウルフ》、または類似のティア1敵キャラクターの動物1体を召喚する。召喚した敵キャラクターは近距離射程に現れ、即座にスポットライトを得る。"
+        }
+      ]
+    },
+    {
+      "id": "giant-brawler",
+      "name": "ジャイアントの喧嘩屋",
+      "tier": 2,
+      "type": "暴力",
+      "description": "ヒューマンより大きな戦鎚を振るう、とりわけ筋肉質の巨人。",
+      "motivesAndTactics": "生計を立てる、圧倒する、叩きつける、転倒させる",
+      "difficulty": 15,
+      "damageThresholds": "14／28",
+      "hp": 7,
+      "stress": 4,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "戦鎚",
+        "range": "至近距離",
+        "damagedice": "2d12+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "侵入",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "破城槌",
+          "type": "行動",
+          "description": "ストレスを1つマークして、この喧嘩屋を近距離射程内にある破壊可能で生き物でない物体（壁、荷車、露店など）に向かって突進させ、それを破壊する。その物体の至近距離射程内にいるすべての目標は【敏捷】反応ロールを行わなければならず、失敗すると破片によって2d4＋3の物理ダメージを受ける。"
+        },
+        {
+          "name": "血の報復",
+          "type": "反応",
+          "description": "この喧嘩屋が至近距離射程内の攻撃によってHPを2つ以上マークした時、君は攻撃者に対して通常攻撃を行うことができる。成功したなら、この喧嘩屋は通常ダメージの代わりに2d6＋15の物理ダメージを与える。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この喧嘩屋がPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "giant-recruit",
+      "name": "ジャイアントの新兵",
+      "tier": 2,
+      "type": "雑魚",
+      "description": "借りものの鎧をまとった巨人の戦士。",
+      "motivesAndTactics": "乱打する、生計を立てる、圧倒する、恐怖を与える",
+      "difficulty": 13,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 2,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "戦鎚",
+        "range": "至近距離",
+        "damagedice": "5",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（7）",
+          "type": "受動",
+          "description": "この新兵はダメージを受けると倒れる。PCがこの新兵に7ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《ジャイアントの新兵》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ5の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "giant-eagle",
+      "name": "巨大イーグル",
+      "tier": 2,
+      "type": "潜伏",
+      "description": "血に染まった鉤爪を持つ巨大な猛禽類。",
+      "motivesAndTactics": "獲物を狩る、機動力を確保する、果断に攻撃する",
+      "difficulty": 14,
+      "damageThresholds": "8／19",
+      "hp": 4,
+      "stress": 4,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "爪と嘴",
+        "range": "至近距離",
+        "damagedice": "2d6+3",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "飛行",
+          "type": "受動",
+          "description": "飛行中、このイーグルは難易度に＋3のボーナスを得る。"
+        },
+        {
+          "name": "急降下",
+          "type": "行動",
+          "description": "ストレスを1つマークして、遠距離射程内の目標1体に攻撃する。成功したなら、2d10＋2の物理ダメージを与え、目標を押し倒して次の目標の行動まで脆弱状態にする。"
+        },
+        {
+          "name": "飛翔",
+          "type": "行動",
+          "description": "至近距離射程内の目標1体に対して攻撃を行う。成功したなら、2d4＋3の物理ダメージを与える。さらに、目標は【敏捷】反応ロールを行わなければならず、失敗するとこのイーグルの巨大な鉤爪の中で一時的に拘束状態になる。目標が拘束されたなら、このイーグルは目標を掴んだまま即座に戦場上空の超遠距離射程へ飛び上がる。"
+        },
+        {
+          "name": "致死の投下",
+          "type": "行動",
+          "description": "飛行中、このイーグルは掴んでいる拘束状態の目標を落とすことができる。落とされた目標はもはや拘束状態ではなくなるが、落下し始める。そのPCの次の行動までに落下を止めなければ、目標は地面に衝突して2d20の物理ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "gorgon",
+      "name": "ゴーゴン",
+      "tier": 2,
+      "type": "単体",
+      "description": "蛇の髪を持ち、鱗に覆われた人型生物。金色の弓を携え、平穏が乱されると激怒する。",
+      "motivesAndTactics": "追い詰める、攻撃して逃げる、石化させる、復讐を求める",
+      "difficulty": 15,
+      "damageThresholds": "13／25",
+      "hp": 9,
+      "stress": 3,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "灼陽の短弓",
+        "range": "遠距離",
+        "damagedice": "2d20+3",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "隠密",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "このゴーゴンにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "灼陽の矢",
+          "type": "受動",
+          "description": "このゴーゴンが通常攻撃に成功した時、目標は場面の終了時まで輝き状態になり、隠れ身状態になれなくなる。輝いている目標に対する攻撃ロールは有利を得る。"
+        },
+        {
+          "name": "蛇の冠",
+          "type": "行動",
+          "description": "このゴーゴンを守る蛇を使用して、近接射程内の目標1体に対して攻撃ロールを行う。成功したなら、ストレスを1つマークして、2d10＋4の物理ダメージを与える。さらに、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "石化の視線",
+          "type": "反応",
+          "description": "このゴーゴンが近距離射程内の攻撃によってダメージを受けた時、君は恐怖を1つ消費して、攻撃者に【直観】反応ロールを行わせることができる。失敗したなら、目標は石化し始め、HPを1つマークし、石化カウントダウン（4）を開始する。このカウントダウンはこのゴーゴンが攻撃を受けると進む。カウントダウンが作動した時、目標は死亡ムーヴを行わなければならない。このゴーゴンが倒れたなら、石化カウントダウンはすべて終了する。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このゴーゴンがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "juvenile-flickerfly",
+      "name": "幼体フリッカーフライ",
+      "tier": 2,
+      "type": "単体",
+      "description": "虹色に輝く鱗と結晶質の羽を持ち、目では追いきれないほどの速さで動く、馬大の昆虫。",
+      "motivesAndTactics": "光るものを集める、狩りをする、急降下する",
+      "difficulty": 14,
+      "damageThresholds": "13／26",
+      "hp": 10,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "翼の斬りつけ",
+        "range": "至近距離",
+        "damagedice": "2d10+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "隠密",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "このフリッカーフライにはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "比類なき正確性",
+          "type": "受動",
+          "description": "このフリッカーフライが攻撃を行う前に、d6を振る。出た目が4以上なら、その攻撃に対する目標の回避値は半分になる。"
+        },
+        {
+          "name": "精神交錯",
+          "type": "行動",
+          "description": "ストレスを1つマークして、魔法的な眩い光を作り出し、周囲の敵の心を掴む。近距離射程内にいるすべての目標は【直観】反応ロールを行わなければならない。失敗した目標1体ごとに、君は恐怖を1つ得て、このフリッカーフライは目標が恐れているものを1つ知る。"
+        },
+        {
+          "name": "幻覚ブレス",
+          "type": "反応",
+          "description": "カウントダウン（繰り返し1d6）。このフリッカーフライが初めてダメージを受けた時、カウントダウンを開始する。カウントダウンが作動した時、このフリッカーフライは自分の前方の遠距離射程までにいるすべての目標に幻覚ガスを吐く。目標は【直観】反応ロールを行わなければならず、失敗すると恐ろしい幻覚に苛まれる。このフリッカーフライに恐れているものを知られている目標は、このロールに不利を受ける。失敗した目標はストレスを1つマークしなければならず、希望を1つ失う。"
+        }
+      ]
+    },
+    {
+      "id": "knight-of-the-realm",
+      "name": "王国騎士",
+      "tier": 2,
+      "type": "指揮",
+      "description": "重装甲を身にまとい、力強い馬に乗る、叙勲された兵士。",
+      "motivesAndTactics": "轢く、栄光を求める、支配力を示す",
+      "difficulty": 15,
+      "damageThresholds": "13／26",
+      "hp": 6,
+      "stress": 4,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "ロングソード",
+        "range": "近接",
+        "damagedice": "2d10+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "古代知識",
+          "modifier": 3
+        },
+        {
+          "name": "上流社会",
+          "modifier": 3
+        },
+        {
+          "name": "戦術",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "騎乗戦闘",
+          "type": "受動",
+          "description": "騎乗中、この騎士は難易度に＋2のボーナスを得る。この騎士は大ダメージを受けると乗騎から落ち、次にスポットライトを浴びるまでこの利益を失う。"
+        },
+        {
+          "name": "重装鎧",
+          "type": "受動",
+          "description": "この騎士が物理ダメージを受けた時、そのダメージを3減らす。"
+        },
+        {
+          "name": "騎兵突進",
+          "type": "行動",
+          "description": "この騎士が騎乗しているなら、遠距離射程まで移動し、目標1体に対して通常攻撃を行う。成功したなら、2d8＋4の物理ダメージを与える。さらに、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "王国のために！",
+          "type": "行動",
+          "description": "ストレスを1つマークして、1d4＋1体の味方にスポットライトを当てる。こうしてスポットライトを浴びている間、その味方が行う攻撃が与えるダメージは半分になる。"
+        }
+      ]
+    },
+    {
+      "id": "masked-thief",
+      "name": "覆面盗賊",
+      "tier": 2,
+      "type": "潜伏",
+      "description": "軽業と劇的な演出の才を持つ、狡猾な泥棒。",
+      "motivesAndTactics": "かいくぐる、隠れる、スリをする、儲ける",
+      "difficulty": 14,
+      "damageThresholds": "8／17",
+      "hp": 4,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "片刃剣",
+        "range": "近接",
+        "damagedice": "2d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "軽業",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "器用な手さばき",
+          "type": "行動",
+          "description": "近接射程内の目標1体に対して攻撃を行う。成功したなら、1d8＋2の物理ダメージを与える。さらに、この盗賊は目標の所持品からアイテムまたは消耗品を1つ盗む。"
+        },
+        {
+          "name": "逃走計画",
+          "type": "行動",
+          "description": "ストレスを1つマークして、戦場の任意の場所にこの盗賊が仕掛けた輪罠を明らかにする。その罠の至近距離射程内にいるすべての目標は、【敏捷】反応ロール（13）を行わなければならず、失敗すると足元をすくわれて逆さまに吊り下げられる。目標は拘束状態かつ脆弱状態になる。【技巧】または【筋力】ロール（13）に成功したなら、目標は脱出し、両状態が解除される。"
+        }
+      ]
+    },
+    {
+      "id": "merchant-baron",
+      "name": "商人男爵",
+      "tier": 2,
+      "type": "社交",
+      "description": "大規模事業を統率する、熟練の商人。",
+      "motivesAndTactics": "権力を乱用する、資源を集める、手下を動員する",
+      "difficulty": 15,
+      "damageThresholds": "9／19",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": -2,
+      "standardAttack": {
+        "name": "レイピア",
+        "range": "近接",
+        "damagedice": "1d6+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "高貴",
+          "modifier": 2
+        },
+        {
+          "name": "取引",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "買収材料",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、目標1体に目標が求めているか必要としているものについて危険な取引を持ちかける。相手がPCなら、目標は【存在】反応ロール（17）を行わなければならない。失敗したなら、目標はストレスを2つマークするか、取引を受けなければならない。"
+        },
+        {
+          "name": "金で買える最高の用心棒",
+          "type": "行動",
+          "description": "場面ごとに1回、ストレスを1つマークして、ティア1敵キャラクターを1d4＋1体召喚する。召喚した敵キャラクターは遠距離射程に現れ、この男爵の意思を遂行する。"
+        }
+      ]
+    },
+    {
+      "id": "minotaur-wrecker",
+      "name": "ミノタウロスの壊し屋",
+      "tier": 2,
+      "type": "暴力",
+      "description": "巨大な雄牛の頭を持つ短気なフィルボルグ。",
+      "motivesAndTactics": "食らい尽くす、角で突き刺す、道を探す、力で圧倒する、追求する",
+      "difficulty": 16,
+      "damageThresholds": "14／27",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "戦斧",
+        "range": "近距離",
+        "damagedice": "2d8+5",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "道探し",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "増強",
+          "type": "受動",
+          "description": "君はこのミノタウロスにスポットライトを当てる際、恐怖を1つ消費しなければならない。スポットライトを浴びている間、このミノタウロスは射程内にいるすべての目標に対して通常攻撃を行うことができる。"
+        },
+        {
+          "name": "雄牛の突進",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内の集団に突進し、このミノタウロスの通り道にいるすべての目標に対して攻撃を行う。このミノタウロスが成功した目標は2d6＋8の物理ダメージを受け、超遠距離射程へ吹き飛ばされる。固い物体や他のクリーチャーに衝突した目標は、1d6の追加ダメージを受ける（ダメージは合計すること）。"
+        },
+        {
+          "name": "突き刺し",
+          "type": "行動",
+          "description": "至近距離射程内の目標1体に対して攻撃を行い、このミノタウロスを目標の近接射程内に移動させる。成功したなら、2d8の直接物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "mortal-hunter",
+      "name": "モータル・ハンター",
+      "tier": 2,
+      "type": "指揮",
+      "description": "分厚い革のコートをまとったアンデッド。探るような目を向け、さりげなく残酷な態度をしている。",
+      "motivesAndTactics": "貪り食う、狩る、追跡する",
+      "difficulty": 16,
+      "damageThresholds": "15／27",
+      "hp": 6,
+      "stress": 4,
+      "attackModifier": 5,
+      "standardAttack": {
+        "name": "かきむしり",
+        "range": "至近距離",
+        "damagedice": "2d12+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "執拗な追跡",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "恐怖",
+          "type": "受動",
+          "description": "このハンターが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "死縛",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、至近距離射程内の目標1体を呪い、場面の終了時まで死霊による死縛状態にする。このハンターが死縛状態の目標に対して行う攻撃は、直接ダメージを与える。このハンターが維持できる死縛は一度に1つのみである。"
+        },
+        {
+          "name": "避けがたき死",
+          "type": "行動",
+          "description": "ストレスを1つマークして、1d4体の味方にスポットライトを当てる。こうしてスポットライトを浴びている間、その味方が与えるダメージは半分になる。"
+        },
+        {
+          "name": "大暴れ",
+          "type": "反応",
+          "description": "カウントダウン（繰り返し1d6）。このハンターが初めてスポットライトを浴びた時、カウントダウンを開始する。カウントダウンが作動した時、このハンターを遠距離射程内の一点へまっすぐに移動させ、その直線上にいるすべての目標に対して攻撃を行わせる。このハンターが成功した目標は2d8＋2の物理ダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "royal-advisor",
+      "name": "王室顧問",
+      "tier": 2,
+      "type": "社交",
+      "description": "地元貴族たちに影響力を持つ高位の廷臣。",
+      "motivesAndTactics": "取り入る、証拠を捏造する、陰謀を企てる",
+      "difficulty": 14,
+      "damageThresholds": "8／15",
+      "hp": 3,
+      "stress": 3,
+      "attackModifier": -3,
+      "standardAttack": {
+        "name": "ワンド",
+        "range": "遠距離",
+        "damagedice": "1d4+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "行政",
+          "modifier": 3
+        },
+        {
+          "name": "機嫌取り",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "痛烈な反論",
+          "type": "受動",
+          "description": "この顧問を目標とした行動ロールで17未満を振ったPCは、ストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "長話",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近接射程内のNPC1人に囁きかけて感化する。1つの事柄に対して、その目標の見解は（目標の動機と正反対の場合を除いて）この顧問の意向に沿った方向に変化する。"
+        },
+        {
+          "name": "身代わり",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、群集または著名な人物1人を説得し、目標が直面しているある問題の責任は特定の人物または集団にあると信じ込ませる。目標は、その人物が【存在】ロール（17）に成功して無実を証明するまで、身代わりに対して敵対的になる。"
+        }
+      ]
+    },
+    {
+      "id": "secret-keeper",
+      "name": "秘密の守り人",
+      "tier": 2,
+      "type": "指揮",
+      "description": "堕神と直接的なつながりを持つ、秘密結社の指導者。",
+      "motivesAndTactics": "強大な力を蓄える、陰謀を企てる、指揮を執る",
+      "difficulty": 16,
+      "damageThresholds": "13／26",
+      "hp": 7,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "印形刻みの長杖",
+        "range": "遠距離",
+        "damagedice": "2d12",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "強制",
+          "modifier": 2
+        },
+        {
+          "name": "堕落知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "好機を掴む",
+          "type": "行動",
+          "description": "恐怖を2つ消費して、1d4体の味方にスポットライトを当てる。こうしてスポットライトを浴びている間にその味方が行った攻撃が与えるダメージは半分になる。"
+        },
+        {
+          "name": "主の意思",
+          "type": "反応",
+          "description": "君が遠距離射程内の味方にスポットライトを当てた時、ストレスを1つマークして恐怖を1つ得る。"
+        },
+        {
+          "name": "召喚儀式",
+          "type": "反応",
+          "description": "カウントダウン（6）。この秘密の守り人が初めてスポットライトを浴びた時、カウントダウンを開始する。この秘密の守り人がHPをマークした時、マークしたHPの数だけカウントダウンを進める。このカウントダウンが作動した時、近距離射程に1体の《マイナー・デーモン》を召喚する。"
+        },
+        {
+          "name": "堕落の猟犬",
+          "type": "反応",
+          "description": "場面ごとに1回、この秘密の守り人がHPを2つ以上マークした時、君はストレスを1つマークして、《デモニック・ハウンドの群れ》を召喚することができる。召喚したクリーチャーは近距離射程に現れ、即座にスポットライトを浴びる。"
+        }
+      ]
+    },
+    {
+      "id": "shark",
+      "name": "シャーク",
+      "tier": 2,
+      "type": "暴力",
+      "description": "常に動き続ける水生の大型捕食動物。",
+      "motivesAndTactics": "血を探す、獲物を孤立させる、弱者を狙う",
+      "difficulty": 14,
+      "damageThresholds": "14／28",
+      "hp": 7,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "噛み砕く",
+        "range": "至近距離",
+        "damagedice": "2d12+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "血液感知",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "恐怖",
+          "type": "受動",
+          "description": "このシャークが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "引き裂く噛みつき",
+          "type": "受動",
+          "description": "このシャークが攻撃に成功した時、目標は防具スロットを1つマークしなければならない（これは何の利益ももたらさないが、さらに防具スロットを使用してダメージを軽減することはできる）。防具スロットをマークできないなら、HPを追加で1つマークしなければならない。"
+        },
+        {
+          "name": "水中に血",
+          "type": "反応",
+          "description": "このシャークの近距離射程内にいるクリーチャーが他のクリーチャーの攻撃によってHPをマークした時、君はストレスを1つマークして、即座にこのシャークにスポットライトを当て、目標の近接射程内に移動させて通常攻撃を行わせることができる。"
+        }
+      ]
+    },
+    {
+      "id": "siren",
+      "name": "セイレーン",
+      "tier": 2,
+      "type": "潜伏",
+      "description": "輝く鱗と抗い難い声を持つ半人半魚。",
+      "motivesAndTactics": "喰らう、獲物を誘い出す、歌で制する",
+      "difficulty": 14,
+      "damageThresholds": "9／18",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "顎展開",
+        "range": "近接",
+        "damagedice": "2d6+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "多彩な歌",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "囚われの聴衆",
+          "type": "受動",
+          "description": "このセイレーンが自分の歌による恍惚状態の目標に対して通常攻撃を行ったなら、その攻撃は通常ダメージではなく2d10＋1のダメージを与える。"
+        },
+        {
+          "name": "魅惑の唄",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、近距離射程内にいるすべての目標に影響を及ぼす唄を歌う。目標は【直観】反応ロールを行わなければならず、失敗するとストレスを2つマークするまで恍惚状態になる。目標の近距離射程内にいる他の《セイレーン》は、ストレスを1つマークして、それぞれこの反応ロールの難易度に＋1のボーナスを加えることができる。恍惚状態の間、目標は行動できず、脆弱状態である。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-archer",
+      "name": "スペクトラルの弓使い",
+      "tier": 2,
+      "type": "射撃",
+      "description": "幽玄な弓を携えた幽霊の戦士。守るべきものが危険にさらされている間は、その場を離れることができない。",
+      "motivesAndTactics": "固い物体を通り抜ける、戦いから距離を取る、過去の戦いを再現する",
+      "difficulty": 13,
+      "damageThresholds": "6／14",
+      "hp": 3,
+      "stress": 3,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "長弓",
+        "range": "遠距離",
+        "damagedice": "2d10+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "古代知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "霊体",
+          "type": "受動",
+          "description": "この弓使いは物理ダメージへの抵抗を持つ。ストレスを1つマークして、固い物体を通り抜け、近距離射程まで移動する。"
+        },
+        {
+          "name": "標的選び",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内にいる“至近距離射程内に他のPCが最低2体いるPC1体”に対して攻撃を行う。成功したなら、目標は2d8＋12の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-captain",
+      "name": "スペクトラルの隊長",
+      "tier": 2,
+      "type": "指揮",
+      "description": "死してなお部隊を率いる幽霊の指揮官。",
+      "motivesAndTactics": "固い物体を通り抜ける、部隊を鼓舞する、過去の戦いを再現する",
+      "difficulty": 16,
+      "damageThresholds": "13／26",
+      "hp": 6,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "長弓",
+        "range": "遠距離",
+        "damagedice": "2d10+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "古代知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "霊体",
+          "type": "受動",
+          "description": "この隊長は物理ダメージへの抵抗を持つ。ストレスを1つマークして、固い物体を通り抜け、近距離射程まで移動する。"
+        },
+        {
+          "name": "終わりなき戦い",
+          "type": "行動",
+          "description": "恐怖を2つ消費して、倒れたスペクトラルの味方を1d4＋1体まで、そのスペクトラルが初めて現れた地点に（HPもストレスも一切マークしていない状態で）戦闘に戻す。"
+        },
+        {
+          "name": "固守",
+          "type": "反応",
+          "description": "この隊長の味方のスペクトラルが反応ロールを行わされた時、君はストレスを1つマークして、そのロールに＋2のボーナスを与えることができる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この隊長がPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "spectral-guardian",
+      "name": "スペクトラルの守護者",
+      "tier": 2,
+      "type": "標準",
+      "description": "義務によって支えられた、槍と剣を携えた幽霊の戦士。",
+      "motivesAndTactics": "固い物体を通り抜ける、財宝を守る、過去の戦いを再現する",
+      "difficulty": 15,
+      "damageThresholds": "7／15",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": 1,
+      "standardAttack": {
+        "name": "槍",
+        "range": "至近距離",
+        "damagedice": "2d8+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "古代知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "霊体",
+          "type": "受動",
+          "description": "この守護者は物理ダメージへの抵抗を持つ。ストレスを1つマークして、固い物体を通り抜け、近距離射程まで移動する。"
+        },
+        {
+          "name": "墓場の刃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、至近距離射程内の目標1体に対して攻撃を行う。成功したなら、2d10＋6の物理ダメージを与える。さらに、目標はストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "spy",
+      "name": "密偵",
+      "tier": 2,
+      "type": "社交",
+      "description": "秘密を耳にするのに絶好の場所に居合わせる才能を持った、熟練の諜報員。",
+      "motivesAndTactics": "慌てて逃げ出す、変装する、盗聴する",
+      "difficulty": 15,
+      "damageThresholds": "8／17",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": -2,
+      "standardAttack": {
+        "name": "ダガー",
+        "range": "近接",
+        "damagedice": "2d6+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "諜報",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "秘密収集",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、この密偵が場面内でPC1人に関する秘密を1つ知る様子を描写する。"
+        },
+        {
+          "name": "壁に耳あり",
+          "type": "反応",
+          "description": "PCが1人または集団で繊細なものごとについて話し合っている時、君はストレスを1つマークして、この密偵が場面内にいてPCを観察していたことを明かすことができる。この密偵が場面を逃げ切って突き止めた内容を報告したなら、君は恐怖を1d4つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "stonewraith",
+      "name": "ストーンレイス",
+      "tier": 2,
+      "type": "潜伏",
+      "description": "瓦色の石の体を持ち、身を隠して忍び寄る、ピューマに似た徘徊する狩人。",
+      "motivesAndTactics": "縄張りを守る、獲物を孤立させる、忍び寄る",
+      "difficulty": 13,
+      "damageThresholds": "11／22",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "噛みつきと爪",
+        "range": "近接",
+        "damagedice": "2d8+6",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "石感知",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "石渡り",
+          "type": "受動",
+          "description": "このストーンレイスは石や土の中を空気中のように移動できる。石や土の中にいる間、このストーンレイスは隠れ身状態であり、あらゆるダメージに完全耐性を持つ。"
+        },
+        {
+          "name": "岩の待ち伏せ",
+          "type": "行動",
+          "description": "隠れ身状態にある時、ストレスを1つマークして、至近距離射程内にいる目標1体の近接射程内に飛び込む。目標は【敏捷】または【直観】反応ロール（15）を行わなければならず、失敗すると2d8の物理ダメージを受け、一時的に拘束状態になる。"
+        },
+        {
+          "name": "滑落の咆哮",
+          "type": "行動",
+          "description": "恐怖を1つ消費して洞窟内で咆哮し、落盤を起こす。近距離射程内にいるすべての目標は【敏捷】反応ロール（14）を行わなければならず、失敗すると2d10の物理ダメージを受ける。瓦礫は進展型カウントダウン（8）で除去できる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このストーンレイスがPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "war-wizard",
+      "name": "戦闘魔術師",
+      "tier": 2,
+      "type": "射撃",
+      "description": "破壊魔法を修めた百戦錬磨の魔道士。",
+      "motivesAndTactics": "新たな呪文を開発する、力を求める、陣形を崩す",
+      "difficulty": 16,
+      "damageThresholds": "11／23",
+      "hp": 5,
+      "stress": 6,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "長杖",
+        "range": "遠距離",
+        "damagedice": "2d10+4",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "魔法知識",
+          "modifier": 2
+        },
+        {
+          "name": "戦略",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "転移戦闘",
+          "type": "受動",
+          "description": "通常攻撃を行う前または行った後、君はストレスを1つマークして、遠距離射程内の場所に転移することができる。"
+        },
+        {
+          "name": "防護球再生",
+          "type": "行動",
+          "description": "ストレスを1つマークして、このウィザードの反応“防護球”をリセットする。"
+        },
+        {
+          "name": "噴出",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内の一点を選ぶ。その地点の周囲の至近距離の範囲は爆発して通過不能の地形となる。その範囲内にいるすべての目標は【敏捷】反応ロール（14）を行わなければならない。失敗した目標は2d10の物理ダメージを受け、範囲外へ投げ出される。成功した目標は半分のダメージを受ける（移動はさせられない）。"
+        },
+        {
+          "name": "秘術砲",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、精密な魔法の弾幕を放つ。場面内にいるすべての目標は【敏捷】反応ロールを行わなければならない。失敗した目標は2d12の魔法ダメージを受ける。成功した目標は半分のダメージを受ける。"
+        },
+        {
+          "name": "防護球",
+          "type": "反応",
+          "description": "このウィザードが近距離射程内の攻撃によってダメージを受けた時、攻撃者に2d6の魔法ダメージを与える。この反応はこのウィザードが行動“防護球再生”でリセットするまで再使用できない。"
+        }
+      ]
+    }
+  ],
+  "tier-3": [
+    {
+      "id": "adult-flickerfly",
+      "name": "成体フリッカーフライ",
+      "tier": 3,
+      "type": "単体",
+      "description": "虹色に輝く鱗と羽を持ち、目では追いきれないほどの速さで動く、大型の馬ほどの大きさの昆虫。",
+      "motivesAndTactics": "光るものを集める、狩りをする、巣を作る、急降下する",
+      "difficulty": 17,
+      "damageThresholds": "20／35",
+      "hp": 12,
+      "stress": 6,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "翼の斬りつけ",
+        "range": "至近距離",
+        "damagedice": "3d20",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "連続攻撃（4）",
+          "type": "受動",
+          "description": "このフリッカーフライにはGMターンごとに最大4回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "百発百中",
+          "type": "受動",
+          "description": "このフリッカーフライが攻撃を行う時、その攻撃に対する目標の回避値は半分になる。"
+        },
+        {
+          "name": "致死飛行",
+          "type": "受動",
+          "description": "飛行中、このフリッカーフライは行動を取る前に近距離ではなく遠距離射程まで移動できる。"
+        },
+        {
+          "name": "旋風",
+          "type": "行動",
+          "description": "恐怖を1つ消費して旋回し、至近距離射程内にいるすべての目標に対して攻撃を行う。このフリッカーフライが成功した目標は3d8の直接物理ダメージを受ける。"
+        },
+        {
+          "name": "精神交錯",
+          "type": "行動",
+          "description": "ストレスを1つマークして、魔法的な眩い光を作り出し、周囲の敵の心を掴む。近距離射程内にいるすべての目標は【直観】反応ロールを行わなければならない。失敗した目標1体ごとに、君は恐怖を1つ得て、このフリッカーフライは目標が恐れているものを1つ知る。"
+        },
+        {
+          "name": "幻覚ブレス",
+          "type": "反応",
+          "description": "カウントダウン（繰り返し1d6）。このフリッカーフライが初めてダメージを受けた時、カウントダウンを開始する。カウントダウンが作動した時、このフリッカーフライは自分の前方の遠距離射程までにいるすべての目標に幻覚ガスを吐く。目標は【直観】反応ロールを行わなければならず、失敗すると恐ろしい幻覚に苛まれる。このフリッカーフライに恐れているものを知られている目標は、このロールに不利を受ける。失敗した目標は、希望を2つ失い、3d8＋3の直接魔法ダメージを受ける。"
+        },
+        {
+          "name": "並外れた柔軟性",
+          "type": "反応",
+          "description": "このフリッカーフライが近距離射程内の攻撃からダメージを受けた時、君はストレスを1つマークして受けるダメージを半分にすることができる。"
+        }
+      ]
+    },
+    {
+      "id": "demon-of-avarice",
+      "name": "貪欲のデーモン",
+      "tier": 3,
+      "type": "支援",
+      "description": "円形の角を財宝で飾り立て、威厳あるマントをまとった怪物。",
+      "motivesAndTactics": "貪り尽くす、欲を煽る、不和をまき散らす",
+      "difficulty": 17,
+      "damageThresholds": "15／29",
+      "hp": 6,
+      "stress": 5,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "空腹の口",
+        "range": "近接",
+        "damagedice": "3d6+5",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "人心操作",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "地獄の沙汰も金次第",
+          "type": "受動",
+          "description": "このデーモンに対する攻撃は、攻撃者が金を1握り消費しない限り不利を受ける。このデーモンは開始時に（PC数×1握り）の金を持っている。このデーモンの通常攻撃によってHPをマークした目標は、HPをマークする代わりに金1握りを消費することができる（HP1つごとに1握りを消費する）。PCがこの特徴のために消費した金1握りごとに、このデーモンに金1握りを加える。"
+        },
+        {
+          "name": "金の増強",
+          "type": "受動",
+          "description": "このデーモンの攻撃ロールには、このデーモンが持っている金1握りの数に等しいボーナスを加える。"
+        },
+        {
+          "name": "金は時なり",
+          "type": "行動",
+          "description": "金3握り（または恐怖1つ）を消費して、1d4＋1体の味方にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "demon-of-despair",
+      "name": "絶望のデーモン",
+      "tier": 3,
+      "type": "潜伏",
+      "description": "長い手足を持ち、影を滲ませ、布切れをまとった悪魔のような生き物。",
+      "motivesAndTactics": "恐怖を広める、影に張り付く、決意を揺るがす",
+      "difficulty": 17,
+      "damageThresholds": "18／35",
+      "hp": 6,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "瘴気の矢",
+        "range": "遠距離",
+        "damagedice": "3d6+1",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "人心操作",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "絶望の深さ",
+          "type": "受動",
+          "description": "このデーモンが希望を持っていないPCに与えるダメージは2倍になる。"
+        },
+        {
+          "name": "足掻いても無駄だ",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内にいるすべてのPCの精神を重くする。影響を受けたすべての目標は、ロールに希望成功するか次の休憩まで、希望ダイスをd8に置き換える。"
+        },
+        {
+          "name": "友に見放されるぞ",
+          "type": "反応",
+          "description": "PCが恐怖失敗した時、君はストレスを1つマークして、近距離射程内にいるその他のすべてのPCに希望を1つ失わせることができる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このデーモンがPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "demon-of-hubris",
+      "name": "傲慢のデーモン",
+      "tier": 3,
+      "type": "指揮",
+      "description": "きらめく槍と優雅なローブを身にまとった、完璧な美と限りない残酷さを兼ね備えた悪魔。",
+      "motivesAndTactics": "見下す、早々に勝利を宣言する、優越性を証明する",
+      "difficulty": 18,
+      "damageThresholds": "18／36",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "完全槍",
+        "range": "至近距離",
+        "damagedice": "3d10",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "人心操作",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "恐怖喚起",
+          "type": "受動",
+          "description": "このデーモンが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "一か八か",
+          "type": "受動",
+          "description": "遠距離射程内のPCは、ロールに失敗した時、恐怖ダイスを振り直すことを選択できる（新しい結果を使用する）。それでも失敗したなら、そのPCはストレスを2つマークし、このデーモンはストレスを1つ回復する。"
+        },
+        {
+          "name": "比類なき技術",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内の目標1体にこのデーモンの通常攻撃のダメージを与える。"
+        },
+        {
+          "name": "悪の根源",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内にいる他のデーモン2体にスポットライトを当てる。"
+        },
+        {
+          "name": "足元にも及ばぬ",
+          "type": "反応",
+          "description": "このデーモンの近距離射程内でロールに失敗したPCは、ストレスを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "demon-of-jealousy",
+      "name": "嫉妬のデーモン",
+      "tier": 3,
+      "type": "射撃",
+      "description": "細長い手足と飽くなき欲望を持つ、気まぐれな生き物。",
+      "motivesAndTactics": "他人の成功に便乗する、他者のものを奪う、恨みを抱く",
+      "difficulty": 17,
+      "damageThresholds": "17／30",
+      "hp": 6,
+      "stress": 6,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "精神強襲",
+        "range": "遠距離",
+        "damagedice": "3d8+3",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "人心操作",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "剥き出しの精神",
+          "type": "受動",
+          "description": "このデーモンの通常攻撃は直接ダメージを与える。"
+        },
+        {
+          "name": "こちらの番だ",
+          "type": "反応",
+          "description": "このデーモンが攻撃によってHPをマークした時、マークしたHPと同じ数の恐怖を消費して、攻撃者にも同じだけHPをマークさせる。"
+        },
+        {
+          "name": "対抗心",
+          "type": "反応",
+          "description": "近距離射程内のクリーチャーが別の敵キャラクターからダメージを受けた時、君はストレスを1つマークして、そのダメージロールにd4を加えることができる。"
+        },
+        {
+          "name": "お前のものは俺のもの",
+          "type": "反応",
+          "description": "このデーモンの至近距離射程内でPCが大ダメージを受けた時、君は恐怖を1つ消費して、目標に【技巧】ロールを行わせることができる。失敗したなら、このデーモンが目標の所持品からアイテムまたは消耗品を1つ選んで掴み取る。"
+        }
+      ]
+    },
+    {
+      "id": "demon-of-wrath",
+      "name": "憤怒のデーモン",
+      "tier": 3,
+      "type": "暴力",
+      "description": "終わりなき怒りに駆られた、丸岩大の拳を持つ巨躯の悪魔",
+      "motivesAndTactics": "怒りを煽る、敵を感心させる、甚大な被害をもたらす",
+      "difficulty": 17,
+      "damageThresholds": "22／40",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "拳",
+        "range": "至近距離",
+        "damagedice": "3d8+1",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "威圧",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "容赦なき怒り",
+          "type": "受動",
+          "description": "このデーモンの攻撃は直接ダメージを与える。"
+        },
+        {
+          "name": "闘争心",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内にいるすべてのPCの頭に血を上らせる。場面の終了時まで、それらのPCは恐怖ダイスとしてd20を使用する。"
+        },
+        {
+          "name": "仕返し",
+          "type": "反応",
+          "description": "このデーモンが近距離射程内の攻撃によってダメージを受けた時、君はストレスを1つマークして、攻撃者に対して通常攻撃を行うことができる。"
+        },
+        {
+          "name": "血と魂",
+          "type": "反応",
+          "description": "カウントダウン（繰り返し1d6）。このデーモンの視界内で初めて攻撃が行われた時、カウントダウンを開始する。PCが暴力的な行動を取った時、カウントダウンが進む。カウントダウンが作動した時、近距離射程に1d4体の《マイナー・デーモン》を召喚する。"
+        }
+      ]
+    },
+    {
+      "id": "dire-bat",
+      "name": "ダイア・バット",
+      "tier": 3,
+      "type": "潜伏",
+      "description": "飼い主のヴァンパイアに限りない忠誠を尽くす、大きな翼を持つペット。",
+      "motivesAndTactics": "急降下攻撃をする、隠れる、指導者を守る",
+      "difficulty": 14,
+      "damageThresholds": "16／30",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "爪と歯",
+        "range": "近接",
+        "damagedice": "2d6+7",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "血の渇望",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "飛行",
+          "type": "受動",
+          "description": "飛行中、このバットは難易度に＋3のボーナスを得る。"
+        },
+        {
+          "name": "金切り声",
+          "type": "行動",
+          "description": "ストレスを1つマークして、このバットの前方の遠距離射程内にいるすべての目標に向けて甲高い金切り声を放つ。それらの目標はストレスを1d4つマークしなければならない。"
+        },
+        {
+          "name": "守護",
+          "type": "反応",
+          "description": "味方のヴァンパイアがHPをマークした時、君はストレスを1つマークして、攻撃者の近接射程内へ飛んでいき、攻撃者に対して有利で攻撃を行うことができる。成功したなら、2d6＋2の物理ダメージを与える。"
+        }
+      ]
+    },
+    {
+      "id": "dryad",
+      "name": "ドライアド",
+      "tier": 3,
+      "type": "指揮",
+      "description": "人型の木の形を取った自然の精霊。",
+      "motivesAndTactics": "命令する、耕す、追い払う、森を保全する",
+      "difficulty": 16,
+      "damageThresholds": "24／38",
+      "hp": 8,
+      "stress": 5,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "倒木の短弓",
+        "range": "遠距離",
+        "damagedice": "3d10+1",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "森林知識",
+          "modifier": 4
+        }
+      ],
+      "features": [
+        {
+          "name": "茨の群生",
+          "type": "行動",
+          "description": "ストレスを1つマークして、遠距離射程内の一点を目標とする。その地点の近距離射程内の範囲を覆う茨の群生を生み出す。その範囲内にいるすべての目標は行動時に2d6＋2の物理ダメージを受ける。目標がこの範囲を離れるには、【技巧】ロールに成功するか、このドライアドに21以上のダメージを与えなければならない。"
+        },
+        {
+          "name": "苗木生育",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、3体の《トリエントの苗木》を召喚する。召喚したクリーチャーは近距離射程に現れ、即座にスポットライトを浴びる。"
+        },
+        {
+          "name": "我らは一つ",
+          "type": "反応",
+          "description": "近距離射程内で味方が死んだ時、君は恐怖を1つ消費して、倒れた味方の生命力を森へ返し、HPまたはストレスを2つ回復することができる。"
+        }
+      ]
+    },
+    {
+      "id": "elemental-spark",
+      "name": "エレメンタルの火花",
+      "tier": 3,
+      "type": "雑魚",
+      "description": "元素の炎の燃える粒子。",
+      "motivesAndTactics": "爆発する、飲み込む、質量を増やす",
+      "difficulty": 15,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "爆炎",
+        "range": "近距離",
+        "damagedice": "5",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（9）",
+          "type": "受動",
+          "description": "このエレメンタルはダメージを受けると倒れる。PCがこのエレメンタルに9ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《エレメンタルの火花》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ5の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "greater-earth-elemental",
+      "name": "上級アース・エレメンタル",
+      "tier": 3,
+      "type": "暴力",
+      "description": "家ほども大きさのある、岩や土埃が流れ落ちる生きた土砂崩れ。",
+      "motivesAndTactics": "滑落を起こす、ひっくり返す、打ちのめす",
+      "difficulty": 17,
+      "damageThresholds": "22／40",
+      "hp": 10,
+      "stress": 4,
+      "attackModifier": 7,
+      "standardAttack": {
+        "name": "岩拳",
+        "range": "至近距離",
+        "damagedice": "3d10+1",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "鈍重",
+          "type": "受動",
+          "description": "このエレメンタルにスポットライトを当てた時、データブロックの上にトークンがなければ、このエレメンタルは行動できない。データブロックにトークンを置き、どんな行動を準備しているか説明すること。このエレメンタルにスポットライトを当てた時、データブロックの上にトークンがあるなら、このエレメンタルは行動できる。トークンを取り除くこと。"
+        },
+        {
+          "name": "粉砕の一撃",
+          "type": "受動",
+          "description": "このエレメンタルが攻撃に成功した時、目標は防具スロットを1つマークしなければならない（これは何の利益ももたらさないが、さらに防具を使用してダメージを軽減することはできる）。防具スロットをマークできないなら、HPを追加で1つマークしなければならない。"
+        },
+        {
+          "name": "不動の物体",
+          "type": "受動",
+          "description": "攻撃によってこのエレメンタルが動く時、その距離は2段階ぶん小さくなる（例：遠距離なら至近距離になる）。このエレメンタルが物理ダメージを受ける時、そのダメージを7減少させる。"
+        },
+        {
+          "name": "土砂崩れ",
+          "type": "行動",
+          "description": "ストレスを1つマークして土砂崩れを生み出し、このエレメンタルの前方の近距離射程内の地面を落石で埋める。この範囲内にいるすべての目標は【敏捷】反応ロール（19）を行わなければならない。失敗した目標は2d12＋5の物理ダメージを受け、次に自分のロール結果が希望となるまで脆弱状態になる。成功した目標は半分のダメージを受ける。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このエレメンタルがPCに対する攻撃に成功したなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "greater-water-elemental",
+      "name": "上級ウォーター・エレメンタル",
+      "tier": 3,
+      "type": "支援",
+      "description": "敵に襲いかかる巨大な生きた波。",
+      "motivesAndTactics": "大洪水を起こす、分散させる、溺れさせる",
+      "difficulty": 17,
+      "damageThresholds": "17／34",
+      "hp": 5,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "押しつぶす波",
+        "range": "至近距離",
+        "damagedice": "3d4+1",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "高圧水流",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内の目標1体を攻撃する。成功したなら、2d4＋7の物理ダメージを与え、目標の次の行動に不利を課す。失敗したなら、目標はストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "溺水の抱擁",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、至近距離射程内にいるすべての目標に対して攻撃を行う。このエレメンタルが成功した目標は溺れ始め、拘束状態かつ脆弱状態になる。目標は【筋力】または【直観】ロールに成功することで脱出し、両状態を終了させることができる。"
+        },
+        {
+          "name": "高波",
+          "type": "反応",
+          "description": "このエレメンタルが通常攻撃に成功した時、君はストレスを1つマークして、目標を近距離射程へ吹き飛ばすことができる。"
+        }
+      ]
+    },
+    {
+      "id": "huge-green-ooze",
+      "name": "大型グリーン・ウーズ",
+      "tier": 3,
+      "type": "潜伏",
+      "description": "ほとんどのヒューマンより大きな透明な緑色の酸の塊。",
+      "motivesAndTactics": "環境に溶け込む、忍び寄る、包み込む、増殖する",
+      "difficulty": 15,
+      "damageThresholds": "15／30",
+      "hp": 7,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "粘腕",
+        "range": "近接",
+        "damagedice": "3d8+1",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "溶け込む",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "鈍重",
+          "type": "受動",
+          "description": "このウーズにスポットライトを当てた時、データブロックの上にトークンがなければ、このウーズは行動できない。データブロックにトークンを置き、どんな行動を準備しているか説明すること。このウーズにスポットライトを当てた時、データブロックの上にトークンがあれば、このウーズは行動できる。トークンを取り除くこと。"
+        },
+        {
+          "name": "酸の体",
+          "type": "受動",
+          "description": "このウーズが攻撃に成功した時、目標は防具スロットを1つマークしなければならない（これは何の利益ももたらさないが、さらに防具を使用してダメージを軽減することはできる）。防具スロットをマークできないなら、HPを追加で1つマークしなければならない。"
+        },
+        {
+          "name": "包み込み",
+          "type": "行動",
+          "description": "近接射程内の目標1体に対して通常攻撃を行う。成功したなら、このウーズが目標を包み込み、目標はストレスを2つマークしなければならない。包み込み状態の間、目標は行動ロールを行うたびにストレスを追加で1つマークしなければならない。このウーズが大ダメージを受けたなら、包み込み状態の目標は解放され、この状態は終了する。"
+        },
+        {
+          "name": "分裂",
+          "type": "反応",
+          "description": "このウーズがHPを4つ以上マークしている時、君は恐怖を1つ消費して、このウーズを2体の《グリーン・ウーズ》に分裂させることができる（HPとストレスは一切マークされていない状態）。即座にその2体にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "hydra",
+      "name": "ヒュドラ",
+      "tier": 3,
+      "type": "単体",
+      "description": "威圧的な牙を生やした首の長い複数の頭部を持つ、鱗に覆われた四足歩行の獣。",
+      "motivesAndTactics": "貪る、再生する、恐怖を与える",
+      "difficulty": 18,
+      "damageThresholds": "19／35",
+      "hp": 10,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "噛みつき",
+        "range": "近距離",
+        "damagedice": "2d12+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "多頭の怪物",
+          "type": "受動",
+          "description": "このヒュドラの頭部は3つで始まり、最大5つになる。このヒュドラは、中ダメージ以上を受けると頭部を1つ失う。"
+        },
+        {
+          "name": "連続攻撃（X）",
+          "type": "受動",
+          "description": "このヒュドラにはGMターンごとに最大X回までスポットライトを当てることができる（Xはこのヒュドラの頭部の数）。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "再生",
+          "type": "行動",
+          "description": "このヒュドラがHPをマークしているなら、恐怖を1つ消費して、HPを1つ回復し、頭部を2つ生やす。"
+        },
+        {
+          "name": "恐怖の合唱",
+          "type": "行動",
+          "description": "遠距離射程内にいるすべてのPCは希望を2つ失う。"
+        },
+        {
+          "name": "魔法が弱点",
+          "type": "反応",
+          "description": "このヒュドラは魔法ダメージを受けると、次にロール結果が恐怖となるまで放心状態になる。放心状態の間、このヒュドラは行動「再生」を使用できないが、魔法ダメージに完全耐性を持つ。"
+        }
+      ]
+    },
+    {
+      "id": "monarch",
+      "name": "君主",
+      "tier": 3,
+      "type": "社交",
+      "description": "伝統による特権に包まれ、自分の領土内で比類なき権力を振るう、ある国の最高支配者。",
+      "motivesAndTactics": "家臣を支配する、敵を滅ぼす、遺産を築く",
+      "difficulty": 16,
+      "damageThresholds": "16／32",
+      "hp": 6,
+      "stress": 5,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "戦鎚",
+        "range": "近接",
+        "damagedice": "3d6+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "歴史",
+          "modifier": 3
+        },
+        {
+          "name": "高貴",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "処刑せよ！",
+          "type": "行動",
+          "description": "パーティ内のPC1人ごとに恐怖を1つ消費して、実際に犯した罪またはでっち上げの罪について、パーティの有罪を宣告する。【存在】ロールに成功したPCは、決闘裁判その他の特別な裁判形式を要求することができる。"
+        },
+        {
+          "name": "近衛兵",
+          "type": "行動",
+          "description": "場面ごとに1回、ストレスを1つマークして、ティア3の雑魚クリーチャーを6体召喚する。召喚したクリーチャーは近距離射程に現れ、この君主の意思を遂行する。"
+        },
+        {
+          "name": "開戦事由",
+          "type": "反応",
+          "description": "長期型カウントダウン（8）。この君主の戦争への意欲が初めて明らかになった後、恐怖を1つ消費して、カウントダウンを開始する。カウントダウンが作動した時、この君主は国民を戦争へ結集させる理由と、その理由に基づいて行動するための支持を得る。君は恐怖を1d4つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "stag-knight",
+      "name": "スタッグ騎士",
+      "tier": 3,
+      "type": "標準",
+      "description": "巨大で威厳のある角を持ち、危険な棘でできた鎧を身にまとった騎士。",
+      "motivesAndTactics": "孤立させる、うまく立ち回る、森を守る、歓迎されない者を排除する",
+      "difficulty": 17,
+      "damageThresholds": "19／36",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "茨剣",
+        "range": "近接",
+        "damagedice": "3d8+3",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "森林知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "高所",
+          "type": "受動",
+          "description": "この騎士が目標より高所からの通常攻撃に成功した時、目標は通常ダメージではなく3d12＋3の物理ダメージを与える。"
+        },
+        {
+          "name": "森の刃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、至近距離射程内にいるすべての目標に対して攻撃を行う。この騎士が成功した目標は（3d4＋目標の中ダメージ閾値）に等しい物理ダメージを受ける。"
+        },
+        {
+          "name": "棘鎧",
+          "type": "反応",
+          "description": "このナイトが近接射程内の攻撃によってダメージを受けた時、君はストレスを1つマークして、攻撃者に1d10＋5の物理ダメージを与えることができる。"
+        }
+      ]
+    },
+    {
+      "id": "oak-treant",
+      "name": "オーク樹のトリエント",
+      "tier": 3,
+      "type": "暴力",
+      "description": "頑丈な動く古木。",
+      "motivesAndTactics": "人目につく場所で身を隠す、森を保全する、根を張る、枝を振る",
+      "difficulty": 17,
+      "damageThresholds": "22／40",
+      "hp": 7,
+      "stress": 4,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "枝",
+        "range": "至近距離",
+        "damagedice": "3d8+2",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "森林知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "ありふれた木",
+          "type": "受動",
+          "description": "このトリエントは、戦闘において最初の攻撃を行う前、または隠れ身状態になった後、他の木と区別できない。この効果は、このトリエントが次に行動するか、PCが【直観】ロールに成功してこのトリエントを識別するまで継続する。"
+        },
+        {
+          "name": "種弾幕",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内にいる最大3体までの目標に対して攻撃を行い、巨大なドングリで打ちのめす。このトリエントが成功した目標は2d10＋5の物理ダメージを受ける。"
+        },
+        {
+          "name": "根を張る",
+          "type": "行動",
+          "description": "ストレスを1つマークして、このトリエントをその場に根付かせる。根付き状態の間、このトリエントは拘束状態であり、スポットライトを浴びた際、移動する代わりにこの効果を終了させることができる。根付き状態の間、このトリエントは物理ダメージへの抵抗を持つ。"
+        }
+      ]
+    },
+    {
+      "id": "treant-sapling",
+      "name": "トリエントの苗木",
+      "tier": 3,
+      "type": "雑魚",
+      "description": "小さな知性ある苗木。",
+      "motivesAndTactics": "溶け込む、森を保全する、打ちのめす、取り囲む",
+      "difficulty": 14,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 0,
+      "standardAttack": {
+        "name": "枝",
+        "range": "近接",
+        "damagedice": "8",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（6）",
+          "type": "受動",
+          "description": "この苗木はダメージを受けると倒れる。PCがこの苗木に6ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《トリエントの苗木》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ8の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "head-vampire",
+      "name": "ヴァンパイアの頭領",
+      "tier": 3,
+      "type": "指揮",
+      "description": "貴族のように華やかな衣装を身にまとった、魅惑的なアンデッド。",
+      "motivesAndTactics": "奴隷を作る、魅了する、命令する、飛ぶ、威圧する",
+      "difficulty": 17,
+      "damageThresholds": "22／42",
+      "hp": 6,
+      "stress": 6,
+      "attackModifier": 5,
+      "standardAttack": {
+        "name": "レイピア",
+        "range": "近接",
+        "damagedice": "2d20+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "貴族",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "恐怖喚起",
+          "type": "受動",
+          "description": "このヴァンパイアが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "私の目を見ろ",
+          "type": "受動",
+          "description": "このヴァンパイアの近接射程内に移動したクリーチャーは、【直観】反応ロールを行わなければならない。失敗したなら、君が恐怖を1d4つ得る。"
+        },
+        {
+          "name": "信奉者吸血",
+          "type": "行動",
+          "description": "このヴァンパイアは、味方の近接射程内にいる時、その味方にHPを1つマークさせることができる。そうしたなら、このヴァンパイアはHPを1つ回復する。"
+        },
+        {
+          "name": "狩猟開始",
+          "type": "行動",
+          "description": "恐怖を2つ消費して、1d4体の《ヴァンパイア》を召喚する。召喚したクリーチャーは遠距離射程に現れ、即座にスポットライトを浴びる。"
+        },
+        {
+          "name": "生命吸収",
+          "type": "反応",
+          "description": "このヴァンパイアがスポットライトを浴びた時、d8を振る。6以上の目が出たなら、至近距離射程内にいるすべての目標はHPを1つマークしなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "vampire",
+      "name": "ヴァンパイア",
+      "tier": 3,
+      "type": "標準",
+      "description": "唇に血を染み込ませ、捕食者のような笑みを浮かべた、知性を持つアンデッド。",
+      "motivesAndTactics": "噛みつく、魅了する、欺く、餌食にする、威圧する",
+      "difficulty": 16,
+      "damageThresholds": "18／35",
+      "hp": 5,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "レイピア",
+        "range": "近接",
+        "damagedice": "3d8",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "夜の狩人",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "吸血の噛みつき",
+          "type": "行動",
+          "description": "近接射程内の目標1体に対して攻撃を行う。成功したなら、5d4の物理ダメージを与える。この攻撃によってHPをマークした目標は、希望を1つ失い、ストレスを1つマークしなければならない。そうしたなら、このヴァンパイアはHPを1つ回復する。"
+        },
+        {
+          "name": "霧形態",
+          "type": "反応",
+          "description": "このヴァンパイアが物理ダメージを受けた時、君は恐怖を1つ消費して、受けるダメージを半分にすることができる。"
+        }
+      ]
+    },
+    {
+      "id": "vault-guardian-gaoler",
+      "name": "ヴォルト・ガーディアンの看守",
+      "tier": 3,
+      "type": "支援",
+      "description": "胴体に分厚い金属製の扉を備えた、ほこりにまみれた箱型の構築物。",
+      "motivesAndTactics": "連れ去る、罠にかける、守る、殴りつける",
+      "difficulty": 16,
+      "damageThresholds": "19／33",
+      "hp": 5,
+      "stress": 3,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "体当たり",
+        "range": "至近距離",
+        "damagedice": "3d6+2",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "妨害の盾",
+          "type": "受動",
+          "description": "この看守の近接射程内にいるクリーチャーは、この看守に対する攻撃ロールに不利を受ける。この看守の中に捕らわれているクリーチャーはこの特徴の影響を受けない。"
+        },
+        {
+          "name": "収監",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内の目標1体に対して攻撃を行う。成功したなら、目標は【筋力】ロール（18）に成功して脱出するまでこの看守の中で拘束状態になる。拘束状態の間、目標はこの看守しか攻撃できない。"
+        }
+      ]
+    },
+    {
+      "id": "vault-guardian-sentinel",
+      "name": "ヴォルト・ガーディアンの歩哨",
+      "tier": 3,
+      "type": "暴力",
+      "description": "四角い四肢を持ち、巨大なメイスを手とする、ほこりにまみれた金色の構築物。",
+      "motivesAndTactics": "何としても破壊する、消し去る、保護する",
+      "difficulty": 17,
+      "damageThresholds": "21／40",
+      "hp": 6,
+      "stress": 3,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "充填メイス",
+        "range": "至近距離",
+        "damagedice": "2d12+1",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "運動叩きつけ",
+          "type": "受動",
+          "description": "この歩哨の通常攻撃によってダメージを受けた目標は、至近距離射程へ吹き飛ばされる。"
+        },
+        {
+          "name": "封じ込め",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内の目標1体を選んで張り付く。目標は、この歩哨の至近距離射程内にいる時、攻撃ロールに不利を受ける。この歩哨が張り付いていられる目標は一度に1体のみである。"
+        },
+        {
+          "name": "魔力の矢",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内の一点に爆発魔法を放つ。その地点の至近距離射程内にいるすべての目標は、【敏捷】反応ロールを行わなければならない。失敗した目標は、2d8＋20の魔法ダメージを受け、近距離射程へ吹き飛ばされる。成功した目標は半分のダメージを受け、吹き飛ばされない。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この歩哨がPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "vault-guardian-turret",
+      "name": "ヴォルト・ガーディアンの砲塔",
+      "tier": 3,
+      "type": "射撃",
+      "description": "強化装甲とピストン駆動式の機械脚12本を備えた巨大な生きた砲塔。",
+      "motivesAndTactics": "射撃を集中させる、封鎖する、標的を指定する、保護する",
+      "difficulty": 16,
+      "damageThresholds": "20／32",
+      "hp": 5,
+      "stress": 4,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "魔導技術砲",
+        "range": "遠距離",
+        "damagedice": "3d10+3",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "鈍重射撃",
+          "type": "受動",
+          "description": "君がこの砲塔にスポットライトを当てた時、データブロックの上にトークンがなければ、この砲塔は通常攻撃を行えない。データブロックにトークンを置き、どんな行動を準備しているか描写すること。この砲塔にスポットライトを当てた時、データブロックの上にトークンがあれば、この砲塔は攻撃できる。トークンを取り除くこと。"
+        },
+        {
+          "name": "標的指定",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内の目標1体を指定状態にする。この状態は、この砲塔が破壊されるか、指定状態の目標が隠れ身状態になるまで継続する。指定状態の間、目標の回避値は半分になる。"
+        },
+        {
+          "name": "集中射撃",
+          "type": "反応",
+          "description": "他の敵キャラクターがこの砲塔の遠距離射程内にいる目標1体にダメージを与えた時、君はストレスを1つマークして、ダメージロールにこの砲塔の通常攻撃のダメージを加えることができる。"
+        },
+        {
+          "name": "爆轟",
+          "type": "反応",
+          "description": "この砲塔は破壊されると爆発する。近距離射程内にいるすべての目標は【敏捷】反応ロールを行わなければならない。失敗した目標は3d20の物理ダメージを受ける。成功した目標は半分のダメージを受ける。"
+        }
+      ]
+    },
+    {
+      "id": "young-ice-dragon",
+      "name": "ヤング・アイス・ドラゴン",
+      "tier": 3,
+      "type": "単体",
+      "description": "4本の力強い四肢と霜を帯びた翼を持つ、氷河のような青色のドラゴン。",
+      "motivesAndTactics": "雪崩を起こす、住処を守る、飛ぶ、凍らせる、所有物を守る、打ちのめす",
+      "difficulty": 18,
+      "damageThresholds": "21／41",
+      "hp": 10,
+      "stress": 6,
+      "attackModifier": 7,
+      "standardAttack": {
+        "name": "噛みつきと爪",
+        "range": "近距離",
+        "damagedice": "4d10",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "所有物保護",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "このドラゴンにはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "引き裂きと粉砕",
+          "type": "受動",
+          "description": "このドラゴンによってダメージを受けた目標は、防具スロットをマークしてダメージを軽減しなかったなら、ストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "望みなし",
+          "type": "受動",
+          "description": "このドラゴンの遠距離射程内でロール結果が恐怖だったPCは、希望を1つ失う。"
+        },
+        {
+          "name": "吹雪ブレス",
+          "type": "行動",
+          "description": "恐怖を2つ消費して、このドラゴンの前方の近距離射程内に氷の渦を放つ。この範囲内にいるすべての目標は【敏捷】反応ロールを行わなければならない。失敗した目標は、4d6＋5の魔法ダメージを受け、【筋力】ロールに成功して脱出するまで拘束状態になる。成功した目標は、ストレスを2つマークするか、半分のダメージを受けなければならない。"
+        },
+        {
+          "name": "雪崩",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、このドラゴンに雪と氷の大規模な雪崩を起こさせ、遠距離射程内にいる自分以外のすべてのクリーチャーを覆い尽くす。この範囲内にいるすべての目標は【直観】反応ロールを行わなければならず、失敗すると雪と岩に埋もれ、瓦礫から掘り出てくるまで脆弱状態になる。反応ロールに失敗したPC1人ごとに、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "凍った鱗",
+          "type": "反応",
+          "description": "至近距離射程内からこのドラゴンに対する攻撃に成功したクリーチャーは、ストレスを1つマークしなければならず、冷却状態になる。この状態は、そのクリーチャーが次に休憩を取るか、ストレスを1つ回復するまで継続する。冷却状態にあるクリーチャーは、攻撃ロールに不利を受ける。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このドラゴンがPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    }
+  ],
+  "tier-4": [
+    {
+      "id": "arch-necromancer",
+      "name": "大死霊術師",
+      "tier": 4,
+      "type": "指揮",
+      "description": "ボロボロの黒いローブをまとった、朽ち果てつつある魔道士。",
+      "motivesAndTactics": "腐敗させる、朽らす、一度逃げて再戦する、蘇生する",
+      "difficulty": 21,
+      "damageThresholds": "33／66",
+      "hp": 9,
+      "stress": 8,
+      "attackModifier": 6,
+      "standardAttack": {
+        "name": "死霊爆砕",
+        "range": "遠距離",
+        "damagedice": "4d12+8",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "禁忌知識",
+          "modifier": 3
+        },
+        {
+          "name": "世紀の知恵",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "死の踊り",
+          "type": "行動",
+          "description": "ストレスを1つマークして、1d4＋1体の味方にスポットライトを当てる。こうしてスポットライトを浴びている間、その味方が行った攻撃が与えるダメージは半分になる（恐怖を1つ消費して通常のダメージを与えることもできる）。"
+        },
+        {
+          "name": "腐敗光線",
+          "type": "行動",
+          "description": "ストレスを2つマークして、遠距離射程内にいるすべての目標に【筋力】反応ロールを行わせる。失敗した目標は2d20＋12の魔法ダメージを受け、君は恐怖を1つ得る。成功した目標は半分のダメージを受ける。HPを2つ以上マークした目標は、ストレスも2つマークしなければならず、自分のロール結果が希望となるまで脆弱状態になる。"
+        },
+        {
+          "name": "死の門解放",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、《ゾンビ軍団》を召喚する。召喚したクリーチャーは遠距離射程に現れ、即座にスポットライトを浴びる。"
+        },
+        {
+          "name": "また会おう、諸君",
+          "type": "反応",
+          "description": "この死霊術師がHPを7つ以上マークした時、君は恐怖を1つ消費して、この死霊術師を安全な場所へ転移させ、回復させることができる。【直観】ロールに成功したPCは、転移先まで転移魔法を辿っていくことができる。"
+        },
+        {
+          "name": "その命いただく",
+          "type": "反応",
+          "description": "カウントダウン（繰り返し2d6）。この死霊術師がHPを6つ以上マークした時、カウントダウンを開始する。カウントダウンが作動した時、近距離射程内の目標1体に2d10＋6の直接魔法ダメージを与える。その後、この死霊術師はこの攻撃によって目標がマークしたHPと同じ数のストレスを回復する。"
+        }
+      ]
+    },
+    {
+      "id": "fallen-shock-troop",
+      "name": "堕落突撃兵",
+      "tier": 4,
+      "type": "雑魚",
+      "description": "堕神の意思に呪縛された魂。",
+      "motivesAndTactics": "粉砕する、支配する、安堵を得る、罰する",
+      "difficulty": 18,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "呪いの斧",
+        "range": "至近距離",
+        "damagedice": "12",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（12）",
+          "type": "受動",
+          "description": "この突撃兵はダメージを受けると倒れる。PCがこの突撃兵に12ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "破滅のオーラ",
+          "type": "受動",
+          "description": "この突撃兵による攻撃でHPをマークしたPCは、希望を1つ失う。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《堕落突撃兵》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ12の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "fallen-sorcerer",
+      "name": "堕落道士",
+      "tier": 4,
+      "type": "支援",
+      "description": "生前に交わした契約に縛られた、強力な魔道士。",
+      "motivesAndTactics": "獲得する、意気消沈させる、支配する、苦しめる",
+      "difficulty": 19,
+      "damageThresholds": "26／42",
+      "hp": 6,
+      "stress": 5,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "腐敗の長杖",
+        "range": "遠距離",
+        "damagedice": "4d6+10",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "古代知識",
+          "modifier": 2
+        }
+      ],
+      "features": [
+        {
+          "name": "大火",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、すべてを飲み込む火の嵐を放ち、近距離射程内にいるすべての目標に対して攻撃を行う。この魔術師が成功した目標は2d10＋6の直接魔法ダメージを受ける。"
+        },
+        {
+          "name": "悪夢の光景",
+          "type": "行動",
+          "description": "ストレスを1つマークして、遠距離射程内の目標1体を、最も恐れるものの強力な幻術で捕らえる。幻術に捕らわれている間、目標は拘束状態かつ脆弱状態である。目標は【直観】ロールに成功することで脱出し、両状態を終了させることができる。"
+        },
+        {
+          "name": "遁走",
+          "type": "反応",
+          "description": "この魔術師は攻撃によってダメージを受けた時、遠距離射程まで転移することができる。"
+        },
+        {
+          "name": "罪の枷",
+          "type": "反応",
+          "description": "カウントダウン（繰り返し2d6）。この魔術師が初めてスポットライトを浴びた時、カウントダウンを開始する。カウントダウンが作動した時、遠距離射程内にいるすべての目標は脆弱状態になり、最大の後悔を追体験することでストレスを1つマークしなければならない。目標は【存在】または【筋力】ロールに成功することで後悔から抜け出すことができる。PCは脱出に失敗すると希望を1つ失う。"
+        }
+      ]
+    },
+    {
+      "id": "fallen-warlord-realm-breaker",
+      "name": "堕落将軍：王国破り",
+      "tier": 4,
+      "type": "単体",
+      "description": "怒りと恨みに包まれた堕神。英雄たちの精神を打ち砕いてきた数千年の経験を持つ。",
+      "motivesAndTactics": "腐敗させる、支配する、罰する、弱者を打ち砕く",
+      "difficulty": 20,
+      "damageThresholds": "36／66",
+      "hp": 8,
+      "stress": 5,
+      "attackModifier": 7,
+      "standardAttack": {
+        "name": "棘の鞭",
+        "range": "近距離",
+        "damagedice": "4d8+7",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "征服",
+          "modifier": 3
+        },
+        {
+          "name": "歴史",
+          "modifier": 2
+        },
+        {
+          "name": "威圧",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "この王国破りにはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "火恨の板金鎧",
+          "type": "受動",
+          "description": "この王国破りがダメージを受けた時、そのダメージを2d10だけ減少させる。"
+        },
+        {
+          "name": "苦悶の鞭",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内にいるすべての目標に対して通常攻撃を行う。目標は、この攻撃によるダメージを軽減するために防具を使用する際、防具スロットを2つマークしなければならない。"
+        },
+        {
+          "name": "万物を飲み込む怒り",
+          "type": "反応",
+          "description": "カウントダウン（減少8）。この王国破りが初めてスポットライトを浴びた時、カウントダウンを開始する。カウントダウンが作動した時、骨から肉を引き剥がす具現化した怒りの奔流が生まれる。遠距離射程内にいるすべての目標は【存在】反応ロールを行わなければならない。失敗した目標は2d6＋10の直接魔法ダメージを受ける。成功した目標は半分のダメージを受ける。このダメージによってマークされたHP1つごとに、そのHPをマークした目標の至近距離射程内に、《堕落突撃兵》1体を召喚する。カウントダウンの最大値が0になったなら、この王国破りは残っているHPをマークする。その時、遠距離射程内にいるすべての目標も残っているHPをすべてマークし、死亡ムーヴを行わなければならない。"
+        },
+        {
+          "name": "破滅もたらす者",
+          "type": "反応",
+          "description": "この王国破りの攻撃によって目標がHPをマークした時、目標の遠距離射程内にいるすべてのPCは希望を1つ失わなければならない。"
+        },
+        {
+          "name": "敗北を知らぬ（相変化）",
+          "type": "反応",
+          "description": "この王国崩しが最後のHPをマークした時、《不敗の覇者》に置き換え、即座にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "fallen-warlord-undefeated-champion",
+      "name": "堕落将軍：不敗の覇者",
+      "tier": 4,
+      "type": "単体",
+      "description": "最も恐れられる者だけが、真の恐怖を知ることができる。",
+      "motivesAndTactics": "容赦なき死をもたらす、反抗する者を罰する、何としても勝利を確保する",
+      "difficulty": 18,
+      "damageThresholds": "35／58",
+      "hp": 11,
+      "stress": 5,
+      "attackModifier": 8,
+      "standardAttack": {
+        "name": "砕心剣",
+        "range": "至近距離",
+        "damagedice": "4d12+13",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "征服",
+          "modifier": 3
+        },
+        {
+          "name": "歴史",
+          "modifier": 2
+        },
+        {
+          "name": "威圧",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "この不敗の覇者にはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "揺らいだ鎧",
+          "type": "受動",
+          "description": "この不敗の覇者がダメージを受けた時、そのダメージを1d10だけ減少させる。"
+        },
+        {
+          "name": "破砕の一撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内にいるすべての目標に対して通常攻撃を行う。この覇者が成功したPCは、この攻撃によってマークしたHPと同じ数の希望を失う。"
+        },
+        {
+          "name": "終わりなき大軍",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、PC数の2倍に等しい数の《堕落突撃兵》を召喚する。召喚したクリーチャーは遠距離射程に現れる。"
+        },
+        {
+          "name": "不浄の円",
+          "type": "反応",
+          "description": "カウントダウン（1d8）。この不敗の覇者が初めてスポットライトを浴びた時、カウントダウンを開始する。カウントダウンが作動した時、この覇者の遠距離射程内の範囲を覆う魔法円を起動する。この範囲内の目標1体は、円から離れるまで脆弱状態になる。この円は、この不敗の覇者に大ダメージを与えることで除去することができる。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "この不敗の覇者がPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "破滅もたらす者",
+          "type": "反応",
+          "description": "この不敗の覇者の攻撃によって目標がHPをマークした時、目標の遠距離射程内にいるすべてのPCは希望を1つ失わなければならない。"
+        }
+      ]
+    },
+    {
+      "id": "hallowed-archer",
+      "name": "神聖弓兵",
+      "tier": 4,
+      "type": "射撃",
+      "description": "聖化された弓を携えた精霊の兵士。",
+      "motivesAndTactics": "射撃を集中させる、命令に従う、位置取りを変える、掃射する",
+      "difficulty": 19,
+      "damageThresholds": "25／45",
+      "hp": 3,
+      "stress": 2,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "聖化長弓",
+        "range": "遠距離",
+        "damagedice": "4d8+8",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "懲罰",
+          "type": "受動",
+          "description": "この弓使いが《高位神使》による有罪状態の目標に与えるダメージは2倍になる。"
+        },
+        {
+          "name": "神聖掃射",
+          "type": "行動",
+          "description": "ストレスを1つマークして、最大3体の目標に対して通常攻撃を行う。"
+        }
+      ]
+    },
+    {
+      "id": "hallowed-soldier",
+      "name": "神聖兵士",
+      "tier": 4,
+      "type": "雑魚",
+      "description": "神聖な武器によって引き上げられた、信者の魂。",
+      "motivesAndTactics": "服従する、裏をかく、罰する、群がる",
+      "difficulty": 18,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 2,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "剣と盾",
+        "range": "近接",
+        "damagedice": "10",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（13）",
+          "type": "受動",
+          "description": "この兵士はダメージを受けると倒れる。PCがこの兵士に13ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "神聖飛行",
+          "type": "受動",
+          "description": "この兵士が飛行している時、恐怖を1つ消費して、行動を取る前に近距離ではなく遠距離射程まで移動する。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《神聖兵士》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ10の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "high-seraph",
+      "name": "高位神使",
+      "tier": 4,
+      "type": "指揮",
+      "description": "神の意思を執行する戦士たちを率いた聖なる主人であり、神の代理戦士。",
+      "motivesAndTactics": "教義を執行する、飛ぶ、裁きを宣告する、打ちのめす",
+      "difficulty": 20,
+      "damageThresholds": "37／70",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 8,
+      "standardAttack": {
+        "name": "聖剣",
+        "range": "至近距離",
+        "damagedice": "4d10+10",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "神聖知識",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "この神使にはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "神聖飛行",
+          "type": "受動",
+          "description": "この神使が飛行している時、恐怖を1つ消費して、行動を取る前に近距離ではなく遠距離射程まで移動する。"
+        },
+        {
+          "name": "審判",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、目標1体をこの神使が仕える神の目によって有罪状態にする。この状態はこの神使が倒れるまで継続する。有罪状態の間、目標はロール結果が希望だったことによって希望を得られない。この神使が有罪状態の目標に対する通常攻撃に成功した時、目標は通常ダメージの代わりに大ダメージを受ける。この神使が有罪状態にしておける目標は一度に1体のみである。"
+        },
+        {
+          "name": "神の光線",
+          "type": "行動",
+          "description": "ストレスを1つマークして、神性の薄片を灼熱の光線として映し出す。この光線は超遠距離射程内にいる最大20体の目標に命中する。目標は【存在】反応ロールを行わなければならない（有罪状態なら不利を受ける）。失敗した目標は4d6＋12の魔法ダメージを受ける。成功した目標は半分のダメージを受ける。"
+        },
+        {
+          "name": "我らは一つ",
+          "type": "行動",
+          "description": "場面ごとに1回、恐怖を1つ消費して、遠距離射程内にいる自分以外のすべての敵キャラクターにスポットライトを当てる。こうしてスポットライトを浴びている敵キャラクターが行った攻撃が与えるダメージは半分になる。"
+        }
+      ]
+    },
+    {
+      "id": "kraken",
+      "name": "クラーケン",
+      "tier": 4,
+      "type": "単体",
+      "description": "最大級のガレオン船より大きな、伝説の海の獣。びっしりと吸盤の並んだ触手と、恐ろしい大口を持つ。",
+      "motivesAndTactics": "食い尽くす、押しつぶす、溺れさせる、掴む",
+      "difficulty": 20,
+      "damageThresholds": "35／70",
+      "hp": 11,
+      "stress": 8,
+      "attackModifier": 7,
+      "standardAttack": {
+        "name": "触手",
+        "range": "近距離",
+        "damagedice": "4d12+10",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "水泳",
+          "modifier": 3
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "このクラーケンにはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "無数の触手",
+          "type": "受動",
+          "description": "このクラーケンは、マークしているHPが7つ以下の間、射程内の目標2体に対して通常攻撃を行うことができる。"
+        },
+        {
+          "name": "掴んで沈める",
+          "type": "行動",
+          "description": "近距離射程内の目標1体に対して攻撃ロールを行う。成功したなら、ストレスを1つマークして、目標を触手で掴んで水中に引きずり込む。目標は拘束状態かつ脆弱状態になる。これらの状態は、目標が【筋力】ロールに成功して脱出するか、このクラーケンが中ダメージ以上を受けるまで継続する。こうして拘束状態と脆弱状態にある間、目標は行動ロールを行う際にストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "沸騰爆砕",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程までの直線上にいる任意の数の目標に沸き立つ水を吐く。すべての目標は【敏捷】反応ロールを行わなければならず、失敗すると4d6＋9の物理ダメージを受ける。目標は、このダメージを軽減するために防具スロットを1つマークするなら、ストレスも1つマークしなければならない。"
+        },
+        {
+          "name": "優勢",
+          "type": "反応",
+          "description": "このクラーケンがPCに対する攻撃に成功した時、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "oracle-of-doom",
+      "name": "破滅のオラクル",
+      "tier": 4,
+      "type": "単体",
+      "description": "不死身の巨体を持つ運命の化身。呪われているため、悪い結末しか見ることができない。",
+      "motivesAndTactics": "環境を変える、非難する、意気消沈させる、見捨てる",
+      "difficulty": 20,
+      "damageThresholds": "38／68",
+      "hp": 11,
+      "stress": 10,
+      "attackModifier": 8,
+      "standardAttack": {
+        "name": "精神攻撃",
+        "range": "遠距離",
+        "damagedice": "4d8+9",
+        "damagetype": "魔法"
+      },
+      "experiences": [
+        {
+          "name": "無限の知識",
+          "modifier": 4
+        }
+      ],
+      "features": [
+        {
+          "name": "恐怖喚起",
+          "type": "受動",
+          "description": "このオラクルが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "恐怖喚起",
+          "type": "受動",
+          "description": "このオラクルが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "閉塞感",
+          "type": "受動",
+          "description": "このオラクルの超遠距離射程内でロールに失敗したクリーチャーは、ストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "運命宣告",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、遠距離射程内の目標1体に個人的な悪夢の幻視を見せる。目標は【知識】反応ロールを行わなければならない。失敗したなら、目標は希望をすべて失い、2d20＋4の直接魔法ダメージを受ける。成功したなら、目標は半分のダメージを受け、希望を1つ失う。"
+        },
+        {
+          "name": "拷問者召喚",
+          "type": "行動",
+          "description": "1日に1回、恐怖を2つ消費して、PCの個人的な悪夢の1つに関連したティア2以下の雑魚クリーチャーを2d4体召喚する。召喚したクリーチャーはそのPCの近距離射程に現れる。"
+        },
+        {
+          "name": "不吉な知識",
+          "type": "反応",
+          "description": "このオラクルは定命のクリーチャーを見た時、そのクリーチャーの個人的な悪夢1つが瞬時にわかる。"
+        },
+        {
+          "name": "復讐の運命",
+          "type": "反応",
+          "description": "このオラクルが至近距離射程内の攻撃によってHPをマークした時、君はストレスを1つマークして、攻撃者を遠距離射程へ吹き飛ばし、2d10＋4の物理ダメージを与えることができる。"
+        }
+      ]
+    },
+    {
+      "id": "outer-realms-abomination",
+      "name": "外方界のアボミネーション",
+      "tier": 4,
+      "type": "暴力",
+      "description": "絶えず変化し続ける、生命を愚弄する混沌。",
+      "motivesAndTactics": "取り壊す、貪り尽くす、弱らせる",
+      "difficulty": 19,
+      "damageThresholds": "35／71",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": "2d4",
+      "standardAttack": {
+        "name": "巨大擬足",
+        "range": "至近距離",
+        "damagedice": "4d6+13",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "混沌の体",
+          "type": "受動",
+          "description": "このアボミネーションが攻撃する時、2d4を振り、出た目を攻撃修正値として使用する。"
+        },
+        {
+          "name": "方向感覚を狂わせる存在",
+          "type": "受動",
+          "description": "このアボミネーションによってダメージを受けた目標は、【直観】反応ロールを行わなければならない。失敗したなら、目標は次の行動ロールに不利を受け、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "現実震撼",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、このアボミネーションの遠距離射程内の現実の境界線を揺るがす。この範囲内にいるすべての目標は【知識】反応ロールを行わなければならず、失敗すると場面の終了時まで現実からの隔離状態になる。現実からの隔離状態の目標は、希望を消費するか、防具スロット、HP、ストレスをマークする時、消費またはマークする量を2倍にしなければならない。"
+        },
+        {
+          "name": "非現実体",
+          "type": "反応",
+          "description": "このアボミネーションがダメージを受けた時、そのダメージを1d20だけ減少させる。このアボミネーションに対して成功した攻撃によってマークしたHPが1つ以下だったなら、君は恐怖を1つ得る。"
+        }
+      ]
+    },
+    {
+      "id": "outer-realms-corrupter",
+      "name": "外方界のコラプター",
+      "tier": 4,
+      "type": "支援",
+      "description": "色とりどりの光でできているかのような、移ろう形なき塊。",
+      "motivesAndTactics": "混乱させる、注意をそらす、圧倒する",
+      "difficulty": 19,
+      "damageThresholds": "27／47",
+      "hp": 4,
+      "stress": 3,
+      "attackModifier": 7,
+      "standardAttack": {
+        "name": "腐食の擬足",
+        "range": "至近距離",
+        "damagedice": "4d8+5",
+        "damagetype": "魔法"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "意思を砕く接触",
+          "type": "受動",
+          "description": "このコラプターによってダメージを受けたPCは、希望を1つ失う。"
+        },
+        {
+          "name": "現実漂流物吐き出し",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内にいるすべての目標に、飲み込んでいた現実の一部を未消化のまま吐き出す。目標は【知識】反応ロールを行わなければならず、失敗するとストレスを2つマークする。"
+        }
+      ]
+    },
+    {
+      "id": "outer-realms-thrall",
+      "name": "外方界のスロール",
+      "tier": 4,
+      "type": "雑魚",
+      "description": "記憶とアイデンティティを奪われた、ぼんやりと人型をした生き物。",
+      "motivesAndTactics": "破壊する、嫌悪させる、方向感覚を狂わせる、威圧する",
+      "difficulty": 17,
+      "damageThresholds": "なし",
+      "hp": 1,
+      "stress": 1,
+      "attackModifier": 3,
+      "standardAttack": {
+        "name": "爪と歯",
+        "range": "至近距離",
+        "damagedice": "11",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "雑魚（13）",
+          "type": "受動",
+          "description": "このスロールはダメージを受けると倒れる。PCがこのスロールに13ダメージを与えるごとに、その攻撃が成功する射程内の雑魚クリーチャーを追加で1体倒す。"
+        },
+        {
+          "name": "集団攻撃",
+          "type": "行動",
+          "description": "恐怖を1つ消費して目標1体を選び、目標の近距離射程内にいるすべての《外方界のスロール》にスポットライトを当てる。それらの雑魚クリーチャーは目標の近接射程内に移動し、全員で1回の攻撃ロールを行う。成功したなら、それぞれ11の物理ダメージを与える（ダメージは合計すること）。"
+        }
+      ]
+    },
+    {
+      "id": "volcanic-dragon-obsidian-predator",
+      "name": "ヴォルカニック・ドラゴン：黒曜の捕食獣",
+      "tier": 4,
+      "type": "単体",
+      "description": "黒曜石の鱗と信じがたいほど鋭い爪を持つ、巨大な翼のある生き物。",
+      "motivesAndTactics": "住処を守る、急降下して攻撃する、飛ぶ、狩る、威圧する",
+      "difficulty": 19,
+      "damageThresholds": "33／65",
+      "hp": 6,
+      "stress": 5,
+      "attackModifier": 8,
+      "standardAttack": {
+        "name": "黒曜爪",
+        "range": "近距離",
+        "damagedice": "4d10+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "上空狩猟",
+          "modifier": 5
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "この黒曜の捕食獣にはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "飛行",
+          "type": "受動",
+          "description": "飛行中、この黒曜の捕食獣は難易度に＋3のボーナスを得る。"
+        },
+        {
+          "name": "黒曜鱗",
+          "type": "受動",
+          "description": "この黒曜の捕食獣は物理ダメージへの抵抗を持つ。"
+        },
+        {
+          "name": "滑落の尾",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内にいるすべての目標に対して攻撃を行う。この黒曜の捕食獣が成功した目標は4d6＋4の物理ダメージを受け、遠距離射程へ吹き飛ばされて、次に自分のロール結果が希望となるまで脆弱状態になる。"
+        },
+        {
+          "name": "急降下攻撃",
+          "type": "行動",
+          "description": "この黒曜の捕食獣が飛行しているなら、ストレスを1つマークして、遠距離射程内の一点を選ぶ。その地点へ移動し、至近距離射程内にいるすべての目標に攻撃を行う。この黒曜の捕食獣が成功した目標は2d10＋6の物理ダメージを受け、ストレスを1つマークしなければならず、希望を1つ失う。"
+        },
+        {
+          "name": "噴火する激怒（相変化）",
+          "type": "反応",
+          "description": "この黒曜の捕食獣が最後のHPをマークした時、《溶岩の厄災獣》に置き換え、即座にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "volcanic-dragon-molten-scourge",
+      "name": "ヴォルカニック・ドラゴン：溶岩の厄災獣",
+      "tier": 4,
+      "type": "単体",
+      "description": "傷を負って激怒し、ドラゴンは爆発して溶岩となる。",
+      "motivesAndTactics": "溶岩を浴びせる、焼き尽くす、侵入者を撃退する、位置取りを変える",
+      "difficulty": 20,
+      "damageThresholds": "30／58",
+      "hp": 7,
+      "stress": 5,
+      "attackModifier": 9,
+      "standardAttack": {
+        "name": "溶岩爪",
+        "range": "近距離",
+        "damagedice": "4d12+4",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "上空狩猟",
+          "modifier": 5
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（3）",
+          "type": "受動",
+          "description": "この溶岩の厄災獣にはGMターンごとに最大3回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "ひび割れた鱗",
+          "type": "受動",
+          "description": "この溶岩の厄災獣がダメージを受けた時、マークしているHPと同じ数のd6を振る。4以上の目が1つ出るごとに、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "破砕の力",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内の目標1体に対して攻撃を行う。成功したなら、目標は4d8＋1の物理ダメージを受け、希望を1つ失い、近距離射程へ吹き飛ばされる。この溶岩の厄災獣はストレスを1つ回復する。"
+        },
+        {
+          "name": "噴火",
+          "type": "行動",
+          "description": "恐怖を1つ消費して、この溶岩の厄災獣の鱗の下から溶岩を噴出し、至近距離射程内の範囲を流れる溶岩で満たす。その範囲内にいるすべての目標は【敏捷】反応ロールを行わなければならず、失敗すると4d6＋6の物理ダメージを受けて近距離射程へ吹き飛ばされる。この範囲には溶岩が残る。この溶岩の厄災獣以外のクリーチャーは、その範囲に入るか、その中で行動したなら、HPを6つマークしなければならない。"
+        },
+        {
+          "name": "火山ブレス",
+          "type": "反応",
+          "description": "この溶岩の厄災獣が中ダメージを受けた時、d10を振る。8以上の目が出たなら、この溶岩の厄災獣は前方の遠距離射程内に溶岩を吐く。その範囲内にいるすべての目標は【敏捷】反応ロールを行わなければならない。失敗した目標は2d10＋4の物理ダメージを受け、ストレスを1d4つマークし、ストレスを回復するまで脆弱状態になる。成功した目標は半分のダメージを受け、ストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "溶岩噴射",
+          "type": "反応",
+          "description": "この溶岩の厄災獣が至近距離射程内の攻撃によって大ダメージを受けた時、傷口から溶けた血液が湧き出し、攻撃者に2d10＋4の直接物理ダメージを与える。"
+        },
+        {
+          "name": "灰の復讐（相変化）",
+          "type": "反応",
+          "description": "この溶岩の厄災獣が最後のHPをマークした時、《灰燼の暴獣》に置き換え、即座にスポットライトを当てる。"
+        }
+      ]
+    },
+    {
+      "id": "volcanic-dragon-ashen-tyrant",
+      "name": "ヴォルカニック・ドラゴン：灰燼の暴獣",
+      "tier": 4,
+      "type": "単体",
+      "description": "不遜にもこのドラゴンをこれほど傷つけた敵は初めてだ。溶岩が落ち着くにつれ、ドラゴンは自分がこれまで倒してきた敵と同じように、灰と化す。",
+      "motivesAndTactics": "締め上げる、飛行する、威圧する、殺すか殺されるか",
+      "difficulty": 18,
+      "damageThresholds": "29／55",
+      "hp": 8,
+      "stress": 5,
+      "attackModifier": 10,
+      "standardAttack": {
+        "name": "爪と牙",
+        "range": "近距離",
+        "damagedice": "4d12+15",
+        "damagetype": "物理"
+      },
+      "experiences": [
+        {
+          "name": "上空狩猟",
+          "modifier": 5
+        }
+      ],
+      "features": [
+        {
+          "name": "連続攻撃（4）",
+          "type": "受動",
+          "description": "この灰燼の暴獣にはGMターンごとに最大4回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "背水の陣",
+          "type": "受動",
+          "description": "恐怖を消費する代わりにストレスを1つマークして、この灰燼の暴獣にスポットライトを当てる。"
+        },
+        {
+          "name": "傷ついた翼",
+          "type": "受動",
+          "description": "飛行中、この灰燼の暴獣は難易度に＋1のボーナスを得る。"
+        },
+        {
+          "name": "灰は灰へ",
+          "type": "受動",
+          "description": "PCがこの灰燼の暴獣の近距離射程内でロールに失敗した時、そのPCは希望を1つ失い、君は恐怖を1つ得る。希望を失えないなら、PCはHPを1つマークする。"
+        },
+        {
+          "name": "絶望の大暴れ",
+          "type": "行動",
+          "description": "ストレスを1つマークして、近距離射程内にいるすべての目標に対して攻撃を行う。この灰燼の暴獣が成功した目標は2d20＋2の物理ダメージを受け、元いた場所から近距離射程へ吹き飛ばされ、ストレスを1つマークしなければならない。"
+        },
+        {
+          "name": "灰の雲",
+          "type": "行動",
+          "description": "恐怖を1つ消費して地面を叩きつけ、遠距離射程内に灰を巻き上げる。この灰の雲の中にいる間、目標は行動ロールに不利を受ける。次に敵キャラクターがスポットライトを浴びた時、この灰の雲は晴れる。"
+        },
+        {
+          "name": "終末の叩きつけ",
+          "type": "行動",
+          "description": "カウントダウン（1d12）。恐怖を1つ消費して開始する。PCのロール結果が恐怖だった時、カウントダウンが進む。カウントダウンが作動した時、この灰燼の暴獣が辺りを打ちつけ、環境的損害（地震、滑落、壁の崩落など）を引き起こす。遠距離射程内にいるすべての目標は【筋力】反応ロールを行わなければならない。失敗した目標は2d10＋10の物理ダメージを受け、瓦礫によって拘束状態になる。この状態は【筋力】ロールに成功して脱出するまで継続する。成功した目標は半分のダメージを受ける。カウントダウンの途中でこの灰燼の暴獣が倒されたなら、断末魔のあがきとして即座にカウントダウンを作動させる。"
+        }
+      ]
+    },
+    {
+      "id": "perfected-zombie",
+      "name": "完成化ゾンビ",
+      "tier": 4,
+      "type": "暴力",
+      "description": "魔法によって力と技能を注ぎ込まれた、巨体で筋肉質のゾンビ。",
+      "motivesAndTactics": "食い尽くす、執拗に追いかける、傷つける、恐怖を与える",
+      "difficulty": 20,
+      "damageThresholds": "40／70",
+      "hp": 9,
+      "stress": 4,
+      "attackModifier": 4,
+      "standardAttack": {
+        "name": "大斧",
+        "range": "至近距離",
+        "damagedice": "4d12+15",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "恐怖喚起",
+          "type": "受動",
+          "description": "このゾンビが攻撃に成功した時、遠距離射程内にいるすべてのPCは希望を1つ失い、君は恐怖を1つ得る。"
+        },
+        {
+          "name": "恐ろしの存在",
+          "type": "受動",
+          "description": "PCはこのゾンビに対して特徴を使用するために希望を消費することができない。"
+        },
+        {
+          "name": "完全攻撃",
+          "type": "行動",
+          "description": "ストレスを1つマークして、至近距離射程内にいるすべての目標に対して通常攻撃を行う。このゾンビが成功した目標は次の休憩まで脆弱状態になる。"
+        },
+        {
+          "name": "熟練の便乗主義",
+          "type": "反応",
+          "description": "他の敵キャラクターがこのゾンビの至近距離射程内の目標にダメージを与えた時、君は恐怖を1つ消費して、そのダメージロールにこのゾンビの通常攻撃のダメージを加えることができる。"
+        }
+      ]
+    },
+    {
+      "id": "zombie-legion",
+      "name": "ゾンビ軍団",
+      "tier": 4,
+      "type": "大群（3／HP）",
+      "description": "肉体が腐敗してなお力強い、大規模なアンデッドの群れ。",
+      "motivesAndTactics": "脳みそを食らう、肉を細切れにする、取り囲む",
+      "difficulty": 17,
+      "damageThresholds": "25／45",
+      "hp": 8,
+      "stress": 5,
+      "attackModifier": 2,
+      "standardAttack": {
+        "name": "不死の手",
+        "range": "近距離",
+        "damagedice": "4d6+10",
+        "damagetype": "物理"
+      },
+      "experiences": [],
+      "features": [
+        {
+          "name": "大群（2d6＋5）",
+          "type": "受動",
+          "description": "この大軍がHPを半分以上マークしている時、通常攻撃が与える物理ダメージは2d6＋5になる。"
+        },
+        {
+          "name": "不屈",
+          "type": "受動",
+          "description": "この大軍は物理ダメージへの抵抗を持つ。"
+        },
+        {
+          "name": "連続攻撃（2）",
+          "type": "受動",
+          "description": "この大軍にはGMターンごとに最大2回までスポットライトを当てることができる。スポットライトを当てる際は通常通りに恐怖を消費する。"
+        },
+        {
+          "name": "圧倒",
+          "type": "反応",
+          "description": "この大軍が近接射程内の攻撃から小ダメージを受けた時、君はストレスを1つマークして、攻撃者に対して有利で通常攻撃を行うことができる。"
+        }
+      ]
+    }
+  ]
+}
