@@ -18,8 +18,8 @@ let characterData = {
   inventoryWeapon1: {name: "", category: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
   inventoryWeapon2: {name: "", category: "", trait: "", range: "", damagedie: "", damagetype: "", burden: "", feature: ""},
   gold: {handful: 0, bag: 0, chest: 0},
-  heritageFeatures: [], classFeatures: [], domainCards: [],
   detail: [], background: [], connection: [],
+  heritageFeatures: [], classFeatures: [], domainCards: [],
   levelupTier2: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0},
   levelupTier3: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0, upgrade: 0, proficiency: 0, multiclass: 0},
   levelupTier4: {trait: 0, hp: 0, stress: 0, experience: 0, domaincard: 0, evasion: 0, upgrade: 0, proficiency: 0, multiclass: 0},
@@ -101,6 +101,7 @@ async function loadPremadeData(file) {
   const data = premadeData.find(premade => premade.id === id);
   
   characterData = data;
+  console.log(characterData);
   setCharacterData();
 }
 
