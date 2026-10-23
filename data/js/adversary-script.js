@@ -1,4 +1,4 @@
-let adversaryData = {
+const defaultAdversaryData = {
   name: "", tier: "", type: "", hpPerNum: "",
   description: "", motivesAndTactics: "",
   difficulty: 0, damageThresholds: "", hp: "", stress: "",
@@ -36,8 +36,10 @@ let adversaryData = {
   additionalChatPalette: []
 };
 
+let adversaryData = defaultAdversaryData;
+
 // =========================
-// 初期化
+// ページ初期化
 // =========================
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -80,13 +82,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 // =========================
-// JSON保存
+// 新規作成
 // =========================
 
 function resetAdversaryData() {
   if (!confirm("入力中のデータは失われます。キャラクターシートをリセットしてもよろしいですか？")) {
     return;
   }
+
+  adversaryData = defaultAdversaryData;
+  setAdversaryData();
 }
 
 // =========================
@@ -402,8 +407,12 @@ function copyToCcf() {
   // メモ
   memo_arr.push(`【ティア】${data.tier}｜【分類】${data.type}
     ${data.type === "大群" ? `（${data.hpPerNum}／HP）` : ""}`);
-  memo_arr.push(`${data.description}`);
-  memo_arr.push(`【動機と戦術】${data.motivesAndTactics}`);
+  if (data.description) {
+    memo_arr.push(data.description);
+  }
+  if (data.motivesAndTactics) {
+    memo_arr.push(`【動機と戦術】${data.motivesAndTactics}`);
+  }
   memo_arr.push(`【難易度】${data.difficulty}｜【ダメージ閾値】${data.damageThresholds}`);
 
   // ステータス
@@ -425,7 +434,7 @@ function copyToCcf() {
       params: "",
       commands: chatPalette(data),
       active: true,
-      secret: false,
+      secret: true,
       invisible: false,
       hideStatus: false,
       color: "#ffffff"

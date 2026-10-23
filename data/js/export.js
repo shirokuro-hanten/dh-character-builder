@@ -13,17 +13,18 @@ function copyToCcf() {
   let params_arr = [];
 
   // メモ
-  memo_arr.push(`【代名詞】${data.pronouns}｜【プレイヤー名】${data.playerName}`);
+  memo_arr.push(`【名前】${data.name}`);
+  memo_arr.push(`【ジェンダー代名詞】${data.pronouns}｜【プレイヤー名】${data.playerName}`);
   memo_arr.push(`【クラス】${data.class}｜【サブクラス】${data.subclass}｜【レベル】${data.level}`);
   memo_arr.push(`【血統】${data.ancestry}｜【共同体】${data.community}`);
-  memo_arr.push(`【回避】${data.evasion}｜【ダメージ閾値】${data.damageThresholds.major}／${data.damageThresholds.severe}`);
+  memo_arr.push(`【回避値】${data.evasion}｜【ダメージ閾値】${data.damageThresholds.major}／${data.damageThresholds.severe}`);
   memo_arr.push(`【所持品】\n${data.inventory.join("\n")}`);
 
   // ステータス
   status_arr.push({label: "HP", value: data.hp - data.hpMarked, max: data.hp});
   status_arr.push({label: "ストレス", value: data.stress - data.stressMarked, max: data.stress});
   status_arr.push({label: "希望", value: data.hope, max: 6});
-  status_arr.push({label: "防具スロット", value: data.armorScore - data.armorSlotsMarked, max: data.armorScore});
+  status_arr.push({label: "防具ｽﾛｯﾄ", value: data.armorScore - data.armorSlotsMarked, max: data.armorScore});
   for (let i = 0; i < 5; i++) {
     const additionalStat = data.additionalStat[i];
     if (additionalStat.label === "") {continue;}
@@ -79,7 +80,7 @@ function exportToUdonarium() {
     </data>
     <data name="detail">
       <data name="情報">
-        <data type="note" name="代名詞">${escapeXml(data.pronouns)}</data>
+        <data type="note" name="ジェンダー代名詞">${escapeXml(data.pronouns)}</data>
         <data type="note" name="プレイヤー名">${escapeXml(data.playerName)}</data>
         <data type="note" name="クラス">${escapeXml(data.class)}</data>
         <data type="note" name="サブクラス">${escapeXml(data.subclass)}</data>
@@ -91,8 +92,8 @@ function exportToUdonarium() {
         <data type="numberResource" currentValue="${data.hp - data.hpMarked}" name="HP">${data.hp}</data>
         <data type="numberResource" currentValue="${data.stress - data.stressMarked}" name="ストレス">${data.stress}</data>
         <data type="numberResource" currentValue="${data.hope}" name="希望">6</data>
-        <data type="numberResource" currentValue="${data.armorScore - data.armorSlotsMarked}" name="防具スロット">${data.armorScore}</data>
-        <data name="回避">${data.evasion}</data>
+        <data type="numberResource" currentValue="${data.armorScore - data.armorSlotsMarked}" name="防具ｽﾛｯﾄ">${data.armorScore}</data>
+        <data name="回避値">${data.evasion}</data>
         <data type="number" name="ダメージ閾値">${data.damageThresholds.major}／${data.damageThresholds.severe}</data>
         <data name="習熟">${data.proficiency}</data>
         ${additionalStatsXml(data)}
@@ -159,25 +160,46 @@ function chatPalette(data) {
     chatPalette_arr.push(`------呪文発動------`);
     chatPalette_arr.push(`2d12${getModifier(data.traits[data.spellcastingTrait])} 呪文発動ロール【${traitsName[data.spellcastingTrait]}】`);
   };
+
   chatPalette_arr.push("------武器------");
-  chatPalette_arr.push(`---メイン武器〈${data.activeWeaponPrimary.name}〉：${data.activeWeaponPrimary.range}、${data.activeWeaponPrimary.burden}、${traitsName[data.activeWeaponPrimary.trait]}`);
-  chatPalette_arr.push(`2d12${getModifier(data.traits[data.activeWeaponPrimary.trait])} 〈${data.activeWeaponPrimary.name}〉攻撃ロール`);
+  let weaponTrait =
+    data.activeWeaponPrimary.trait === "spellcasting"
+      ? data.spellcastingTrait
+      : data.activeWeaponPrimary.trait;
+  chatPalette_arr.push(`---メイン武器〈${data.activeWeaponPrimary.name}〉：【${traitsName[weaponTrait]}】、${data.activeWeaponPrimary.range}、${data.activeWeaponPrimary.burden}`);
+  chatPalette_arr.push(`2d12${getModifier(data.traits[weaponTrait])} 〈${data.activeWeaponPrimary.name}〉攻撃ロール`);
   chatPalette_arr.push(`${data.proficiency}${data.activeWeaponPrimary.damagedie} 〈${data.activeWeaponPrimary.name}〉ダメージロール（${data.activeWeaponPrimary.damagetype}）`);
+
   if (data.activeWeaponSecondary.name != "") {
     chatPalette_arr.push(`---サブ武器〈${data.activeWeaponSecondary.name}〉：${data.activeWeaponSecondary.range}、${traitsName[data.activeWeaponSecondary.trait]}`);
-    chatPalette_arr.push(`2d12${getModifier(data.traits[data.activeWeaponSecondary.trait])} 〈${data.activeWeaponSecondary.name}〉攻撃ロール`);
+    weaponTrait =
+      data.activeWeaponSecondary.trait === "spellcasting"
+        ? data.spellcastingTrait
+        : data.activeWeaponSecondary.trait;
+    chatPalette_arr.push(`2d12${getModifier(data.traits[weaponTrait])} 〈${data.activeWeaponSecondary.name}〉攻撃ロール`);
     chatPalette_arr.push(`${data.proficiency}${data.activeWeaponSecondary.damagedie} 〈${data.activeWeaponSecondary.name}〉ダメージロール（${data.activeWeaponSecondary.damagetype}）`);
   }
+
   if (data.inventoryWeapon1.name != "") {
     chatPalette_arr.push(`---所持武器〈${data.inventoryWeapon1.name}〉：${data.inventoryWeapon1.category}、${data.inventoryWeapon1.range}、${data.inventoryWeapon1.burden}、${traitsName[data.inventoryWeapon1.trait]}`);
-    chatPalette_arr.push(`2d12${getModifier(data.traits[data.inventoryWeapon1.trait])} 〈${data.inventoryWeapon1.name}〉攻撃ロール`);
+    weaponTrait =
+      data.inventoryWeapon1.trait === "spellcasting"
+        ? data.spellcastingTrait
+        : data.activeWeaponPrimary.trait;
+    chatPalette_arr.push(`2d12${getModifier(data.traits[weaponTrait])} 〈${data.inventoryWeapon1.name}〉攻撃ロール`);
     chatPalette_arr.push(`${data.proficiency}${data.inventoryWeapon1.damagedie} 〈${data.inventoryWeapon1.name}〉ダメージロール（${data.inventoryWeapon1.damagetype}）`);
   }
+
   if (data.inventoryWeapon2.name != "") {
     chatPalette_arr.push(`---所持武器〈${data.inventoryWeapon2.name}〉：${data.inventoryWeapon2.category}、${data.inventoryWeapon2.range}、${data.inventoryWeapon2.burden}、${traitsName[data.inventoryWeapon2.trait]}`);
-    chatPalette_arr.push(`2d12${getModifier(data.traits[data.inventoryWeapon2.trait])} 〈${data.inventoryWeapon2.name}〉攻撃ロール`);
+    weaponTrait =
+      data.inventoryWeapon2.trait === "spellcasting"
+        ? data.spellcastingTrait
+        : data.inventoryWeapon2.trait;
+    chatPalette_arr.push(`2d12${getModifier(data.traits[weaponTrait])} 〈${data.inventoryWeapon2.name}〉攻撃ロール`);
     chatPalette_arr.push(`${data.proficiency}${data.inventoryWeapon2.damagedie} 〈${data.inventoryWeapon2.name}〉ダメージロール（${data.inventoryWeapon2.damagetype}）`);
   }
+
   if (data.additionalChatPalette.length > 0) {
     chatPalette_arr.push("---------------");
     chatPalette_arr.push(...data.additionalChatPalette);

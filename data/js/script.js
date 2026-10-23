@@ -1,4 +1,4 @@
-let characterData = {
+const defaultCharacterData = {
   name: "", pronouns: "", playerName: "",
   class: "", subclass: "", level: 1,
   ancestry: "", community: "",
@@ -7,9 +7,15 @@ let characterData = {
   traitsMarked: {agility: false, strength: false, finesse: false, instinct: false, presence: false, knowledge: false},
   spellcastingTrait: "",
   damageThresholds: "",
-  hp: 0, hpMarked: 0, stress: 0, stressMarked: 0,
+  hp: 6, hpMarked: 0, stress: 6, stressMarked: 0,
   hope: 2,
-  experiences: [{experience: "", bonus: 2}, {experience: "", bonus: 2}, {experience: "", bonus: 0}, {experience: "", bonus: 0}, {experience: "", bonus: 0}],
+  experiences: [
+    {experience: "", bonus: 2},
+    {experience: "", bonus: 2},
+    {experience: "", bonus: 0},
+    {experience: "", bonus: 0},
+    {experience: "", bonus: 0}
+  ],
   proficiency: 1,
   activeWeaponPrimary: {name: "", burden: "", trait: "", range: "", damagedie: "", damagetype: "", feature: ""},
   activeWeaponSecondary: {name: "", trait: "", range: "", damagedie: "", damagetype: "", feature: ""},
@@ -33,14 +39,19 @@ let characterData = {
   additionalChatPalette: []
 };
 
+let characterData = defaultCharacterData;
+
 // =========================
-// JSON保存
+// ページ初期化
 // =========================
 
 function ResetCharacterData() {
   if (!confirm("入力中のデータは失われます。キャラクターシートをリセットしてもよろしいですか？")) {
     return;
   }
+
+  characterData = defaultCharacterData;
+  setCharacterData();
 }
 
 // =========================
@@ -95,13 +106,15 @@ async function loadPremadeData(file) {
   const id = document.getElementById("select-premade").value;
   if (id === "") { return; }
   
-  const response = await fetch("data/json/premade.json");
+  //const response = await fetch("data/json/premade.json");
+  const response = await fetch("data/json/premade.json", {
+    cache: "no-store"
+  });
   const premadeData = await response.json();
   
   const data = premadeData.find(premade => premade.id === id);
   
   characterData = data;
-  console.log(characterData);
   setCharacterData();
 }
 
@@ -247,12 +260,6 @@ function getCharacterData() {
     document.getElementById("gold-chest").value === "" ? 0
     : document.getElementById("gold-chest").value;
 
-  data.heritageFeatures =
-    document.getElementById("heritage-features").value.split("\n");
-  data.classFeatures =
-    document.getElementById("class-features").value.split("\n");
-  data.domainCards =
-    document.getElementById("domain-cards").value.split("\n");
   data.detail =
     document.getElementById("detail").value.split("\n");
   data.background =
@@ -260,6 +267,13 @@ function getCharacterData() {
   data.connection =
     document.getElementById("connection").value.split("\n");
 
+  data.heritageFeatures =
+    document.getElementById("heritage-features").value.split("\n");
+  data.classFeatures =
+    document.getElementById("class-features").value.split("\n");
+  data.domainCards =
+    document.getElementById("domain-cards").value.split("\n");
+  
   for (let i = 2; i < 5; i++) {
     const tier = data[`levelupTier${i}`];
 
@@ -306,6 +320,7 @@ function getCharacterData() {
 
 function setCharacterData() {
   const data = characterData;
+  console.log(data);
 
   document.getElementById("character-name").value =
     data.name;
@@ -373,6 +388,7 @@ function setCharacterData() {
   document.getElementById("proficiency").value =
     data.proficiency;
 
+  console.log(data);
   document.getElementById("active-weapon-primary-name").value =
     data.activeWeaponPrimary.name;
   document.getElementById("active-weapon-primary-burden").value =
@@ -441,18 +457,19 @@ function setCharacterData() {
   document.getElementById("gold-chest").value =
     data.gold.chest === 0 ? "" : data.gold.chest;
 
-  document.getElementById("heritage-features").value =
-    data.heritageFeatures.join("\n");
-  document.getElementById("class-features").value =
-    data.classFeatures.join("\n");
-  document.getElementById("domain-cards").value =
-    data.domainCards.join("\n");
   document.getElementById("detail").value =
     data.detail.join("\n");
   document.getElementById("background").value =
     data.background.join("\n");
   document.getElementById("connection").value =
     data.connection.join("\n");
+
+  document.getElementById("heritage-features").value =
+    data.heritageFeatures.join("\n");
+  document.getElementById("class-features").value =
+    data.classFeatures.join("\n");
+  document.getElementById("domain-cards").value =
+    data.domainCards.join("\n");
 
   for (let i = 2; i < 5; i++) {
     const tier = data[`levelupTier${i}`];
