@@ -405,7 +405,7 @@ function copyToCcf() {
   let params_arr = [];
 
   // メモ
-  memo_arr.push(`【ティア】${data.tier}｜【分類】${data.type}
+  memo_arr.push(`【ティア】${data.tier}｜【種別】${data.type}
     ${data.type === "大群" ? `（${data.hpPerNum}／HP）` : ""}`);
   if (data.description) {
     memo_arr.push(data.description);
@@ -485,7 +485,7 @@ function exportToUdonarium() {
     <data name="detail">
       <data name="情報">
         <data type="note" name="ティア">${escapeXml(data.tier)}</data>
-        <data type="note" name="分類">${escapeXml(data.type)}</data>
+        <data type="note" name="種別">${escapeXml(data.type)}</data>
         <data type="note" name="クラス">${escapeXml(data.hpPerNum)}</data>
         <data type="note" name="説明">${escapeXml(data.description)}</data>
         <data type="number" name="動機と戦術">${data.motivesAndTactics}</data>
@@ -565,8 +565,8 @@ function chatPalette(data) {
 
   chatPalette_arr.push("------攻撃------");
   chatPalette_arr.push(`1d20${getModifier(data.attackModifier)} 攻撃ロール`);
-  chatPalette_arr.push(`1d20${getModifier(data.attackModifier)} 【${data.standardAttack.name}】攻撃ロール（射程：${data.standardAttack.range}）`);
-  chatPalette_arr.push(`${data.standardAttack.damagedice} 【${data.standardAttack.name}】ダメージロール（${data.standardAttack.damagetype}）`);
+  chatPalette_arr.push(`1d20${getModifier(data.attackModifier)} 〈${data.standardAttack.name}〉攻撃ロール（射程：${data.standardAttack.range}）`);
+  chatPalette_arr.push(`${data.standardAttack.damagedice} 〈${data.standardAttack.name}〉ダメージロール（${data.standardAttack.damagetype}）`);
 
   if (data.additionalChatPalette.some(line => line !== "")) {
     chatPalette_arr.push("---------------");
